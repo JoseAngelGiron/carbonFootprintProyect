@@ -20,6 +20,12 @@
     <!-- <property name="hibernate.hbm2ddl.auto">update</property> -->
 
     <!-- entitys -->
-    <!-- <mapping class="com.github.JoseAngelGiron.model.actividad"/> -->
+    <mapping class="com.github.JoseAngelGiron.model.entity.Usuario"/>
+    <mapping class="com.github.JoseAngelGiron.model.entity.Recomendacion"/>
+    <mapping class="com.github.JoseAngelGiron.model.entity.Huella"/>
+    <mapping class="com.github.JoseAngelGiron.model.entity.HabitoId"/>
+    <mapping class="com.github.JoseAngelGiron.model.entity.Habito"/>
+    <mapping class="com.github.JoseAngelGiron.model.entity.Categoria"/>
+    <mapping class="com.github.JoseAngelGiron.model.entity.Actividad"/>
   </session-factory>
 </hibernate-configuration>

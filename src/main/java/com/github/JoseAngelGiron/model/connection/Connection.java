@@ -14,7 +14,6 @@ public class Connection {
             sessionFactory = new Configuration().configure().buildSessionFactory();
         } catch (Exception e) {
             e.printStackTrace();
-            throw new RuntimeException(e);
         }
     }
 
@@ -25,9 +24,13 @@ public class Connection {
         return _instance;
     }
 
-    public Session getSessionFactory() {
+    public static Session getSessionFactory() {
+        if (sessionFactory == null || sessionFactory.isClosed()) {
+            sessionFactory = new Configuration().configure().buildSessionFactory();
+        }
         return sessionFactory.openSession();
     }
+
     public void close() {
 
         if (_instance != null && sessionFactory.isOpen()) {
