@@ -9,6 +9,9 @@ import java.util.Set;
 @Entity
 @Table(name = "usuario")
 public class Usuario {
+
+
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id_usuario", nullable = false)
@@ -31,6 +34,17 @@ public class Usuario {
 
     @OneToMany(mappedBy = "idUsuario")
     private Set<Huella> huellas = new LinkedHashSet<>();
+
+    public Usuario() {
+
+    }
+
+    public Usuario(String nombre, String email, String contrasena, LocalDate fechaRegistro) {
+        this.nombre = nombre;
+        this.email = email;
+        this.contrasena = contrasena;
+        this.fechaRegistro = fechaRegistro;
+    }
 
     public Integer getId() {
         return id;
@@ -88,4 +102,14 @@ public class Usuario {
         this.huellas = huellas;
     }
 
+    @Override
+    public String toString() {
+        return "Usuario{" +
+                "id=" + id +
+                ", nombre='" + nombre + '\'' +
+                ", email='" + email + '\'' +
+                ", contrasena='" + contrasena + '\'' +
+                ", fechaRegistro=" + fechaRegistro +
+                '}';
+    }
 }

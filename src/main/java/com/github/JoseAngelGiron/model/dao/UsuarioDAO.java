@@ -9,7 +9,7 @@ import org.hibernate.query.Query;
 
 public class UsuarioDAO implements IDAO<Usuario> {
 
-    private final static String FINDBYNAME = "FROM Usuario WHERE nombre = :name";
+    private final static String FINDBYEMAIL = "FROM Usuario WHERE  email = :email";
 
     private Session session;
 
@@ -44,18 +44,18 @@ public class UsuarioDAO implements IDAO<Usuario> {
     /**
      * Finds a User by their name from the database.
      *
-     * @param name the name of the User to search for.
+     * @param email the name of the User to search for.
      * @return a Usuario object representing the User with the given name, or an empty Usuario if not found.
      */
 
-    public Usuario findByName(String name) {
+    public Usuario findByEmail(String email) {
         session = Connection.getSessionFactory();
 
         Usuario user = new Usuario();
 
         try {
-            Query<Usuario> query = session.createQuery(FINDBYNAME, Usuario.class);
-            query.setParameter("name", name);
+            Query<Usuario> query = session.createQuery(FINDBYEMAIL, Usuario.class);
+            query.setParameter("email", email);
 
             user = query.getSingleResultOrNull();
 

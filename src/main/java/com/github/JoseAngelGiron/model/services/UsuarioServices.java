@@ -17,9 +17,9 @@ public class UsuarioServices implements IServices<Usuario> {
     public boolean save(Usuario user) {
         boolean saved = false;
 
-        if (user.getId() == null && !user.getNombre().isEmpty()) {
+        if (user.getId() == null && !user.getNombre().isEmpty() && !user.getEmail().isEmpty()) {
 
-            Usuario retrievedUser = userDAO.findByName(user.getNombre());
+            Usuario retrievedUser = userDAO.findByEmail(user.getEmail());
 
             if(retrievedUser == null) {
                 userDAO.save(user);
@@ -39,10 +39,10 @@ public class UsuarioServices implements IServices<Usuario> {
 
     }
 
-    public Usuario findUsuarioByName(String name) {
+    public Usuario findUsuarioByEmail(String email) {
         Usuario user = new Usuario();
-        if (name != null) {
-            userDAO.findByName(name);
+        if (email != null) {
+            user = userDAO.findByEmail(email);
         }
         return user;
     }
