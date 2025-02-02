@@ -55,15 +55,13 @@ public class LoginController extends Controller implements Initializable {
         UsuarioServices usuarioService = new UsuarioServices();
         userToLogin = usuarioService.findUsuarioByEmail(email);
 
-
-
-
         if(userToLogin.getId() != null && userToLogin.getContrasena().equals(password)){
             UserSession session = UserSession.UserSession();
             session.setUserIntoSession(userToLogin);
             changeToMainWindow();
 
         }else{
+
             System.out.println("No existe ningún usuario");
         }
 

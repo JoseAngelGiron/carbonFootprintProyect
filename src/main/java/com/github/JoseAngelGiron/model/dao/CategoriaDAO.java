@@ -3,6 +3,7 @@ package com.github.JoseAngelGiron.model.dao;
 import com.github.JoseAngelGiron.model.entity.Categoria;
 
 public class CategoriaDAO implements IDAO<Categoria> {
+
     @Override
     public void save(Categoria entity) {
 

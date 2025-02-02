@@ -4,6 +4,7 @@ module com.github.JoseAngelGiron {
     requires jakarta.persistence;
     requires java.naming;
     requires org.hibernate.orm.core;
+    requires java.desktop;
 
 
     opens com.github.JoseAngelGiron to javafx.fxml;

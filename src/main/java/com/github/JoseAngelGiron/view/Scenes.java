@@ -1,12 +1,14 @@
 package com.github.JoseAngelGiron.view;
 
 public enum Scenes {
-    ROOT("view/main"),
+    ROOT("view/home"),
 
     LOGIN("view/login"),
     REGISTER("view/register"),
 
-    HOME("view/home");
+    PROFILE("view/userProfile");
+
+    //HOME("view/home");
 
 
     private String url;

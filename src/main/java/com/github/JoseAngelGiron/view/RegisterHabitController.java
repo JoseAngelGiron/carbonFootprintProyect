@@ -1,23 +1,19 @@
 package com.github.JoseAngelGiron.view;
 
-
+import com.github.JoseAngelGiron.model.services.ActividadServices;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
-import javafx.scene.layout.Pane;
+import javafx.scene.control.ListView;
 
+import java.awt.*;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
-import static com.github.JoseAngelGiron.App.changeScene;
-
-
-public class HomeController extends Controller implements Initializable {
+public class RegisterHabitController extends Controller implements Initializable {
 
     @FXML
-    private Pane mainPane;
-
-
+    private ListView<TextField> listViewCampos;
 
     @Override
     public void onOpen(Object input, Object input2) throws IOException {
@@ -34,13 +30,11 @@ public class HomeController extends Controller implements Initializable {
 
     }
 
-    @FXML
-    public void changeProfile() throws IOException {
-        changeScene(Scenes.PROFILE, mainPane,null);
+
+    private void retrieveActivitys() throws IOException {
+        ActividadServices actividadServices = new ActividadServices();
+
+
 
     }
-
 }
-
-
-

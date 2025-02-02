@@ -143,7 +143,7 @@ public class RegisterController extends Controller implements Initializable {
      * @param nick The nickname to validate.
      * @return true if the nickname is valid, false otherwise.
      */
-    private static boolean validateNick(String nick){
+    public static boolean validateNick(String nick){
         Pattern pattern = Pattern.compile("^(?!.*\\s)\\w{4,12}$");
         return pattern.matcher(nick).matches();
 
@@ -164,7 +164,7 @@ public class RegisterController extends Controller implements Initializable {
      * @param email The email address to validate.
      * @return true if the email address is valid, false otherwise.
      */
-    private static boolean validateEmail(String email) {
+    public static boolean validateEmail(String email) {
         Pattern pattern = Pattern.compile("^(?!.*\\s).+@.+\\.(com|es)$");
         return pattern.matcher(email).matches();
     }
