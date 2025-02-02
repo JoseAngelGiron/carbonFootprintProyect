@@ -40,6 +40,12 @@ public class HomeController extends Controller implements Initializable {
 
     }
 
+    @FXML
+    public void changeRegisterHabit() throws IOException {
+        changeScene(Scenes.REGISTERNEWHABIT, mainPane,null);
+
+    }
+
 }
 
 

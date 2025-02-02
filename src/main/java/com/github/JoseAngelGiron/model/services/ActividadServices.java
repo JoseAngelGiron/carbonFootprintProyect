@@ -3,7 +3,6 @@ package com.github.JoseAngelGiron.model.services;
 import com.github.JoseAngelGiron.model.dao.ActividadDAO;
 import com.github.JoseAngelGiron.model.entity.Actividad;
 
-import java.util.ArrayList;
 import java.util.List;
 
 public class ActividadServices implements IServices<Actividad> {
@@ -21,11 +20,7 @@ public class ActividadServices implements IServices<Actividad> {
     }
 
     public List<Actividad> findAllActivities() {
-        List<Actividad> actividades = new ArrayList<>();
-
-        actividadDAO.findAll();
-
-        return actividades;
+        return actividadDAO.findAll();
     }
 
     @Override

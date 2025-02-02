@@ -6,6 +6,9 @@ public enum Scenes {
     LOGIN("view/login"),
     REGISTER("view/register"),
 
+    REGISTERNEWHABIT("view/registerHabit"),
+    //TODOS TUS HABITOS
+
     PROFILE("view/userProfile");
 
     //HOME("view/home");

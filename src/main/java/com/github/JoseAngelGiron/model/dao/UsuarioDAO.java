@@ -47,7 +47,6 @@ public class UsuarioDAO implements IDAO<Usuario> {
      * @param email the name of the User to search for.
      * @return a Usuario object representing the User with the given name, or an empty Usuario if not found.
      */
-
     public Usuario findByEmail(String email) {
         session = Connection.getSessionFactory();
 
@@ -76,7 +75,8 @@ public class UsuarioDAO implements IDAO<Usuario> {
      * @param user the Usuario object representing the user to be saved.
      */
     @Override
-    public void save(Usuario user) {
+    public boolean save(Usuario user) {
+        boolean saved = false;
         session = Connection.getSessionFactory();
 
         Transaction transaction = null;
@@ -85,6 +85,7 @@ public class UsuarioDAO implements IDAO<Usuario> {
             transaction = session.beginTransaction();
             session.persist(user);
             transaction.commit();
+            saved = true;
 
         } catch (Exception e) {
             if (transaction != null) {
@@ -95,7 +96,7 @@ public class UsuarioDAO implements IDAO<Usuario> {
 
             session.close();
         }
-
+        return saved;
     }
     /**
      * Deletes a User by their ID from the database.
@@ -103,7 +104,8 @@ public class UsuarioDAO implements IDAO<Usuario> {
      * @param id the ID of the User to delete.
      */
     @Override
-    public void delete(Integer id) {
+    public boolean delete(Integer id) {
+        boolean deleted = false;
         session = Connection.getSessionFactory();
         Transaction transaction = null;
         try{
@@ -111,6 +113,7 @@ public class UsuarioDAO implements IDAO<Usuario> {
             Usuario user = session.get(Usuario.class, id);
             session.remove(user);
             transaction.commit();
+            deleted = true;
 
         } catch (Exception e) {
             e.printStackTrace();
@@ -119,6 +122,7 @@ public class UsuarioDAO implements IDAO<Usuario> {
 
             session.close();
         }
+        return deleted;
     }
 
     /**
@@ -127,20 +131,23 @@ public class UsuarioDAO implements IDAO<Usuario> {
      * @param user the Usuario object representing the user to be updated.
      */
     @Override
-    public void update(Usuario user) {
+    public boolean update(Usuario user) {
+        boolean updated = false;
         session = Connection.getSessionFactory();
         Transaction transaction = null;
+
         try{
             transaction = session.beginTransaction();
             session.merge(user);
             transaction.commit();
-
+            updated = true;
         } catch (Exception e) {
             e.printStackTrace();
             transaction.rollback();
         }finally {
             session.close();
         }
+        return updated;
     }
 
 

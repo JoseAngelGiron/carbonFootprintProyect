@@ -15,7 +15,8 @@ public class ActividadTest {
         List<Actividad> actividades = actividadDAO.findAll();
 
         for(Actividad actividad : actividades) {
-            System.out.println(actividad.getNombre() + " "+ actividad.getIdCategoria().getNombre());
+            System.out.println(actividad.getNombre() + " "+ actividad.getIdCategoria().getNombre()
+            + " " + actividad.getIdCategoria().getUnidad() + " " + actividad.getIdCategoria().getFactorEmision() );
         }
     }
 }

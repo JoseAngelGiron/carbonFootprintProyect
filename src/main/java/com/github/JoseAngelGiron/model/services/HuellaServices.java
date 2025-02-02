@@ -7,18 +7,18 @@ import com.github.JoseAngelGiron.model.entity.Huella;
 
 public class HuellaServices implements IDAO<Huella> {
     @Override
-    public void save(Huella entity) {
-
+    public boolean save(Huella entity) {
+        return false;
     }
 
     @Override
-    public void delete(Integer id) {
-
+    public boolean delete(Integer id) {
+        return false;
     }
 
     @Override
-    public void update(Huella entity) {
-
+    public boolean update(Huella entity) {
+        return false;
     }
 
     @Override

@@ -5,18 +5,18 @@ import com.github.JoseAngelGiron.model.entity.Categoria;
 
 public class CategoriaServices implements IDAO<Categoria> {
     @Override
-    public void save(Categoria entity) {
-
+    public boolean save(Categoria entity) {
+        return false;
     }
 
     @Override
-    public void delete(Integer id) {
-
+    public boolean delete(Integer id) {
+        return false;
     }
 
     @Override
-    public void update(Categoria entity) {
-
+    public boolean update(Categoria entity) {
+        return false;
     }
 
     @Override

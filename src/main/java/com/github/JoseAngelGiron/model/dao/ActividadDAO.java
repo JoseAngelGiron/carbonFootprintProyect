@@ -38,18 +38,18 @@ public class ActividadDAO implements IDAO<Actividad> {
 
 
     @Override
-    public void save(Actividad entity) {
-
+    public boolean save(Actividad entity) {
+        return false;
     }
 
     @Override
-    public void delete(Integer id) {
-
+    public boolean delete(Integer id) {
+        return false;
     }
 
     @Override
-    public void update(Actividad entity) {
-
+    public boolean update(Actividad entity) {
+        return false;
     }
 
 

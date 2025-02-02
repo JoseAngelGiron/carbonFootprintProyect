@@ -9,6 +9,19 @@ import java.time.LocalDate;
 @Entity
 @Table(name = "habito")
 public class Habito {
+
+    public Habito() {
+    }
+
+    public Habito(HabitoId id, Usuario idUsuario, Actividad idActividad, Integer frecuencia, String tipo, LocalDate ultimaFecha) {
+        this.id = id;
+        this.idUsuario = idUsuario;
+        this.idActividad = idActividad;
+        this.frecuencia = frecuencia;
+        this.tipo = tipo;
+        this.ultimaFecha = ultimaFecha;
+    }
+
     @EmbeddedId
     private HabitoId id;
 
@@ -16,7 +29,7 @@ public class Habito {
     @ManyToOne(fetch = FetchType.LAZY, optional = false)
     @OnDelete(action = OnDeleteAction.CASCADE)
     @JoinColumn(name = "id_usuario", nullable = false)
-    private com.github.JoseAngelGiron.model.entity.Usuario idUsuario;
+    private Usuario idUsuario;
 
     @MapsId("idActividad")
     @ManyToOne(fetch = FetchType.LAZY, optional = false)

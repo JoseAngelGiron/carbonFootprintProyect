@@ -1,10 +1,36 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextArea?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane prefHeight="502.0" prefWidth="849.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.github.JoseAngelGiron.view.RegisterHabitController">
+<AnchorPane prefHeight="636.0" prefWidth="923.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.github.JoseAngelGiron.view.RegisterHabitController">
    <children>
-      <ListView fx:id="listViewCampos" layoutX="8.0" layoutY="11.0" prefHeight="479.0" prefWidth="243.0" />
+      <TableView fx:id="actividadTable" layoutX="18.0" layoutY="10.0" prefHeight="555.0" prefWidth="339.0">
+        <columns>
+          <TableColumn fx:id="activityCategoryColumn" prefWidth="120.80002212524414" text="Categoría" />
+          <TableColumn fx:id="activityNameColumn" prefWidth="220.79994201660156" text="Actividad" />
+        </columns>
+      </TableView>
+      <TextArea fx:id="activityName" editable="false" layoutX="399.0" layoutY="52.0" prefHeight="42.0" prefWidth="399.0" />
+      <Label layoutX="399.0" layoutY="26.0" prefHeight="18.0" prefWidth="171.0" text="Actividad seleccionada:" />
+      <Label layoutX="399.0" layoutY="316.0" prefHeight="18.0" prefWidth="114.0" text="Frecuencia:" />
+      <TextArea fx:id="category" editable="false" layoutX="399.0" layoutY="135.0" prefHeight="42.0" prefWidth="399.0" />
+      <Label layoutX="399.0" layoutY="190.0" prefHeight="18.0" prefWidth="114.0" text="Factor de emisión:" />
+      <TextArea fx:id="emisionFactor" editable="false" layoutX="399.0" layoutY="208.0" prefHeight="42.0" prefWidth="180.0" />
+      <Label layoutX="607.0" layoutY="190.0" prefHeight="18.0" prefWidth="68.0" text="Unidad:" />
+      <TextArea fx:id="unity" editable="false" layoutX="601.0" layoutY="208.0" prefHeight="42.0" prefWidth="198.0" />
+      <Label layoutX="406.0" layoutY="528.0" prefHeight="18.0" prefWidth="242.0" text="¿Desea registrar esta actividad?" />
+      <Button layoutX="404.0" layoutY="565.0" mnemonicParsing="false" onAction="#registerHabit" prefHeight="42.0" prefWidth="406.0" text="Registrar nueva actividad" />
+      <Label layoutX="399.0" layoutY="278.0" prefHeight="27.0" prefWidth="171.0" text="Seleccione:" />
+      <TextArea fx:id="frecuency" layoutX="399.0" layoutY="335.0" prefHeight="42.0" prefWidth="171.0" promptText="Ejemplo: 4.." />
+      <Label layoutX="399.0" layoutY="116.0" prefHeight="18.0" prefWidth="114.0" text="Categoría:" />
+      <ComboBox fx:id="typeBox" layoutX="600.0" layoutY="335.0" prefHeight="42.0" prefWidth="198.0" promptText="Frecuencia" />
+      <DatePicker fx:id="datePicker" layoutX="399.0" layoutY="413.0" prefHeight="88.0" prefWidth="406.0" />
    </children>
 </AnchorPane>

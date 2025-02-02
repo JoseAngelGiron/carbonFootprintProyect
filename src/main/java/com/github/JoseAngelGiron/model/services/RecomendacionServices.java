@@ -5,18 +5,18 @@ import com.github.JoseAngelGiron.model.entity.Recomendacion;
 
 public class RecomendacionServices implements IDAO<Recomendacion> {
     @Override
-    public void save(Recomendacion entity) {
-
+    public boolean save(Recomendacion entity) {
+        return false;
     }
 
     @Override
-    public void delete(Integer id) {
-
+    public boolean delete(Integer id) {
+        return false;
     }
 
     @Override
-    public void update(Recomendacion entity) {
-
+    public boolean update(Recomendacion entity) {
+        return false;
     }
 
     @Override

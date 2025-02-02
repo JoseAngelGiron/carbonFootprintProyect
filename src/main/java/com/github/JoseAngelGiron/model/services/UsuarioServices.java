@@ -22,8 +22,7 @@ public class UsuarioServices implements IServices<Usuario> {
             Usuario retrievedUser = userDAO.findByEmail(user.getEmail());
 
             if(retrievedUser == null) {
-                userDAO.save(user);
-                saved = true;
+                saved = userDAO.save(user);
             }
         }
 

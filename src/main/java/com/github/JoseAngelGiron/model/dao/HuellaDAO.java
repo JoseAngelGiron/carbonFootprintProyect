@@ -32,14 +32,15 @@ public class HuellaDAO implements IDAO<Huella> {
     }
 
     @Override
-    public void save(Huella entity) {
+    public boolean save(Huella entity) {
+        boolean save = false;
         session = Connection.getSessionFactory();
         Transaction transaction = null;
         try{
             transaction = session.beginTransaction();
             session.persist(entity);
             transaction.commit();
-
+            save = true;
         }catch(Exception e){
             if(transaction!=null) {
                 transaction.rollback();
@@ -48,10 +49,12 @@ public class HuellaDAO implements IDAO<Huella> {
         }finally{
             session.close();
         }
+        return save;
     }
 
     @Override
-    public void delete(Integer id) {
+    public boolean delete(Integer id) {
+        boolean delete = false;
         session = Connection.getSessionFactory();
         Transaction transaction = null;
         try{
@@ -59,6 +62,7 @@ public class HuellaDAO implements IDAO<Huella> {
             Huella print = session.get(Huella.class, id);
             session.remove(print);
             transaction.commit();
+            delete = true;
 
         } catch (Exception e) {
             e.printStackTrace();
@@ -67,16 +71,19 @@ public class HuellaDAO implements IDAO<Huella> {
 
             session.close();
         }
+        return delete;
     }
 
     @Override
-    public void update(Huella entity) {
+    public boolean update(Huella entity) {
+        boolean update = false;
         session = Connection.getSessionFactory();
         Transaction transaction = null;
         try{
             transaction = session.beginTransaction();
             session.merge(entity);
             transaction.commit();
+            update = true;
 
         } catch (Exception e) {
             e.printStackTrace();
@@ -84,6 +91,7 @@ public class HuellaDAO implements IDAO<Huella> {
         }finally {
             session.close();
         }
+        return update;
     }
 
 
