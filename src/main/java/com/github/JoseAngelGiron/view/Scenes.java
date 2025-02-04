@@ -7,7 +7,15 @@ public enum Scenes {
     REGISTER("view/register"),
 
     REGISTERNEWHABIT("view/registerHabit"),
-    //TODOS TUS HABITOS
+    DELETEHABIT("view/deleteHabits"),
+    UPDATEHABIT("view/updateHabits"),
+    YOURHABITS("view/yourHabits"),
+
+
+    REGISTERNEWPRINT("view/registerNewPrint"),
+    DELETEPRINT("view/deletePrint"),
+    UPDATEPRINT("view/updatePrint"),
+    YOURPRINTS("view/yourPrints"),
 
     PROFILE("view/userProfile");
 

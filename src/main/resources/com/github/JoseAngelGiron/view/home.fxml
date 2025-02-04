@@ -17,14 +17,18 @@
                         <Button layoutX="1396.0" layoutY="16.0" mnemonicParsing="false" onAction="#changeProfile" prefHeight="26.0" prefWidth="154.0" text="Perfil" />
                         <MenuButton layoutX="36.0" layoutY="16.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="154.0" text="Habitos">
                           <items>
-                            <MenuItem mnemonicParsing="false" onAction="#changeRegisterHabit" text="Registrar un nuevo hábito" />
-                            <MenuItem mnemonicParsing="false" text="Tus habitos" />
+                            <MenuItem mnemonicParsing="false" onAction="#changeToRegisterHabit" text="Registrar un nuevo hábito" />
+                              <MenuItem mnemonicParsing="false" onAction="#changeToUpdateHabit" text="Actualizar un hábito" />
+                              <MenuItem mnemonicParsing="false" onAction="#changeToDeleteHabit" text="Borrar hábitos" />
+                            <MenuItem mnemonicParsing="false" onAction="#changeToYourHabits" text="Tus habitos y recomendaciones" />
                           </items>
                         </MenuButton>
                         <MenuButton layoutX="228.0" layoutY="16.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="204.0" text="Huellas">
                           <items>
-                            <MenuItem mnemonicParsing="false" text="Registrar una nueva huella" />
-                            <MenuItem mnemonicParsing="false" text="Todas tus huellas" />
+                            <MenuItem mnemonicParsing="false" onAction="#changeToRegisterPrint" text="Registrar una nueva huella" />
+                              <MenuItem mnemonicParsing="false" onAction="#changeToUpdatePrints" text="Actualizar Huella" />
+                              <MenuItem mnemonicParsing="false" onAction="#changeToDeletePrints" text="Borrar huella" />
+                            <MenuItem mnemonicParsing="false" onAction="#changeToYourPrints" text="Todas tus huellas" />
                           </items>
                         </MenuButton>
                      </children>

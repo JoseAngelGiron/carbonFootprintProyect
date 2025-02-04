@@ -40,11 +40,51 @@ public class HomeController extends Controller implements Initializable {
 
     }
 
+
     @FXML
-    public void changeRegisterHabit() throws IOException {
+    public void changeToRegisterHabit() throws IOException {
         changeScene(Scenes.REGISTERNEWHABIT, mainPane,null);
 
     }
+
+    @FXML
+    public void changeToYourHabits() throws IOException {
+        changeScene(Scenes.YOURHABITS, mainPane,null);
+
+    }
+
+    @FXML
+    public void changeToUpdateHabit() throws IOException {
+        changeScene(Scenes.UPDATEHABIT, mainPane,null);
+
+    }
+
+    @FXML
+    public void changeToDeleteHabit() throws IOException {
+        changeScene(Scenes.DELETEHABIT, mainPane,null);
+
+    }
+
+
+    @FXML
+    public void changeToRegisterPrint() throws IOException {
+        changeScene(Scenes.REGISTERNEWPRINT, mainPane,null);
+
+    }@FXML
+    public void changeToYourPrints() throws IOException {
+        changeScene(Scenes.YOURPRINTS, mainPane,null);
+
+    }@FXML
+    public void changeToUpdatePrints() throws IOException {
+        changeScene(Scenes.UPDATEPRINT, mainPane,null);
+
+    }@FXML
+    public void changeToDeletePrints() throws IOException {
+        changeScene(Scenes.DELETEPRINT, mainPane,null);
+
+    }
+
+
 
 }
 

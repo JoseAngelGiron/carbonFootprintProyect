@@ -10,6 +10,20 @@ import java.time.LocalDate;
 @Entity
 @Table(name = "huella")
 public class Huella {
+
+    public Huella() {
+
+    }
+
+    public Huella( Usuario idUsuario, Actividad idActividad, BigDecimal valor, String unidad, LocalDate fecha) {
+
+        this.idUsuario = idUsuario;
+        this.idActividad = idActividad;
+        this.valor = valor;
+        this.unidad = unidad;
+        this.fecha = fecha;
+    }
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id_registro", nullable = false)

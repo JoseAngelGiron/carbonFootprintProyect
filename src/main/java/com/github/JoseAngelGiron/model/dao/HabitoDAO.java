@@ -5,10 +5,21 @@ import com.github.JoseAngelGiron.model.entity.Habito;
 
 
 import com.github.JoseAngelGiron.model.entity.HabitoId;
+import com.github.JoseAngelGiron.model.entity.Usuario;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
+import org.hibernate.query.Query;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class HabitoDAO implements IDAO<Habito> {
+
+    private final static String FINDALLHABITSANDCATEGORIESBYUSER = "SELECT h FROM Habito h " +
+                    "JOIN FETCH h.idActividad a " +
+                    "JOIN FETCH a.idCategoria c " +
+                    "WHERE h.idUsuario = :usuario";
+
 
     private Session session;
 
@@ -31,6 +42,7 @@ public class HabitoDAO implements IDAO<Habito> {
 
         return habito;
     }
+
     public Habito findByHabitoId(HabitoId id) {
         session = Connection.getSessionFactory();
         Habito habito = new Habito();
@@ -48,6 +60,26 @@ public class HabitoDAO implements IDAO<Habito> {
         }
 
         return habito;
+    }
+
+    public List<Habito> findAllHabitsByUser(Usuario user) {
+        List<Habito> habits = new ArrayList();
+        session = Connection.getSessionFactory();
+
+        try{
+            Query<Habito> query = session.createQuery(FINDALLHABITSANDCATEGORIESBYUSER, Habito.class);
+
+            query.setParameter("usuario", user);
+
+            habits = query.list();
+
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+        }finally {
+            session.close();
+        }
+
+        return habits;
     }
 
     @Override
@@ -96,6 +128,30 @@ public class HabitoDAO implements IDAO<Habito> {
         return deleted;
     }
 
+
+    public boolean deleteByHabitoID(Habito habit) {
+        boolean deleted = false;
+        session = Connection.getSessionFactory();
+        Transaction transaction = null;
+        try{
+            transaction = session.beginTransaction();
+
+            session.remove(habit);
+            transaction.commit();
+            deleted = true;
+
+        }catch(Exception e){
+            if(transaction!=null) {
+                transaction.rollback();
+            }
+            e.printStackTrace();
+
+        }finally{
+            session.close();
+        }
+        return deleted;
+    }
+
     @Override
     public boolean update(Habito entity) {
         boolean updated = false;
@@ -116,6 +172,7 @@ public class HabitoDAO implements IDAO<Habito> {
 
         return updated;
     }
+
 
 
 }

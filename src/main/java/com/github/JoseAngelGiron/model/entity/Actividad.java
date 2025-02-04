@@ -21,13 +21,13 @@ public class Actividad {
     @ManyToOne(fetch = FetchType.LAZY, optional = false)
     @OnDelete(action = OnDeleteAction.CASCADE)
     @JoinColumn(name = "id_categoria", nullable = false)
-    private com.github.JoseAngelGiron.model.entity.Categoria idCategoria;
+    private Categoria idCategoria;
 
     @OneToMany(mappedBy = "idActividad")
-    private Set<com.github.JoseAngelGiron.model.entity.Habito> habitos = new LinkedHashSet<>();
+    private Set<Habito> habitos = new LinkedHashSet<>();
 
     @OneToMany(mappedBy = "idActividad")
-    private Set<com.github.JoseAngelGiron.model.entity.Huella> huellas = new LinkedHashSet<>();
+    private Set<Huella> huellas = new LinkedHashSet<>();
 
     public Integer getId() {
         return id;

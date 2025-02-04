@@ -38,7 +38,7 @@ public class HuellaDAO implements IDAO<Huella> {
         Transaction transaction = null;
         try{
             transaction = session.beginTransaction();
-            session.persist(entity);
+            session.merge(entity);
             transaction.commit();
             save = true;
         }catch(Exception e){
