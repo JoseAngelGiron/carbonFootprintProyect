@@ -1,8 +1,41 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Text?>
 
-
-<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.github.JoseAngelGiron.view.UpdatePrintController">
-
+<AnchorPane prefHeight="634.0" prefWidth="1170.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.github.JoseAngelGiron.view.UpdatePrintController">
+   <children>
+      <TableView fx:id="printTable" layoutX="25.0" layoutY="57.0" prefHeight="569.0" prefWidth="584.0">
+        <columns>
+          <TableColumn fx:id="numberColumn" prefWidth="72.79998779296875" text="Numero" />
+          <TableColumn fx:id="activityColumn" prefWidth="88.79998779296875" text="Actividad" />
+            <TableColumn fx:id="categoryColumn" prefWidth="88.00001525878906" text="Categoria" />
+            <TableColumn fx:id="emisionColumn" prefWidth="124.79998779296875" text="Factor de emisión" />
+            <TableColumn fx:id="unityColumn" prefWidth="95.199951171875" text="Unidad" />
+            <TableColumn fx:id="dateColumn" prefWidth="112.800048828125" text="Fecha" />
+        </columns>
+      </TableView>
+      <TextField fx:id="numberPrintField" editable="false" layoutX="686.0" layoutY="162.0" prefHeight="26.0" prefWidth="50.0" />
+      <Text layoutX="681.0" layoutY="97.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Huella seleccionada:" wrappingWidth="149.60000000000014" />
+      <Text layoutX="681.0" layoutY="143.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Número:" />
+      <Text layoutX="678.0" layoutY="227.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Actividad:" wrappingWidth="66.949951171875" />
+      <TextField fx:id="categoryField" editable="false" layoutX="912.0" layoutY="241.0" prefHeight="26.0" prefWidth="123.0" />
+      <Text layoutX="912.0" layoutY="218.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Categoría:" wrappingWidth="66.949951171875" />
+      <Text layoutX="679.0" layoutY="305.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Factor de emisión:" wrappingWidth="112.5499267578125" />
+      <TextField fx:id="emisionField" layoutX="683.0" layoutY="325.0" prefHeight="26.0" prefWidth="103.0" />
+      <Text layoutX="917.0" layoutY="305.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Unidad:" wrappingWidth="112.5499267578125" />
+      <TextField fx:id="unityField" editable="false" layoutX="916.0" layoutY="325.0" prefHeight="26.0" prefWidth="103.0" />
+      <Text layoutX="679.0" layoutY="395.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Fecha:" wrappingWidth="112.5499267578125" />
+      <Button layoutX="674.0" layoutY="504.0" mnemonicParsing="false" onAction="#updatePrint" prefHeight="49.0" prefWidth="317.0" text="Actualizar" />
+      <Text layoutX="674.0" layoutY="490.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Para borrar la huella seleccionada, pulse en borrar:" wrappingWidth="267.19997558593764" />
+      <Text layoutX="674.0" layoutY="26.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Actualizar huella" wrappingWidth="235.72216796875" />
+      <Text layoutX="25.0" layoutY="34.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Seleccione una huella:" wrappingWidth="235.72216796875" />
+      <DatePicker fx:id="datePicker" layoutX="683.0" layoutY="417.0" onAction="#updatePrint" />
+      <TextField fx:id="activityField" editable="false" layoutX="682.0" layoutY="242.0" />
+   </children>
 </AnchorPane>

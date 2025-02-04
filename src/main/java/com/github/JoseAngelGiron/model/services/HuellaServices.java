@@ -3,7 +3,10 @@ package com.github.JoseAngelGiron.model.services;
 import com.github.JoseAngelGiron.model.dao.HuellaDAO;
 import com.github.JoseAngelGiron.model.dao.IDAO;
 import com.github.JoseAngelGiron.model.entity.Huella;
+import com.github.JoseAngelGiron.model.entity.Usuario;
 
+import java.util.ArrayList;
+import java.util.List;
 
 
 public class HuellaServices implements IDAO<Huella> {
@@ -33,16 +36,34 @@ public class HuellaServices implements IDAO<Huella> {
 
     @Override
     public boolean delete(Integer id) {
-        return false;
+        boolean deleted = false;
+        if(id != null) {
+            deleted = huellaDAO.delete(id);
+        }
+        return deleted;
     }
 
     @Override
     public boolean update(Huella entity) {
-        return false;
+        boolean updated = false;
+        if(entity != null) {
+            updated = huellaDAO.update(entity);
+        }
+        return updated;
     }
 
     @Override
     public Huella findById(Integer id) {
         return null;
+    }
+
+    public List<Huella> findAllprintsByUser(Usuario usuario) {
+        List<Huella> prints = new ArrayList<>();
+
+        if(usuario!=null){
+            prints = huellaDAO.findAllPrintsByUser(usuario);
+        }
+
+        return prints;
     }
 }

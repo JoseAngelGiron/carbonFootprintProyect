@@ -15,7 +15,7 @@ import java.util.List;
 
 public class HabitoDAO implements IDAO<Habito> {
 
-    private final static String FINDALLHABITSANDCATEGORIESBYUSER = "SELECT h FROM Habito h " +
+    private final static String FIND_ALL_HABITS_AND_CATEGORIES_BY_USER = "SELECT h FROM Habito h " +
                     "JOIN FETCH h.idActividad a " +
                     "JOIN FETCH a.idCategoria c " +
                     "WHERE h.idUsuario = :usuario";
@@ -67,7 +67,7 @@ public class HabitoDAO implements IDAO<Habito> {
         session = Connection.getSessionFactory();
 
         try{
-            Query<Habito> query = session.createQuery(FINDALLHABITSANDCATEGORIESBYUSER, Habito.class);
+            Query<Habito> query = session.createQuery(FIND_ALL_HABITS_AND_CATEGORIES_BY_USER, Habito.class);
 
             query.setParameter("usuario", user);
 

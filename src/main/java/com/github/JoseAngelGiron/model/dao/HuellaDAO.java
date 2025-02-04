@@ -1,12 +1,24 @@
 package com.github.JoseAngelGiron.model.dao;
 
 import com.github.JoseAngelGiron.model.connection.Connection;
+import com.github.JoseAngelGiron.model.entity.Habito;
 import com.github.JoseAngelGiron.model.entity.Huella;
+import com.github.JoseAngelGiron.model.entity.Usuario;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
+import org.hibernate.query.Query;
+
+import java.util.ArrayList;
+import java.util.List;
 
 
 public class HuellaDAO implements IDAO<Huella> {
+
+    private final static String FIND_ALL_FOOTPRINTS_WITH_ACTIVITIES_AND_CATEGORIES_BY_USER = "SELECT hu FROM Huella hu " +
+            "JOIN FETCH hu.idActividad a " +
+            "JOIN FETCH a.idCategoria c " +
+            "WHERE hu.idUsuario = :usuario";
+
 
     private Session session;
 
@@ -29,6 +41,25 @@ public class HuellaDAO implements IDAO<Huella> {
         }
 
         return print;
+    }
+
+    public List<Huella> findAllPrintsByUser(Usuario usuario) {
+        List<Huella> prints = new ArrayList();
+        session = Connection.getSessionFactory();
+
+        try{
+            Query<Huella> query = session.createQuery(FIND_ALL_FOOTPRINTS_WITH_ACTIVITIES_AND_CATEGORIES_BY_USER, Huella.class);
+            query.setParameter("usuario", usuario);
+            prints = query.getResultList();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }finally {
+            session.close();
+        }
+
+
+
+        return prints;
     }
 
     @Override
@@ -65,8 +96,10 @@ public class HuellaDAO implements IDAO<Huella> {
             delete = true;
 
         } catch (Exception e) {
+            if(transaction!=null) {
+                transaction.rollback();
+            }
             e.printStackTrace();
-            transaction.rollback();
         }finally {
 
             session.close();

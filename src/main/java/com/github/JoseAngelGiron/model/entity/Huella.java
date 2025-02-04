@@ -32,7 +32,7 @@ public class Huella {
     @ManyToOne(fetch = FetchType.LAZY, optional = false)
     @OnDelete(action = OnDeleteAction.CASCADE)
     @JoinColumn(name = "id_usuario", nullable = false)
-    private com.github.JoseAngelGiron.model.entity.Usuario idUsuario;
+    private Usuario idUsuario;
 
     @ManyToOne(fetch = FetchType.LAZY, optional = false)
     @OnDelete(action = OnDeleteAction.CASCADE)
