@@ -5,6 +5,7 @@ import com.github.JoseAngelGiron.model.dao.IDAO;
 import com.github.JoseAngelGiron.model.entity.Huella;
 import com.github.JoseAngelGiron.model.entity.Usuario;
 
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -15,6 +16,41 @@ public class HuellaServices implements IDAO<Huella> {
 
     public HuellaServices() {
         huellaDAO = new HuellaDAO();
+    }
+
+    @Override
+    public Huella findById(Integer id) {
+        return null;
+    }
+
+    public List<Huella> findAllprintsByUser(Usuario usuario) {
+        List<Huella> prints = new ArrayList<>();
+
+        if(usuario!=null){
+            prints = huellaDAO.findAllPrintsByUser(usuario);
+        }
+
+        return prints;
+    }
+
+    public double findDailyImpact(Usuario user, LocalDate date) {
+        double impact = 0;
+
+        if(user!=null && date!=null) {
+            impact = huellaDAO.calculateDailyImpact(date, user.getId());
+        }
+
+        return impact;
+    }
+
+    public double findImpactForAPeriod(Usuario user, LocalDate startdate, LocalDate endDate) {
+        double impact = 0;
+
+        if(user!=null && startdate!=null && endDate!=null) {
+            impact = huellaDAO.calculateImpactForPeriod(startdate, endDate, user.getId());
+        }
+
+        return impact;
     }
 
     @Override
@@ -52,18 +88,5 @@ public class HuellaServices implements IDAO<Huella> {
         return updated;
     }
 
-    @Override
-    public Huella findById(Integer id) {
-        return null;
-    }
 
-    public List<Huella> findAllprintsByUser(Usuario usuario) {
-        List<Huella> prints = new ArrayList<>();
-
-        if(usuario!=null){
-            prints = huellaDAO.findAllPrintsByUser(usuario);
-        }
-
-        return prints;
-    }
 }

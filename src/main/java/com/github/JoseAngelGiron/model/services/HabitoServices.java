@@ -39,8 +39,8 @@ public class HabitoServices implements IDAO<Habito> {
     @Override
     public boolean save(Habito entity) {
         boolean saved = false;
-        Habito habit = habitoDAO.findByHabitoId(entity.getId());
-        if (habit == null) {
+        Habito retrievedHabit = habitoDAO.findByUserAndActivity(entity.getIdUsuario(),entity.getIdActividad());
+        if (retrievedHabit == null) {
             saved = habitoDAO.save(entity);
         }
         return saved;

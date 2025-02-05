@@ -4,8 +4,9 @@
 <?import javafx.scene.control.TableView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Text?>
+<?import javafx.scene.text.TextFlow?>
 
-<AnchorPane prefHeight="634.0" prefWidth="1170.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.github.JoseAngelGiron.view.YourPrintsController">
+<AnchorPane prefHeight="634.0" prefWidth="1252.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.github.JoseAngelGiron.view.YourPrintsController">
    <children>
       <TableView fx:id="printTable" layoutX="25.0" layoutY="57.0" prefHeight="569.0" prefWidth="584.0">
         <columns>
@@ -17,6 +18,8 @@
             <TableColumn fx:id="dateColumn" prefWidth="112.800048828125" text="Fecha" />
         </columns>
       </TableView>
-      <Text layoutX="25.0" layoutY="34.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Seleccione una huella:" wrappingWidth="235.72216796875" />
+      <Text layoutX="652.0" layoutY="79.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Recomendaciones:" wrappingWidth="235.72216796875" />
+      <Text layoutX="25.0" layoutY="27.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Seleccione una huella para ver una recomendación en especifico:" wrappingWidth="361.3221435546875" />
+      <TextFlow fx:id="recommendationsTextFlow" layoutX="652.0" layoutY="100.0" prefHeight="50.0" prefWidth="584.0" />
    </children>
 </AnchorPane>

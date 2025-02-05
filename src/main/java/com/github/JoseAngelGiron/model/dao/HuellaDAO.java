@@ -1,13 +1,15 @@
 package com.github.JoseAngelGiron.model.dao;
 
 import com.github.JoseAngelGiron.model.connection.Connection;
-import com.github.JoseAngelGiron.model.entity.Habito;
+
 import com.github.JoseAngelGiron.model.entity.Huella;
 import com.github.JoseAngelGiron.model.entity.Usuario;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
 import org.hibernate.query.Query;
 
+import java.math.BigDecimal;
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -19,6 +21,19 @@ public class HuellaDAO implements IDAO<Huella> {
             "JOIN FETCH a.idCategoria c " +
             "WHERE hu.idUsuario = :usuario";
 
+    private final static String CALCULATE_DAILY_IMPACT = "SELECT SUM(h.valor * c.factorEmision) " +
+            "FROM Huella h " +
+            "JOIN h.idActividad a " +
+            "JOIN a.idCategoria c " +
+            "WHERE h.fecha = :date " +
+            "AND h.idUsuario.id = :userId";
+
+    private final static String CALCULATE_IMPACT_IN_A_PERIOD = "SELECT SUM(h.valor * c.factorEmision) " +
+            "FROM Huella h " +
+            "JOIN h.idActividad a " +
+            "JOIN a.idCategoria c " +
+            "WHERE h.fecha BETWEEN :startDate AND :endDate " +
+            "AND h.idUsuario.id = :userId";
 
     private Session session;
 
@@ -60,6 +75,51 @@ public class HuellaDAO implements IDAO<Huella> {
 
 
         return prints;
+    }
+
+    public double calculateDailyImpact(LocalDate date, Integer userId) {
+        double impactoTotal = 0.0;
+        session = Connection.getSessionFactory();
+
+        try {
+            Query<BigDecimal> query = session.createQuery(CALCULATE_DAILY_IMPACT, BigDecimal.class);
+
+            query.setParameter("date", date);
+            query.setParameter("userId", userId);
+
+            BigDecimal result = query.getSingleResult();
+            impactoTotal = (result != null) ? result.doubleValue() : 0.0;
+
+        } catch (RuntimeException e) {
+            e.printStackTrace();
+        } finally {
+            session.close();
+        }
+
+        return impactoTotal;
+    }
+
+    public double calculateImpactForPeriod(LocalDate startDate, LocalDate endDate, Integer userId) {
+        double impactoTotal = 0.0;
+        session = Connection.getSessionFactory();
+
+        try {
+            Query<BigDecimal> query = session.createQuery(CALCULATE_IMPACT_IN_A_PERIOD, BigDecimal.class);
+
+            query.setParameter("startDate", startDate);
+            query.setParameter("endDate", endDate);
+            query.setParameter("userId", userId);
+
+            BigDecimal result = query.getSingleResult();
+            impactoTotal = (result != null) ? result.doubleValue() : 0.0;
+
+        } catch (RuntimeException e) {
+            e.printStackTrace();
+        } finally {
+            session.close();
+        }
+
+        return impactoTotal;
     }
 
     @Override
@@ -126,6 +186,7 @@ public class HuellaDAO implements IDAO<Huella> {
         }
         return update;
     }
+
 
 
 }

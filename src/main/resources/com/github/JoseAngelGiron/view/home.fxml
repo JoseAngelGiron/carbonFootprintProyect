@@ -8,13 +8,13 @@
 
 <AnchorPane prefHeight="655.0" prefWidth="1410.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.github.JoseAngelGiron.view.HomeController">
    <children>
-      <SplitPane dividerPositions="0.9569892473118279" orientation="VERTICAL" prefHeight="76.0" prefWidth="1582.0">
+      <SplitPane dividerPositions="0.9569892473118279" orientation="VERTICAL" prefHeight="76.0" prefWidth="1561.0">
         <items>
-          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0">
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="68.0" prefWidth="1550.0">
                <children>
-                  <AnchorPane layoutY="1.0" prefHeight="58.0" prefWidth="1583.0">
+                  <AnchorPane layoutY="1.0" prefHeight="58.0" prefWidth="1560.0">
                      <children>
-                        <Button layoutX="1396.0" layoutY="16.0" mnemonicParsing="false" onAction="#changeProfile" prefHeight="26.0" prefWidth="154.0" text="Perfil" />
+                        <Button layoutX="1346.0" layoutY="16.0" mnemonicParsing="false" onAction="#changeProfile" prefHeight="26.0" prefWidth="154.0" text="Perfil" />
                         <MenuButton layoutX="36.0" layoutY="16.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="154.0" text="Habitos">
                           <items>
                             <MenuItem mnemonicParsing="false" onAction="#changeToRegisterHabit" text="Registrar un nuevo hábito" />
@@ -31,6 +31,7 @@
                             <MenuItem mnemonicParsing="false" onAction="#changeToYourPrints" text="Todas tus huellas" />
                           </items>
                         </MenuButton>
+                        <Button layoutX="463.0" layoutY="16.0" mnemonicParsing="false" onAction="#changeToImpactFootprints" prefHeight="26.0" prefWidth="222.0" text="Consultar el impacto de tus huellas" />
                      </children>
                   </AnchorPane>
                </children>

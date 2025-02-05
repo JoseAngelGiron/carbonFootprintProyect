@@ -1,6 +1,7 @@
 package com.github.JoseAngelGiron.model.dao;
 
 import com.github.JoseAngelGiron.model.connection.Connection;
+import com.github.JoseAngelGiron.model.entity.Actividad;
 import com.github.JoseAngelGiron.model.entity.Habito;
 
 
@@ -19,6 +20,9 @@ public class HabitoDAO implements IDAO<Habito> {
                     "JOIN FETCH h.idActividad a " +
                     "JOIN FETCH a.idCategoria c " +
                     "WHERE h.idUsuario = :usuario";
+
+    private final static String FIND_HABIT_BY_USER_AND_ACTIVITY = "FROM Habito h WHERE h.idUsuario.id = :userId AND h.idActividad.id = :activityId";
+
 
 
     private Session session;
@@ -43,20 +47,22 @@ public class HabitoDAO implements IDAO<Habito> {
         return habito;
     }
 
-    public Habito findByHabitoId(HabitoId id) {
+    public Habito findByUserAndActivity(Usuario user, Actividad activity) {
         session = Connection.getSessionFactory();
-        Habito habito = new Habito();
+        Habito habito = null;
 
-        if(id==null){
-            return habito;
-        }
+        if (user != null && activity != null) {
+            try {
 
-        try {
-            habito = session.get(Habito.class, id);
-        } catch (Exception e) {
-            e.printStackTrace();
-        } finally {
-            session.close();
+                Query<Habito> query = session.createQuery(FIND_HABIT_BY_USER_AND_ACTIVITY, Habito.class);
+                query.setParameter("userId", user.getId());
+                query.setParameter("activityId", activity.getId());
+                habito = query.uniqueResult();
+            } catch (Exception e) {
+                e.printStackTrace();
+            } finally {
+                session.close();
+            }
         }
 
         return habito;
@@ -80,6 +86,25 @@ public class HabitoDAO implements IDAO<Habito> {
         }
 
         return habits;
+    }
+
+    public Habito findByHabitoId(HabitoId id) {
+        session = Connection.getSessionFactory();
+        Habito habito = new Habito();
+
+        if(id==null){
+            return habito;
+        }
+
+        try {
+            habito = session.get(Habito.class, id);
+        } catch (Exception e) {
+            e.printStackTrace();
+        } finally {
+            session.close();
+        }
+
+        return habito;
     }
 
     @Override
@@ -127,7 +152,6 @@ public class HabitoDAO implements IDAO<Habito> {
         }
         return deleted;
     }
-
 
     public boolean deleteByHabitoID(Habito habit) {
         boolean deleted = false;

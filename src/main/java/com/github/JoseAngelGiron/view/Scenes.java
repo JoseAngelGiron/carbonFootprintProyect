@@ -17,6 +17,8 @@ public enum Scenes {
     UPDATEPRINT("view/updatePrint"),
     YOURPRINTS("view/yourPrints"),
 
+    IMPACTFOOTPRINTS("view/checkImpactFootprints"),
+
     PROFILE("view/userProfile");
 
     //HOME("view/home");

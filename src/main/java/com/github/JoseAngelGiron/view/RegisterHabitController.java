@@ -95,6 +95,7 @@ public class RegisterHabitController extends Controller implements Initializable
 
             Habito newHabit = new Habito(habitoId, currentUser,  selectedActivity, numberOfFrequency, typeFrecuency, dateSelected);
             HabitoServices habitoServices = new HabitoServices();
+            System.out.println();
             boolean registered = habitoServices.save(newHabit);
 
             if(registered) {

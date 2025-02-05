@@ -6,13 +6,13 @@
 
 <AnchorPane prefHeight="592.0" prefWidth="1095.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.github.JoseAngelGiron.view.YourHabitsController">
    <children>
-      <TableView fx:id="activityTable" layoutX="14.0" layoutY="9.0" prefHeight="558.0" prefWidth="606.0">
+      <TableView fx:id="activityTable" layoutX="14.0" layoutY="9.0" prefHeight="558.0" prefWidth="685.0">
         <columns>
-          <TableColumn fx:id="categoryColumn" prefWidth="117.60003662109375" text="Categoría" />
-          <TableColumn fx:id="habitColumn" prefWidth="90.39999389648438" text="Habito" />
-            <TableColumn fx:id="frequencyColumn" prefWidth="150.40000915527344" text="Frecuencia" />
-            <TableColumn fx:id="typeColumn" prefWidth="92.0" text="Tipo" />
-            <TableColumn fx:id="lastTimeColumn" prefWidth="153.60001220703123" text="Ultima vez" />
+          <TableColumn fx:id="categoryColumn" prefWidth="106.39999103546143" text="Categoría" />
+          <TableColumn fx:id="habitColumn" prefWidth="176.8000030517578" text="Habito" />
+            <TableColumn fx:id="frequencyColumn" prefWidth="108.79998779296875" text="Frecuencia" />
+            <TableColumn fx:id="typeColumn" prefWidth="99.20001220703125" text="Tipo" />
+            <TableColumn fx:id="lastTimeColumn" prefWidth="195.20001220703125" text="Ultima vez" />
         </columns>
       </TableView>
    </children>
