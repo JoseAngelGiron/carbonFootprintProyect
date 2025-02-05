@@ -2,6 +2,7 @@ package com.github.JoseAngelGiron.model.dao;
 
 import com.github.JoseAngelGiron.model.connection.Connection;
 import com.github.JoseAngelGiron.model.entity.Recomendacion;
+import com.github.JoseAngelGiron.model.entity.Usuario;
 import org.hibernate.Session;
 import org.hibernate.query.Query;
 
@@ -16,6 +17,16 @@ public class RecomendacionDAO implements IDAO<Recomendacion> {
             "JOIN c.actividads a " +
             "JOIN a.huellas h " +
             "WHERE h.id = :id ";
+
+    private final static String FIND_RECOMMENDATIONS_BY_FREQUENCY = "SELECT r " +
+                    "FROM Recomendacion r " +
+                    "JOIN r.idCategoria c " +
+                    "JOIN Habito h ON h.idActividad.idCategoria = c " +
+                    "WHERE h.idUsuario.id = :userId " +
+                    "AND h.tipo = :tipo " +
+                    "ORDER BY h.frecuencia DESC";
+
+
 
     private Session session;
 
@@ -43,6 +54,31 @@ public class RecomendacionDAO implements IDAO<Recomendacion> {
         return recommendations;
 
     }
+
+
+    public List<Recomendacion> findRecomendationsByFrequency(Usuario user, String tipo) {
+        session = Connection.getSessionFactory();
+        List<Recomendacion> recomendaciones = new ArrayList<>();
+
+        try {
+            Query<Recomendacion> query = session.createQuery(FIND_RECOMMENDATIONS_BY_FREQUENCY, Recomendacion.class);
+            query.setParameter("userId", user.getId());
+            query.setParameter("tipo", tipo);
+            query.setMaxResults(3);
+
+            recomendaciones = query.getResultList();
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        } finally {
+            session.close();
+
+        }
+
+        return recomendaciones;
+    }
+
+
 
     @Override
     public boolean save(Recomendacion entity) {

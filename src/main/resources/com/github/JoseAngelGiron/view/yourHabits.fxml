@@ -1,12 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.control.Button?>
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Text?>
+<?import javafx.scene.text.TextFlow?>
 
-<AnchorPane prefHeight="592.0" prefWidth="1095.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.github.JoseAngelGiron.view.YourHabitsController">
+<AnchorPane prefHeight="622.0" prefWidth="1498.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.github.JoseAngelGiron.view.YourHabitsController">
    <children>
-      <TableView fx:id="activityTable" layoutX="14.0" layoutY="9.0" prefHeight="558.0" prefWidth="685.0">
+      <TableView fx:id="activityTable" layoutX="14.0" layoutY="19.0" prefHeight="586.0" prefWidth="686.0">
         <columns>
           <TableColumn fx:id="categoryColumn" prefWidth="106.39999103546143" text="Categoría" />
           <TableColumn fx:id="habitColumn" prefWidth="176.8000030517578" text="Habito" />
@@ -15,5 +18,11 @@
             <TableColumn fx:id="lastTimeColumn" prefWidth="195.20001220703125" text="Ultima vez" />
         </columns>
       </TableView>
+      <TextFlow fx:id="textFlowRecommendations" layoutX="734.0" layoutY="145.0" prefHeight="436.0" prefWidth="679.0" />
+      <Button layoutX="734.0" layoutY="108.0" mnemonicParsing="false" onAction="#dailyRecomendation" text="Recomendación para el día" />
+      <Text layoutX="740.0" layoutY="44.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Para obtener una recomendación, basandonos en nuestros habitos de mayor frecuencia, solo tenemos que pulsar en los botones que tenemos abajo:" wrappingWidth="463.736572265625" />
+      <Button layoutX="912.0" layoutY="108.0" mnemonicParsing="false" onAction="#weekRecomendation" text="Recomendación para la semana" />
+      <Button layoutX="1114.0" layoutY="108.0" mnemonicParsing="false" onAction="#monthRecomendation" text="Recomendación para el mes" />
+      <Button layoutX="1293.0" layoutY="108.0" mnemonicParsing="false" onAction="#yearRecomendation" text="Recomendación para el año" />
    </children>
 </AnchorPane>

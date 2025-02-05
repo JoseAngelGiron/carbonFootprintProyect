@@ -28,10 +28,12 @@
                             <MenuItem mnemonicParsing="false" onAction="#changeToRegisterPrint" text="Registrar una nueva huella" />
                               <MenuItem mnemonicParsing="false" onAction="#changeToUpdatePrints" text="Actualizar Huella" />
                               <MenuItem mnemonicParsing="false" onAction="#changeToDeletePrints" text="Borrar huella" />
-                            <MenuItem mnemonicParsing="false" onAction="#changeToYourPrints" text="Todas tus huellas" />
+                            <MenuItem mnemonicParsing="false" onAction="#changeToYourPrints" text="Todas tus huellas y recomendaciones" />
                           </items>
                         </MenuButton>
                         <Button layoutX="463.0" layoutY="16.0" mnemonicParsing="false" onAction="#changeToImpactFootprints" prefHeight="26.0" prefWidth="222.0" text="Consultar el impacto de tus huellas" />
+                        <Button layoutX="1130.0" layoutY="16.0" mnemonicParsing="false" onAction="#printYourReport" prefHeight="26.0" prefWidth="197.0" text="Generar tu informe personalizado" />
+                        <Button layoutX="768.0" layoutY="17.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="257.0" text="¿Como es tu huella con la de resto?" />
                      </children>
                   </AnchorPane>
                </children>

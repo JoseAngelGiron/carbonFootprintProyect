@@ -25,17 +25,17 @@ import java.util.ResourceBundle;
 public class DeleteHabitController extends Controller implements Initializable {
 
     @FXML
-    TableView<Habito> activityTable;
+    private TableView<Habito> activityTable;
     @FXML
-    TableColumn<Habito, String> categoryColumn;
+    private TableColumn<Habito, String> categoryColumn;
     @FXML
-    TableColumn<Habito, String> habitColumn;
+    private TableColumn<Habito, String> habitColumn;
     @FXML
-    TableColumn<Habito, Integer> frequencyColumn;
+    private TableColumn<Habito, Integer> frequencyColumn;
     @FXML
-    TableColumn<Habito, String> typeColumn;
+    private TableColumn<Habito, String> typeColumn;
     @FXML
-    TableColumn<Habito, String> lastTimeColumn;
+    private TableColumn<Habito, String> lastTimeColumn;
 
     @FXML
     private TextField categoryArea;

@@ -6,6 +6,8 @@ public enum Scenes {
     LOGIN("view/login"),
     REGISTER("view/register"),
 
+    MAINPAGE("view/mainPage"),
+
     REGISTERNEWHABIT("view/registerHabit"),
     DELETEHABIT("view/deleteHabits"),
     UPDATEHABIT("view/updateHabits"),

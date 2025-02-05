@@ -5,6 +5,8 @@ module com.github.JoseAngelGiron {
     requires java.naming;
     requires org.hibernate.orm.core;
     requires java.desktop;
+    requires kernel;
+    requires layout;
 
 
     opens com.github.JoseAngelGiron to javafx.fxml;

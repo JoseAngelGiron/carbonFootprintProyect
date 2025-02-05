@@ -74,23 +74,15 @@ public class UpdateHabitController extends Controller implements Initializable {
         HabitoServices habitServices = new HabitoServices();
         //refactorizar esto a etiquetas por si falla algo, dar avisos individualizados
 
-        System.out.println("Frecuencia: '" + frequencyArea.getText() + "'");
-        System.out.println("Tipo: '" + typeArea.getText() + "'");
-        System.out.println("Fecha: " + datePicker.getValue());
-
-
-        System.out.println("Fecha seleccionada: " + datePicker.getValue());
-        System.out.println("Fecha actual: " + LocalDate.now());
-        System.out.println("Comparación: " + datePicker.getValue().isBefore(LocalDate.now()));
 
 
         if(!frequencyArea.getText().isEmpty() && !typeArea.getText().isEmpty() && datePicker.getValue() != null
         && datePicker.getValue().isBefore(LocalDate.now())) { //ver que se permita el propio día en cuestión
             //revisar el type
-            System.out.println("entra");
+
             selectedHabit.setFrecuencia(Integer.parseInt(frequencyArea.getText()));
             selectedHabit.setTipo(typeArea.getText());
-            System.out.println(datePicker.getValue());
+
             selectedHabit.setUltimaFecha(datePicker.getValue());
             //Usar el boolean para mostrar aviso de etiqueta
             updated = habitServices.update(selectedHabit);
