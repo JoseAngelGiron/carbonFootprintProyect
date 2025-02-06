@@ -53,6 +53,16 @@ public class HomeController extends Controller implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         currentUser = UserSession.UserSession().getUserLoggedIn();
+        try {
+            changeHome();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    @FXML
+    public void changeHome() throws IOException {
+        changeScene(Scenes.MAINPAGE, mainPane,null);
     }
 
     @FXML
@@ -105,6 +115,11 @@ public class HomeController extends Controller implements Initializable {
     @FXML
     public void changeToImpactFootprints() throws IOException {
         changeScene(Scenes.IMPACTFOOTPRINTS, mainPane,null);
+    }
+
+    @FXML
+    public void changeToComparisonUsers() throws IOException {
+        changeScene(Scenes.COMPARISONUSERS, mainPane,null);
     }
 
     @FXML

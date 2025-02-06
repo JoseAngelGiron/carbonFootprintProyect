@@ -5,9 +5,12 @@ import com.github.JoseAngelGiron.model.dao.IDAO;
 import com.github.JoseAngelGiron.model.entity.Huella;
 import com.github.JoseAngelGiron.model.entity.Usuario;
 
+import java.math.BigDecimal;
 import java.time.LocalDate;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 
 public class HuellaServices implements IDAO<Huella> {
@@ -51,6 +54,23 @@ public class HuellaServices implements IDAO<Huella> {
         }
 
         return impact;
+    }
+
+    public Map<String, BigDecimal > findUserFootprintByCategory(Usuario user){
+       Map<String, BigDecimal> footprintsAndCategories = new HashMap<>();
+
+        if(user.getId()!=null){
+            footprintsAndCategories = huellaDAO.findUserFootprintByCategory(user.getId());
+        }
+        return footprintsAndCategories;
+    }
+
+    public Map<String, BigDecimal > findAverageFootprintByCategory(){
+        Map<String, BigDecimal> footprintsAndCategories;
+
+        footprintsAndCategories = huellaDAO.findAverageFootprintByCategory();
+
+        return footprintsAndCategories;
     }
 
     @Override

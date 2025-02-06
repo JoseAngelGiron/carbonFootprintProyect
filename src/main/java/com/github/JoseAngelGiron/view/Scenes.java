@@ -21,6 +21,8 @@ public enum Scenes {
 
     IMPACTFOOTPRINTS("view/checkImpactFootprints"),
 
+    COMPARISONUSERS("view/comparisonUsers"),
+
     PROFILE("view/userProfile");
 
     //HOME("view/home");

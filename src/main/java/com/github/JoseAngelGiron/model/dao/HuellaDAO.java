@@ -11,7 +11,9 @@ import org.hibernate.query.Query;
 import java.math.BigDecimal;
 import java.time.LocalDate;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 
 public class HuellaDAO implements IDAO<Huella> {
@@ -34,6 +36,15 @@ public class HuellaDAO implements IDAO<Huella> {
             "JOIN a.idCategoria c " +
             "WHERE h.fecha BETWEEN :startDate AND :endDate " +
             "AND h.idUsuario.id = :userId";
+
+    private final static String RETRIEVE_CATEGORIES_AND_TOTAL_IMPACT_FROM_USER = "SELECT h.idActividad.idCategoria.nombre, SUM(h.valor) " +
+            "FROM Huella h " +
+            "WHERE h.idUsuario.id = :userId " +
+            "GROUP BY h.idActividad.idCategoria.nombre";
+
+    private final static String AVERAGE_FOOTPRINT_BY_CATEGORY = "SELECT h.idActividad.idCategoria.nombre, AVG(h.valor) " +
+            "FROM Huella h " +
+            "GROUP BY h.idActividad.idCategoria.nombre";
 
     private Session session;
 
@@ -121,6 +132,47 @@ public class HuellaDAO implements IDAO<Huella> {
 
         return impactoTotal;
     }
+
+    public Map<String, BigDecimal> findUserFootprintByCategory(Integer userId) {
+        session = Connection.getSessionFactory();
+        Map<String, BigDecimal> userFootprint = new HashMap<>();
+
+        List<Object[]> results = session.createQuery(RETRIEVE_CATEGORIES_AND_TOTAL_IMPACT_FROM_USER, Object[].class)
+                .setParameter("userId", userId)
+                .getResultList();
+
+        for (Object[] row : results) {
+            String category = (String) row[0];
+            BigDecimal impact = (BigDecimal) row[1];  // Cambiado a BigDecimal
+            userFootprint.put(category, impact);
+        }
+
+        return userFootprint;
+    }
+
+
+    public Map<String, BigDecimal> findAverageFootprintByCategory() {
+        session = Connection.getSessionFactory();
+        Map<String, BigDecimal> avgFootprint = new HashMap<>();
+
+        List<Object[]> results = session.createQuery(AVERAGE_FOOTPRINT_BY_CATEGORY, Object[].class)
+                .getResultList();
+
+        for (Object[] row : results) {
+            String category = (String) row[0];
+
+
+            Double avgImpactDouble = (Double) row[1];
+            BigDecimal avgImpact = BigDecimal.valueOf(avgImpactDouble);
+
+            avgFootprint.put(category, avgImpact);
+        }
+
+        return avgFootprint;
+    }
+
+
+
 
     @Override
     public boolean save(Huella entity) {

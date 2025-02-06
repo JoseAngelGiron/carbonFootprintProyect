@@ -58,8 +58,6 @@ public class LoginController extends Controller implements Initializable {
         if(userToLogin.getId() != null && userToLogin.getContrasena().equals(password)){
             UserSession session = UserSession.UserSession();
             session.setUserIntoSession(userToLogin);
-            System.out.println(userToLogin);
-            System.out.println(session.getUserLoggedIn());
             changeToMainWindow();
 
         }else{
