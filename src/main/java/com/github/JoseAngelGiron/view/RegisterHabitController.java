@@ -47,6 +47,13 @@ public class RegisterHabitController extends Controller implements Initializable
     @FXML
     private DatePicker datePicker;
 
+    @FXML
+    private Label errorFrecuencyLabel;
+    @FXML
+    private Label errorDateLabel;
+    @FXML
+    private Label errorRegisteredLabel;
+
 
 
 
@@ -77,34 +84,77 @@ public class RegisterHabitController extends Controller implements Initializable
     }
     @FXML
     public void registerHabit() throws IOException {
+
+        if(selectedActivity == null){
+            errorRegisteredLabel.setVisible(true);
+            errorRegisteredLabel.setText("Debe seleccionar un actividad previamente");
+            return;
+        }
+        if(frecuency.getText() ==null){
+            errorFrecuencyLabel.setVisible(true);
+            errorDateLabel.setText("Inserte una frecuencia para la actividad");
+        }
+        if(datePicker.getValue() == null) {
+            errorDateLabel.setVisible(true);
+            errorDateLabel.setText("Inserte una fecha valida");
+            return;
+        }
+
+        LocalDate dateSelected = datePicker.getValue();
+        if(dateSelected.isBefore(LocalDate.now())) {
+            errorDateLabel.setText("La fecha no puede ser superior a la fecha actual");
+            return;
+        }
+
+
         Usuario currentUser = UserSession.UserSession().getUserLoggedIn();
         HabitoId habitoId = new HabitoId(selectedActivity.getId(), currentUser.getId());
         String typeFrecuency = typeBox.getValue();
         int numberOfFrequency = -1;
 
+        if(typeFrecuency == null){
+            errorFrecuencyLabel.setVisible(true);
+            errorFrecuencyLabel.setText("Seleccione un tipo de frecuencia");
+        }
+
         try {
             numberOfFrequency = Integer.valueOf(frecuency.getText());
         } catch (NumberFormatException e) {
-            //Poner ETIQUETA
-            System.out.println("El valor ingresado no es un número entero válido.");
+            errorFrecuencyLabel.setVisible(true);
+            errorFrecuencyLabel.setText("Inserte un valor valido");
         }
 
-        LocalDate dateSelected = datePicker.getValue();
+        if(dateSelected.isAfter(LocalDate.now())) {
+            errorDateLabel.setVisible(true);
+            errorDateLabel.setText("La fecha actual no puede ser superior a la fecha actual");
+            return;
+        }
+
+
 
         if(numberOfFrequency!=-1 && dateSelected!=null && typeFrecuency != null){
 
             Habito newHabit = new Habito(habitoId, currentUser,  selectedActivity, numberOfFrequency, typeFrecuency, dateSelected);
             HabitoServices habitoServices = new HabitoServices();
-            System.out.println();
+
             boolean registered = habitoServices.save(newHabit);
 
             if(registered) {
-                //Poner ETIQUETA
 
-                //Aviso de actividad registrada con éxito
+                errorRegisteredLabel.setVisible(true);
+                errorRegisteredLabel.setText("Actividad registrada con éxito");
+
             }else{
-                //Poner ETIQUETA
-                //No se pudo registrar, actividad ya registrada previamente
+
+                errorRegisteredLabel.setVisible(true);
+                errorRegisteredLabel.setText("No se pudo registrar el actividad, ya esta registrada");
+            }
+
+        }else {
+
+            if (numberOfFrequency == -1){
+                errorFrecuencyLabel.setVisible(true);
+                errorFrecuencyLabel.setText("Inserte un valor valido");
             }
         }
 

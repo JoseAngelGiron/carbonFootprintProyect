@@ -1,0 +1,851 @@
+.MainTitle{
+    -fx-font-size: 32px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #2E8B57;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.3), 10, 0, 2, 2);
+
+}
+
+.SubTitle{
+    -fx-font-size: 18px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #1E90FF;
+
+}
+
+
+
+.indicativeTitle{
+    -fx-background-color: transparent;
+    -fx-text-fill: #000000;
+    -fx-font-size: 14px;
+    -fx-padding: 8px;
+    -fx-border-color: transparent;
+    -fx-border-width: 0px;
+    -fx-effect: dropshadow(three-pass-box, rgba(0, 0, 0, 0.2), 5, 0, 0, 2);
+
+}
+
+.background{
+    -fx-background-color: linear-gradient(to bottom, #FFA766, #FF9050, #6AE368, #4CAF50);
+
+}
+.reverse-background {
+    -fx-background-color: linear-gradient(to bottom, #4CAF50, #6AE368, #FF9050, #FFA766);
+}
+
+
+.login-button {
+    -fx-background-color: linear-gradient(to bottom, #FFA766, #FF7F3F);
+    -fx-text-fill: white;
+    -fx-font-size: 16px;
+    -fx-font-weight: bold;
+    -fx-padding: 10px 20px;
+    -fx-background-radius: 25px;
+    -fx-border-radius: 25px;
+    -fx-border-color: #FF6B2D;
+    -fx-border-width: 2px;
+    -fx-cursor: hand;
+    -fx-effect: dropshadow(three-pass-box, rgba(0, 0, 0, 0.3), 5, 0, 2, 2);
+    -fx-transition: all 0.3s ease-in-out;
+}
+
+.login-button:hover {
+    -fx-background-color: linear-gradient(to bottom, #FF9050, #FF6B2D);
+    -fx-border-color: #E65C20;
+}
+
+.login-button:pressed {
+    -fx-background-color: linear-gradient(to bottom, #FF6B2D, #FF4A10);
+    -fx-border-color: #CC3E00;
+}
+
+
+.create-account-button {
+    -fx-background-color: linear-gradient(to bottom, #6AE368, #4CAF50);
+    -fx-text-fill: white;
+    -fx-font-size: 16px;
+    -fx-font-weight: bold;
+    -fx-padding: 10px 20px;
+    -fx-background-radius: 25px;
+    -fx-border-radius: 25px;
+    -fx-border-color: #3D8F3A;
+    -fx-border-width: 2px;
+    -fx-cursor: hand;
+    -fx-effect: dropshadow(three-pass-box, rgba(0, 0, 0, 0.3), 5, 0, 2, 2);
+    -fx-transition: all 0.3s ease-in-out;
+}
+
+.create-account-button:hover {
+    -fx-background-color: linear-gradient(to bottom, #5FD65C, #43A047);
+    -fx-border-color: #3A8736;
+}
+
+.create-account-button:pressed {
+    -fx-background-color: linear-gradient(to bottom, #43A047, #2E7D32);
+    -fx-border-color: #1B5E20;
+}
+
+.custom-textfield {
+    -fx-background-color: rgba(255, 255, 255, 0.8); /* Blanco semi-transparente */
+    -fx-text-fill: #333333; /* Texto oscuro para contraste */
+    -fx-font-size: 14px;
+    -fx-padding: 8px;
+    -fx-background-radius: 15px;
+    -fx-border-radius: 15px;
+    -fx-border-color: #FF9050; /* Borde naranja suave */
+    -fx-border-width: 2px;
+    -fx-effect: dropshadow(three-pass-box, rgba(0, 0, 0, 0.2), 5, 0, 2, 2);
+}
+
+.custom-textfield:focused {
+    -fx-border-color: #6AE368; /* Cambia a verde cuando se enfoca */
+    -fx-background-color: rgba(255, 255, 255, 0.9);
+}
+
+
+.register-button {
+    -fx-background-color: linear-gradient(to bottom, #FFA766, #6AE368);
+    -fx-text-fill: white;
+    -fx-font-size: 16px;
+    -fx-font-weight: bold;
+    -fx-padding: 10px 20px;
+    -fx-background-radius: 25px;
+    -fx-border-radius: 25px;
+    -fx-border-color: #4CAF50;
+    -fx-border-width: 2px;
+    -fx-cursor: hand;
+    -fx-effect: dropshadow(three-pass-box, rgba(0, 0, 0, 0.3), 5, 0, 2, 2);
+    -fx-transition: all 0.3s ease-in-out;
+}
+
+.register-button:hover {
+    -fx-background-color: linear-gradient(to bottom, #FF9050, #5FD65C);
+    -fx-border-color: #43A047;
+}
+
+.register-button:pressed {
+    -fx-background-color: linear-gradient(to bottom, #FF6B2D, #43A047);
+    -fx-border-color: #1B5E20;
+}
+
+
+.back-button {
+    -fx-background-color: linear-gradient(to bottom, #FF4A10, #D94300); /* Rojo más intenso */
+    -fx-text-fill: white;
+    -fx-font-size: 16px;
+    -fx-font-weight: bold;
+    -fx-padding: 10px 20px;
+    -fx-background-radius: 25px;
+    -fx-border-radius: 25px;
+    -fx-border-color: #D94300; /* Rojo más oscuro */
+    -fx-border-width: 2px;
+    -fx-cursor: hand;
+    -fx-effect: dropshadow(three-pass-box, rgba(0, 0, 0, 0.3), 5, 0, 2, 2);
+    -fx-transition: all 0.3s ease-in-out;
+}
+
+.back-button:hover {
+    -fx-background-color: linear-gradient(to bottom, #FF6B2D, #D94300); /* Rojo más brillante al hacer hover */
+    -fx-border-color: #CC3E00; /* Rojo oscuro al hover */
+}
+
+.back-button:pressed {
+    -fx-background-color: linear-gradient(to bottom, #D94300, #B73F00); /* Rojo intenso para estado presionado */
+    -fx-border-color: #A33C00; /* Rojo más oscuro */
+}
+
+
+.register-textfield {
+    -fx-background-color: rgba(255, 255, 255, 0.9); /* Blanco semi-transparente */
+    -fx-text-fill: #333333; /* Texto oscuro */
+    -fx-font-size: 14px;
+    -fx-padding: 8px;
+    -fx-background-radius: 15px;
+    -fx-border-radius: 15px;
+    -fx-border-color: #FF6B2D; /* Bordes anaranjados para mantener la coherencia */
+    -fx-border-width: 2px;
+    -fx-effect: dropshadow(three-pass-box, rgba(0, 0, 0, 0.2), 5, 0, 2, 2);
+}
+
+.register-textfield:focused {
+    -fx-border-color: #6AE368;
+    -fx-background-color: rgba(255, 255, 255, 1);
+}
+
+.register-textfield:invalid {
+    -fx-border-color: #FF4A10;
+    -fx-background-color: rgba(255, 200, 200, 0.8);
+}
+
+.profile-button {
+    -fx-background-color: linear-gradient(to bottom, #4CAF50, #2E8B57);
+    -fx-text-fill: white;
+    -fx-font-size: 16px;
+    -fx-font-weight: bold;
+    -fx-padding: 5px 12px; /* Menos ancho */
+    -fx-background-radius: 30px;
+    -fx-border-radius: 30px;
+    -fx-border-color: #2E8B57;
+    -fx-border-width: 2px;
+    -fx-cursor: hand;
+    -fx-effect: dropshadow(three-pass-box, rgba(0, 0, 0, 0.3), 4, 0, 2, 2);
+    -fx-transition: all 0.3s ease-in-out;
+}
+
+.profile-button:hover {
+    -fx-background-color: linear-gradient(to bottom, #5FD65C, #3D8F3A);
+    -fx-border-color: #3A8736;
+}
+
+.profile-button:pressed {
+    -fx-background-color: linear-gradient(to bottom, #2E8B57, #1B5E20);
+    -fx-border-color: #1B5E20;
+}
+
+.home-button {
+    -fx-background-color: linear-gradient(to bottom, #FFA766, #FF7F3F);
+    -fx-text-fill: white;
+    -fx-font-size: 16px;
+    -fx-font-weight: bold;
+    -fx-padding: 5px 12px; /* Más estrecho */
+    -fx-background-radius: 30px;
+    -fx-border-radius: 30px;
+    -fx-border-color: #FF6B2D;
+    -fx-border-width: 2px;
+    -fx-cursor: hand;
+    -fx-effect: dropshadow(three-pass-box, rgba(0, 0, 0, 0.3), 4, 0, 2, 2);
+    -fx-transition: all 0.3s ease-in-out;
+}
+
+.home-button:hover {
+    -fx-background-color: linear-gradient(to bottom, #FF9050, #FF6B2D);
+    -fx-border-color: #E65C20;
+}
+
+.home-button:pressed {
+    -fx-background-color: linear-gradient(to bottom, #FF6B2D, #FF4A10);
+    -fx-border-color: #CC3E00;
+}
+
+
+.generate-report-button {
+    -fx-background-color: linear-gradient(to bottom, #007BFF, #0056b3); /* Azul vibrante */
+    -fx-text-fill: white;
+    -fx-font-size: 16px;
+    -fx-font-weight: bold;
+    -fx-padding: 8px 15px; /* Más estrecho */
+    -fx-background-radius: 30px;
+    -fx-border-radius: 30px;
+    -fx-border-color: #0056b3;
+    -fx-border-width: 2px;
+    -fx-cursor: hand;
+    -fx-effect: dropshadow(three-pass-box, rgba(0, 0, 0, 0.3), 4, 0, 2, 2);
+    -fx-transition: all 0.3s ease-in-out;
+}
+
+.generate-report-button:hover {
+    -fx-background-color: linear-gradient(to bottom, #0069d9, #004085); /* Hover en azul más oscuro */
+    -fx-border-color: #003366;
+}
+
+.generate-report-button:pressed {
+    -fx-background-color: linear-gradient(to bottom, #004085, #003366); /* Cuando está presionado */
+    -fx-border-color: #00274d;
+}
+
+.compare-footprint-button {
+    -fx-background-color: linear-gradient(to bottom, #FFB400, #FF8C00); /* Amarillo cálido a naranja */
+    -fx-text-fill: white;
+    -fx-font-size: 16px;
+    -fx-font-weight: bold;
+    -fx-padding: 8px 15px; /* Más estrecho */
+    -fx-background-radius: 30px;
+    -fx-border-radius: 30px;
+    -fx-border-color: #FF8C00;
+    -fx-border-width: 2px;
+    -fx-cursor: hand;
+    -fx-effect: dropshadow(three-pass-box, rgba(0, 0, 0, 0.3), 4, 0, 2, 2);
+    -fx-transition: all 0.3s ease-in-out;
+}
+
+.compare-footprint-button:hover {
+    -fx-background-color: linear-gradient(to bottom, #FF9E3B, #FF6600); /* Hover en amarillo más intenso */
+    -fx-border-color: #FF5C00;
+}
+
+.compare-footprint-button:pressed {
+    -fx-background-color: linear-gradient(to bottom, #FF6600, #CC5200); /* Cuando está presionado */
+    -fx-border-color: #B34400;
+}
+
+
+.impact-footprint-button {
+    -fx-background-color: linear-gradient(to bottom, #1E90FF, #00BFFF); /* Azul brillante */
+    -fx-text-fill: white;
+    -fx-font-size: 16px;
+    -fx-font-weight: bold;
+    -fx-padding: 8px 15px; /* Más estrecho */
+    -fx-background-radius: 30px;
+    -fx-border-radius: 30px;
+    -fx-border-color: #00BFFF;
+    -fx-border-width: 2px;
+    -fx-cursor: hand;
+    -fx-effect: dropshadow(three-pass-box, rgba(0, 0, 0, 0.3), 4, 0, 2, 2);
+    -fx-transition: all 0.3s ease-in-out;
+}
+
+.impact-footprint-button:hover {
+    -fx-background-color: linear-gradient(to bottom, #1C86EE, #009ACD); /* Hover más oscuro */
+    -fx-border-color: #009ACD;
+}
+
+.impact-footprint-button:pressed {
+    -fx-background-color: linear-gradient(to bottom, #009ACD, #006994); /* Cuando se presiona */
+    -fx-border-color: #006994;
+}
+
+
+.habits-menu-button {
+    -fx-background-color: linear-gradient(to bottom, #8A2BE2, #7A4DFF); /* Morado suave */
+    -fx-text-fill: white;
+    -fx-font-size: 14px; /* Tamaño de fuente más pequeño */
+    -fx-font-weight: bold;
+    -fx-padding: 6px 15px; /* Menos alto y menos ancho */
+    -fx-background-radius: 30px;
+    -fx-border-radius: 30px;
+    -fx-border-color: #7A4DFF;
+    -fx-border-width: 2px;
+    -fx-cursor: hand;
+    -fx-effect: dropshadow(three-pass-box, rgba(0, 0, 0, 0.3), 4, 0, 2, 2);
+    -fx-transition: all 0.3s ease-in-out;
+}
+
+.habits-menu-button:hover {
+    -fx-background-color: linear-gradient(to bottom, #7A4DFF, #6A32C6); /* Hover morado más oscuro */
+    -fx-border-color: #6A32C6;
+}
+
+.habits-menu-button:pressed {
+    -fx-background-color: linear-gradient(to bottom, #6A32C6, #4B2A99); /* Cuando se presiona */
+    -fx-border-color: #4B2A99;
+}
+
+.habits-menu-button .menu-item {
+    -fx-font-size: 14px; /* Tamaño de fuente más pequeño */
+    -fx-font-weight: bold;
+    -fx-text-fill: #333333; /* Texto oscuro para buen contraste */
+    -fx-padding: 8px 20px; /* Menos espacio alrededor de los ítems */
+    -fx-background-color: transparent;
+    -fx-background-radius: 5px; /* Bordes redondeados */
+    -fx-border-color: transparent;
+    -fx-border-width: 0;
+    -fx-cursor: hand;
+}
+
+.habits-menu-button .menu-item:hover {
+    -fx-background-color: #F1F1F1; /* Color de fondo gris claro al hacer hover */
+    -fx-text-fill: #7A4DFF; /* Texto morado claro en hover */
+}
+
+.habits-menu-button .menu-item:pressed {
+    -fx-background-color: #E0E0E0; /* Fondo gris más oscuro al presionar */
+    -fx-text-fill: #6A32C6; /* Texto morado más oscuro */
+}
+
+
+
+
+.footprints-menu-button {
+    -fx-background-color: linear-gradient(to bottom, #32CD32, #28A745); /* Verde fresco */
+    -fx-text-fill: white;
+    -fx-font-size: 14px; /* Tamaño de fuente más pequeño */
+    -fx-font-weight: bold;
+    -fx-padding: 6px 15px; /* Menos alto y menos ancho */
+    -fx-background-radius: 30px;
+    -fx-border-radius: 30px;
+    -fx-border-color: #28A745;
+    -fx-border-width: 2px;
+    -fx-cursor: hand;
+    -fx-effect: dropshadow(three-pass-box, rgba(0, 0, 0, 0.3), 4, 0, 2, 2);
+    -fx-transition: all 0.3s ease-in-out;
+}
+
+.footprints-menu-button:hover {
+    -fx-background-color: linear-gradient(to bottom, #28A745, #218838); /* Hover verde más oscuro */
+    -fx-border-color: #218838;
+}
+
+.footprints-menu-button:pressed {
+    -fx-background-color: linear-gradient(to bottom, #218838, #1E7E34); /* Cuando se presiona */
+    -fx-border-color: #1E7E34;
+}
+
+.footprints-menu-button .menu-item {
+    -fx-font-size: 14px; /* Tamaño de fuente más pequeño */
+    -fx-font-weight: bold;
+    -fx-text-fill: #333333; /* Texto oscuro para buen contraste */
+    -fx-padding: 8px 20px; /* Menos espacio alrededor de los ítems */
+    -fx-background-color: transparent;
+    -fx-background-radius: 5px; /* Bordes redondeados */
+    -fx-border-color: transparent;
+    -fx-border-width: 0;
+    -fx-cursor: hand;
+}
+
+.footprints-menu-button .menu-item:hover {
+    -fx-background-color: #F1F1F1; /* Fondo gris claro al hacer hover */
+    -fx-text-fill: #28A745; /* Texto verde claro en hover */
+}
+
+.footprints-menu-button .menu-item:pressed {
+    -fx-background-color: #E0E0E0; /* Fondo gris más oscuro al presionar */
+    -fx-text-fill: #218838; /* Texto verde más oscuro */
+}
+
+
+.SubTitleAlt {
+    -fx-font-size: 18px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #FF4500; /* Naranja rojizo */
+    -fx-font-family: "Verdana"; /* Fuente alternativa */
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.3), 10, 0, 2, 2);
+}
+
+
+.date-picker {
+    -fx-background-color: rgba(255, 255, 255, 0.8);  /* Fondo blanco semi-transparente */
+    -fx-text-fill: #333333;  /* Texto oscuro */
+    -fx-font-size: 14px;  /* Tamaño de fuente */
+    -fx-padding: 8px;  /* Espaciado interno */
+    -fx-background-radius: 10px;  /* Bordes redondeados */
+    -fx-border-color: #FF9050;  /* Borde naranja suave */
+    -fx-border-width: 2px;  /* Grosor del borde */
+    -fx-border-radius: 10px;  /* Bordes redondeados */
+    -fx-effect: dropshadow(three-pass-box, rgba(0, 0, 0, 0.2), 5, 0, 0, 2);  /* Efecto sombra */
+}
+
+.date-picker .text-field {
+    -fx-background-color: transparent;  /* Fondo transparente para el campo de texto */
+    -fx-text-fill: #333333;  /* Texto oscuro */
+}
+
+.date-picker .calendar-popup {
+    -fx-background-color: #FFFFFF;  /* Fondo blanco para el calendario */
+    -fx-border-radius: 10px;  /* Bordes redondeados */
+    -fx-border-color: #FF9050;  /* Borde naranja */
+    -fx-border-width: 2px;  /* Grosor del borde */
+}
+
+.date-picker .month-arrow {
+    -fx-fill: #FF9050;  /* Color de las flechas del calendario */
+}
+
+.date-picker .day-cell {
+    -fx-text-fill: #333333;  /* Color del texto de los días */
+}
+
+.date-picker .day-cell:hover {
+    -fx-background-color: #FF9050;  /* Fondo naranja al pasar el ratón */
+    -fx-text-fill: #FFFFFF;  /* Color del texto en blanco al pasar el ratón */
+}
+
+/* Estilo base para los botones */
+.impact-button {
+    -fx-font-family: 'Roboto', sans-serif;  /* Usando la fuente Roboto */
+    -fx-background-color: linear-gradient(to bottom, #FFA766, #FF7F3F);
+    -fx-text-fill: white;
+    -fx-font-size: 16px;
+    -fx-font-weight: bold;
+    -fx-padding: 6px 22px;  /* Ajusté el ancho de los botones */
+    -fx-background-radius: 50px;  /* Bordes más redondeados */
+    -fx-border-radius: 50px;
+    -fx-border-color: #FF6B2D;
+    -fx-border-width: 2px;
+    -fx-cursor: hand;
+    -fx-effect: dropshadow(three-pass-box, rgba(0, 0, 0, 0.3), 5, 0, 2, 2);
+    -fx-transition: all 0.3s ease-in-out;
+}
+
+.impact-button:hover {
+    -fx-background-color: linear-gradient(to bottom, #FF9050, #FF6B2D);
+    -fx-border-color: #E65C20;
+}
+
+.impact-button:pressed {
+    -fx-background-color: linear-gradient(to bottom, #FF6B2D, #FF4A10);
+    -fx-border-color: #CC3E00;
+}
+
+
+
+.impact-daily {
+    -fx-background-color: linear-gradient(to bottom, #FF6A6A, #FF4A4A);  /* Rojo claro */
+    -fx-border-color: #E65C5C;
+}
+
+.impact-daily:hover {
+    -fx-background-color: linear-gradient(to bottom, #FF7F7F, #FF6B6B);
+    -fx-border-color: #FF4A4A;
+}
+
+.impact-daily:pressed {
+    -fx-background-color: linear-gradient(to bottom, #FF4A4A, #E65C5C);
+    -fx-border-color: #FF4A4A;
+}
+
+
+.impact-weekly {
+    -fx-background-color: linear-gradient(to bottom, #FFB74D, #FF9800);  /* Naranja suave */
+    -fx-border-color: #FF7C1F;
+}
+
+.impact-weekly:hover {
+    -fx-background-color: linear-gradient(to bottom, #FF9F3F, #FF7700);
+    -fx-border-color: #E65C00;
+}
+
+.impact-weekly:pressed {
+    -fx-background-color: linear-gradient(to bottom, #FF7700, #E65C00);
+    -fx-border-color: #CC4A00;
+}
+
+
+.impact-monthly {
+    -fx-background-color: linear-gradient(to bottom, #FFEB3B, #FFC107);  /* Amarillo suave */
+    -fx-border-color: #FFB300;
+}
+
+.impact-monthly:hover {
+    -fx-background-color: linear-gradient(to bottom, #FFCA28, #FFB300);
+    -fx-border-color: #FFA000;
+}
+
+.impact-monthly:pressed {
+    -fx-background-color: linear-gradient(to bottom, #FFB300, #FF9100);
+    -fx-border-color: #FF6F00;
+}
+
+
+.impact-quarterly {
+    -fx-background-color: linear-gradient(to bottom, #66BB6A, #4CAF50);  /* Verde claro */
+    -fx-border-color: #388E3C;
+}
+
+.impact-quarterly:hover {
+    -fx-background-color: linear-gradient(to bottom, #81C784, #66BB6A);
+    -fx-border-color: #2C6E3C;
+}
+
+.impact-quarterly:pressed {
+    -fx-background-color: linear-gradient(to bottom, #66BB6A, #4CAF50);
+    -fx-border-color: #2C6E3C;
+}
+
+.impact-semester {
+    -fx-background-color: linear-gradient(to bottom, #4FC3F7, #03A9F4);  /* Azul claro */
+    -fx-border-color: #0288D1;
+}
+
+.impact-semester:hover {
+    -fx-background-color: linear-gradient(to bottom, #64B5F6, #29B6F6);
+    -fx-border-color: #0288D1;
+}
+
+.impact-semester:pressed {
+    -fx-background-color: linear-gradient(to bottom, #29B6F6, #0288D1);
+    -fx-border-color: #0288D1;
+}
+
+
+.impact-annual {
+    -fx-background-color: linear-gradient(to bottom, #FF5722, #D84315);  /* Naranja oscuro */
+    -fx-border-color: #BF360C;
+}
+
+.impact-annual:hover {
+    -fx-background-color: linear-gradient(to bottom, #FF7043, #D84315);
+    -fx-border-color: #BF360C;
+}
+
+.impact-annual:pressed {
+    -fx-background-color: linear-gradient(to bottom, #D84315, #BF360C);
+    -fx-border-color: #9E2C00;
+}
+
+
+.custom-textarea {
+    -fx-background-color: transparent;  /* Fondo transparente */
+    -fx-text-fill: #333333;  /* Color del texto oscuro */
+    -fx-font-size: 14px;  /* Tamaño de fuente */
+    -fx-font-family: 'Roboto', sans-serif;  /* Fuente Roboto */
+    -fx-padding: 10px;  /* Espaciado interno */
+    -fx-border-color: #FF6B2D;  /* Borde naranja suave */
+    -fx-border-width: 2px;  /* Ancho del borde */
+    -fx-border-radius: 10px;  /* Bordes redondeados */
+    -fx-effect: dropshadow(three-pass-box, rgba(0, 0, 0, 0.2), 5, 0, 2, 2);  /* Sombra suave */
+}
+
+/* Estilo para cuando el TextArea está enfocado */
+.custom-textarea:focused {
+    -fx-border-color: #6AE368;  /* Borde verde cuando está enfocado */
+    -fx-background-color: rgba(255, 255, 255, 0.2);  /* Fondo ligeramente blanco */
+}
+
+/* Estilo para cuando el TextArea contiene texto (por ejemplo, si está en modo de error o alerta) */
+.custom-textarea:invalid {
+    -fx-border-color: #FF4A10;  /* Borde rojo en caso de error */
+    -fx-background-color: rgba(255, 200, 200, 0.8);  /* Fondo suave en rojo */
+}
+
+
+.delete-habit-title {
+    -fx-font-size: 26px;  /* Tamaño grande para el título */
+    -fx-font-weight: bold;  /* Texto en negrita para resaltar */
+    -fx-font-family: 'Roboto', sans-serif;  /* Fuente moderna y limpia */
+    -fx-text-fill: #FF4A10;  /* Color rojo intenso, para llamar la atención */
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.3), 8, 0, 2, 2);  /* Sombra para darle profundidad */
+    -fx-padding: 10px 0;  /* Espaciado alrededor del texto */
+    -fx-alignment: center;  /* Alineación centrada */
+}
+
+
+.non-editable-textfield {
+    -fx-background-color: transparent;  /* Fondo transparente */
+    -fx-border-color: #B0B0B0;  /* Color suave para los bordes (gris claro) */
+    -fx-border-width: 1px;  /* Borde delgado */
+    -fx-text-fill: #A9A9A9;  /* Texto en gris suave para indicar que no está activo */
+    -fx-font-size: 14px;  /* Tamaño de fuente normal */
+    -fx-font-family: 'Roboto', sans-serif;  /* Fuente coherente */
+    -fx-padding: 8px;  /* Espaciado dentro del campo */
+    -fx-background-radius: 10px;  /* Bordes redondeados */
+    -fx-border-radius: 10px;  /* Bordes redondeados también en el borde */
+}
+
+.non-editable-textfield:focused {
+    -fx-border-color: #B0B0B0;  /* Mantener el mismo borde cuando está enfocado */
+    -fx-background-color: transparent;  /* Mantener el fondo transparente al estar enfocado */
+}
+
+.non-editable-textfield:disabled {
+    -fx-opacity: 0.5;  /* Opacidad reducida para indicar que está deshabilitado */
+}
+
+
+.delete-button {
+    -fx-background-color: linear-gradient(to bottom, #FF4C4C, #FF1A1A); /* Rojo suave degradado */
+    -fx-text-fill: white;  /* Texto blanco para buen contraste */
+    -fx-font-size: 16px;
+    -fx-font-weight: bold;
+    -fx-padding: 10px 20px; /* Espaciado interno del botón */
+    -fx-background-radius: 25px;  /* Bordes redondeados */
+    -fx-border-radius: 25px;  /* Bordes redondeados en el borde */
+    -fx-border-color: #FF1A1A;  /* Color del borde */
+    -fx-border-width: 2px;  /* Grosor del borde */
+    -fx-cursor: hand;  /* Cursor tipo mano al pasar sobre el botón */
+    -fx-effect: dropshadow(three-pass-box, rgba(0, 0, 0, 0.2), 5, 0, 2, 2);  /* Sombra sutil */
+    -fx-transition: all 0.3s ease-in-out;  /* Transición suave */
+}
+
+.delete-button:hover {
+    -fx-background-color: linear-gradient(to bottom, #FF1A1A, #FF0000);  /* Rojo más fuerte al hacer hover */
+    -fx-border-color: #D00000;  /* Borde más oscuro al hacer hover */
+}
+
+.delete-button:pressed {
+    -fx-background-color: linear-gradient(to bottom, #D00000, #B20000);  /* Rojo aún más oscuro al presionar */
+    -fx-border-color: #9B0000;  /* Borde más oscuro al presionar */
+}
+
+
+.habits-table {
+    -fx-background-color: rgba(255, 255, 255, 0.8); /* Fondo blanco semi-transparente */
+    -fx-border-color: #FF9050;  /* Borde de la tabla en naranja suave */
+    -fx-border-width: 1px;  /* Grosor del borde */
+    -fx-background-radius: 15px; /* Bordes redondeados */
+    -fx-padding: 10px; /* Espaciado interno de la tabla */
+    -fx-effect: dropshadow(three-pass-box, rgba(0, 0, 0, 0.2), 5, 0, 2, 2); /* Sombra sutil */
+}
+
+/* Estilos para las filas de la tabla */
+.habits-table .table-row-cell {
+    -fx-background-color: transparent;  /* Sin fondo sólido para las filas */
+    -fx-text-fill: #333333; /* Texto oscuro para buen contraste */
+    -fx-font-size: 14px; /* Tamaño de la fuente */
+    -fx-padding: 5px 10px; /* Espaciado interno */
+}
+
+/* Estilo para las filas cuando están seleccionadas */
+.habits-table .table-row-cell:selected {
+    -fx-background-color: rgba(255, 144, 80, 0.2); /* Fondo suave y transparente cuando se selecciona */
+    -fx-text-fill: #2E8B57; /* Texto verde para las filas seleccionadas */
+}
+
+
+.habits-table .column-header {
+    -fx-background-color: #6AE368;  /* Fondo verde suave para las cabeceras */
+    -fx-text-fill: white;  /* Texto blanco en las cabeceras */
+    -fx-font-size: 16px; /* Tamaño de la fuente */
+    -fx-font-weight: bold;  /* Negrita para las cabeceras */
+    -fx-padding: 10px; /* Espaciado interno */
+    -fx-border-color: #4CAF50; /* Borde verde para las cabeceras */
+    -fx-border-width: 1px; /* Grosor del borde de las cabeceras */
+}
+
+
+.habits-table .column-header:selected {
+    -fx-background-color: #4CAF50; /* Verde fuerte cuando la columna está seleccionada */
+}
+
+
+.habits-table .table-cell {
+    -fx-background-color: transparent; /* Fondo transparente */
+    -fx-border-color: transparent; /* Sin borde */
+    -fx-padding: 5px 10px; /* Espaciado interno */
+}
+
+
+.habits-table .table-row-cell:hover {
+    -fx-background-color: rgba(255, 144, 80, 0.1); /* Fondo suave cuando se pasa el ratón */
+}
+
+
+
+/* Estilo del botón con fondo morado suave */
+/* Estilo del botón con fondo morado clarito y verde */
+.register-button {
+    -fx-background-color: linear-gradient(to bottom, #BB86FC, #4CAF50);  /* Degradado de morado claro a verde */
+    -fx-text-fill: white;  /* Texto blanco */
+    -fx-font-size: 16px; /* Tamaño de fuente adecuado */
+    -fx-font-weight: bold; /* Negrita */
+    -fx-padding: 10px 20px; /* Espaciado interno */
+    -fx-background-radius: 25px; /* Bordes redondeados */
+    -fx-border-radius: 25px; /* Bordes redondeados */
+    -fx-border-color: #4CAF50; /* Borde verde */
+    -fx-border-width: 2px; /* Grosor de los bordes */
+    -fx-cursor: hand; /* Cambiar el cursor a mano cuando pasa por encima */
+    -fx-effect: dropshadow(three-pass-box, rgba(0, 0, 0, 0.3), 5, 0, 2, 2); /* Sombra sutil */
+    -fx-transition: all 0.3s ease-in-out; /* Efecto de transición */
+}
+
+/* Efecto hover para el botón */
+.register-button:hover {
+    -fx-background-color: linear-gradient(to bottom, #8E24AA, #66BB6A); /* Fondo más oscuro al pasar el ratón */
+    -fx-border-color: #66BB6A; /* Borde más verde */
+}
+
+/* Efecto presionado para el botón */
+.register-button:pressed {
+    -fx-background-color: linear-gradient(to bottom, #7B1FA2, #43A047); /* Fondo aún más oscuro al presionar */
+    -fx-border-color: #388E3C; /* Borde más oscuro */
+}
+
+
+/* Estilo para el TextField editable */
+.editable-textfield {
+    -fx-background-color: rgba(255, 255, 255, 0.8); /* Fondo blanco semi-transparente */
+    -fx-text-fill: #333333; /* Texto oscuro para contraste */
+    -fx-font-size: 14px; /* Tamaño de la fuente */
+    -fx-padding: 8px 12px; /* Espaciado interno */
+    -fx-background-radius: 10px; /* Bordes redondeados */
+    -fx-border-radius: 10px; /* Bordes redondeados */
+    -fx-border-color: #9E9E9E; /* Borde gris suave */
+    -fx-border-width: 2px; /* Grosor del borde */
+    -fx-effect: dropshadow(three-pass-box, rgba(0, 0, 0, 0.2), 5, 0, 2, 2); /* Sombra sutil */
+}
+
+/* Estilo cuando el TextField está enfocado */
+.editable-textfield:focused {
+    -fx-border-color: #6AE368; /* Borde verde cuando está enfocado */
+    -fx-background-color: rgba(255, 255, 255, 1); /* Fondo más blanco al estar enfocado */
+}
+
+/* Estilo para el TextField cuando tiene texto */
+.editable-textfield:filled {
+    -fx-border-color: #3D8F3A; /* Borde verde más fuerte cuando el campo tiene texto */
+}
+
+/* Estilo para el TextField cuando está vacío */
+.editable-textfield:empty {
+    -fx-border-color: #FF6B2D; /* Borde naranja cuando está vacío */
+}
+
+
+/* Estilo para el botón de actualizar perfil */
+.update-profile-button {
+    -fx-background-color: linear-gradient(to bottom, #B39DDB, #9C27B0); /* De morado claro a morado más fuerte */
+    -fx-text-fill: white; /* Texto blanco */
+    -fx-font-size: 16px; /* Tamaño de fuente */
+    -fx-font-weight: bold; /* Negrita */
+    -fx-padding: 12px 20px; /* Espaciado interno */
+    -fx-background-radius: 25px; /* Bordes redondeados */
+    -fx-border-radius: 25px; /* Bordes redondeados */
+    -fx-border-color: #7B1FA2; /* Borde morado más fuerte */
+    -fx-border-width: 2px; /* Grosor del borde */
+    -fx-cursor: hand; /* Puntero de mano al pasar sobre el botón */
+    -fx-effect: dropshadow(three-pass-box, rgba(0, 0, 0, 0.3), 5, 0, 2, 2); /* Sombra suave */
+    -fx-transition: all 0.3s ease-in-out; /* Transición suave */
+}
+
+/* Efecto cuando el botón es presionado */
+.update-profile-button:pressed {
+    -fx-background-color: linear-gradient(to bottom, #8E24AA, #6A1B9A); /* Cambia el fondo a un morado más oscuro */
+    -fx-border-color: #5E35B1; /* Borde morado más oscuro */
+}
+
+/* Efecto al pasar el mouse sobre el botón */
+.update-profile-button:hover {
+    -fx-background-color: linear-gradient(to bottom, #9C27B0, #8E24AA); /* Fondo más claro cuando se pasa el cursor */
+    -fx-border-color: #9C27B0; /* Borde morado claro al hacer hover */
+}
+
+
+/* Estilo base para los botones de recomendación */
+.recommendation-button {
+    -fx-background-color: linear-gradient(to bottom, #81C784, #66BB6A); /* Gradiente de verde suave a verde más intenso */
+    -fx-text-fill: white; /* Texto blanco */
+    -fx-font-size: 16px; /* Tamaño de fuente */
+    -fx-font-weight: bold; /* Negrita */
+    -fx-padding: 6px 12px; /* Espaciado interno */
+    -fx-background-radius: 25px; /* Bordes redondeados */
+    -fx-border-radius: 25px; /* Bordes redondeados */
+    -fx-border-color: #4CAF50; /* Borde verde */
+    -fx-border-width: 2px; /* Grosor del borde */
+    -fx-cursor: hand; /* Puntero de mano al pasar sobre el botón */
+    -fx-effect: dropshadow(three-pass-box, rgba(0, 0, 0, 0.3), 5, 0, 2, 2); /* Sombra suave */
+    -fx-transition: all 0.3s ease-in-out; /* Transición suave */
+}
+
+/* Efecto al pasar el cursor sobre el botón */
+.recommendation-button:hover {
+    -fx-background-color: linear-gradient(to bottom, #66BB6A, #4CAF50); /* Fondo más oscuro al hacer hover */
+    -fx-border-color: #388E3C; /* Borde más oscuro al hacer hover */
+}
+
+/* Efecto cuando el botón es presionado */
+.recommendation-button:pressed {
+    -fx-background-color: linear-gradient(to bottom, #388E3C, #2C6E2F); /* Fondo más oscuro al presionar */
+    -fx-border-color: #1B5E20; /* Borde más oscuro cuando se presiona */
+}
+
+/* Botón para Recomendación diaria */
+.daily-button {
+    -fx-background-color: linear-gradient(to bottom, #81C784, #66BB6A);
+}
+
+/* Botón para Recomendación semanal */
+.weekly-button {
+    -fx-background-color: linear-gradient(to bottom, #FFEB3B, #FBC02D); /* Gradiente amarillo */
+}
+
+/* Botón para Recomendación mensual */
+.monthly-button {
+    -fx-background-color: linear-gradient(to bottom, #29B6F6, #0288D1); /* Gradiente azul */
+}
+
+/* Botón para Recomendación anual */
+.yearly-button {
+    -fx-background-color: linear-gradient(to bottom, #AB47BC, #8E24AA); /* Gradiente morado */
+}
+
+

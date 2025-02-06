@@ -7,11 +7,11 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane prefHeight="609.0" prefWidth="826.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.github.JoseAngelGiron.view.ComparisonUsersController">
+<AnchorPane prefHeight="609.0" prefWidth="826.0" styleClass="reverse-background" stylesheets="@../../../../assets/styles.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.github.JoseAngelGiron.view.ComparisonUsersController">
 
-    <Label layoutX="422.0" layoutY="14.0" style="-fx-font-size: 16px; -fx-font-weight: bold;" text="Comparación de Huella de Carbono" />
+    <Label layoutX="190.0" layoutY="56.0" prefHeight="28.0" prefWidth="445.0" style="-fx-font-size: 22px; -fx-font-weight: bold;" styleClass="SubTitleAlt" stylesheets="@../../../../assets/styles.css" text="Comparación de Huella de Carbono" />
 
-    <BarChart fx:id="barChartComparison" layoutX="290.0" layoutY="64.0" prefHeight="300" prefWidth="500">
+    <BarChart fx:id="barChartComparison" layoutX="137.0" layoutY="110.0" prefHeight="300" prefWidth="500">
         <xAxis>
             <CategoryAxis label="Categoría" fx:id="xAxis" />
         </xAxis>
@@ -20,6 +20,6 @@
         </yAxis>
     </BarChart>
 
-    <Button fx:id="btnUpdate" layoutX="502.0" layoutY="394.0" onAction="#compareUserWithAverage" text="Actualizar Comparación" />
+    <Button fx:id="btnUpdate" layoutX="208.0" layoutY="424.0" onAction="#compareUserWithAverage" text="Actualizar Comparación" />
 
 </AnchorPane>

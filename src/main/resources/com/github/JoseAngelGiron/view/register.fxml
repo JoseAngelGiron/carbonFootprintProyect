@@ -6,23 +6,23 @@
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane maxHeight="685.0" minWidth="441.0" prefHeight="516.0" prefWidth="495.0" styleClass="register-container" stylesheets="@../../../../assets/aplication.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.github.JoseAngelGiron.view.RegisterController">
+<AnchorPane maxHeight="685.0" minWidth="441.0" prefHeight="538.0" prefWidth="661.0" styleClass="background" stylesheets="@../../../../assets/styles.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.github.JoseAngelGiron.view.RegisterController">
     <children>
         <Label />
-        <Separator layoutX="18.0" layoutY="396.0" prefHeight="28.0" prefWidth="440.0" AnchorPane.leftAnchor="18.0" AnchorPane.rightAnchor="22.799999999999955" AnchorPane.topAnchor="396.0" />
-          <TextField fx:id="nickField" layoutX="41.0" layoutY="105.0" prefHeight="26.0" prefWidth="429.0" />
-          <Label layoutX="41.0" layoutY="71.0" text="Nombre de usuario" />
-          <Label layoutX="34.0" layoutY="32.0" text="CREAR TU CUENTA" />
-      <Label layoutX="41.0" layoutY="289.0" text="Contraseña" />
-      <Label layoutX="43.0" layoutY="180.0" prefHeight="18.0" prefWidth="36.0" text="Email" />
-      <TextField fx:id="passwordField" layoutX="41.0" layoutY="318.0" prefHeight="26.0" prefWidth="429.0" />
-      <TextField fx:id="emailField" layoutX="41.0" layoutY="211.0" prefHeight="26.0" prefWidth="429.0" />
-            <Button layoutX="43.0" layoutY="429.0" mnemonicParsing="false" onAction="#registerUser" prefHeight="26.0" prefWidth="238.0" styleClass="button-login" stylesheets="@../../../../assets/aplication.css" text="REGISTRARSE" />
-            <Button layoutX="43.0" layoutY="468.0" mnemonicParsing="false" onAction="#returnToLogin" prefHeight="26.0" prefWidth="238.0" styleClass="button-yellow" stylesheets="@../../../../assets/aplication.css" text="VOLVER" />
+        <Separator layoutX="9.0" layoutY="430.0" prefHeight="28.0" prefWidth="440.0" AnchorPane.leftAnchor="9.0" AnchorPane.rightAnchor="31.799999999999955" AnchorPane.topAnchor="430.0" />
+          <TextField fx:id="nickField" layoutX="41.0" layoutY="105.0" prefHeight="26.0" prefWidth="429.0" styleClass="register-textfield" stylesheets="@../../../../assets/styles.css" />
+          <Label layoutX="36.0" layoutY="69.0" styleClass="indicativeTitle" stylesheets="@../../../../assets/styles.css" text="Nombre de usuario:" />
+          <Label layoutX="34.0" layoutY="18.0" styleClass="SubTitle" stylesheets="@../../../../assets/styles.css" text="CREAR TU CUENTA" />
+      <Label layoutX="43.0" layoutY="306.0" styleClass="indicativeTitle" stylesheets="@../../../../assets/styles.css" text="Contraseña" />
+      <Label layoutX="43.0" layoutY="180.0" prefHeight="36.0" prefWidth="113.0" styleClass="indicativeTitle" stylesheets="@../../../../assets/styles.css" text="Email:" />
+      <TextField fx:id="passwordField" layoutX="41.0" layoutY="333.0" prefHeight="26.0" prefWidth="429.0" styleClass="register-textfield" stylesheets="@../../../../assets/styles.css" />
+      <TextField fx:id="emailField" layoutX="41.0" layoutY="213.0" prefHeight="26.0" prefWidth="429.0" styleClass="register-textfield" stylesheets="@../../../../assets/styles.css" />
+            <Button layoutX="23.0" layoutY="465.0" mnemonicParsing="false" onAction="#registerUser" prefHeight="26.0" prefWidth="238.0" styleClass="register-button" stylesheets="@../../../../assets/aplication.css" text="REGISTRARSE" />
+            <Button layoutX="450.0" layoutY="464.0" mnemonicParsing="false" onAction="#returnToLogin" prefHeight="50.0" prefWidth="178.0" styleClass="back-button" stylesheets="@../../../../assets/styles.css" text="VOLVER" />
       <Label fx:id="nickLabel1" layoutX="47.0" layoutY="140.0" prefHeight="18.0" prefWidth="269.0" text="El nombre debe estar entre 4 y 12 caracteres" visible="false" />
       <Label fx:id="emailLabel" layoutX="43.0" layoutY="250.0" text="La contraseña debe tener 8 caracteres, al menos 1 mayúscula " visible="false" />
-      <Label fx:id="passwordLabel2" layoutX="47.0" layoutY="378.0" text="El correo debe seguir una estructura similar a :&quot;example@gmail.com&quot;" visible="false" />
-      <Label fx:id="passwordLabel1" layoutX="47.0" layoutY="360.0" text="No puede contener espacios" visible="false" />
-      <Label layoutX="43.0" layoutY="424.0" prefHeight="18.0" prefWidth="438.0" text="O el usuario ya esta registrado, o los campos no cumplen con lo establecido" visible="false" />
+      <Label fx:id="passwordLabel2" layoutX="47.0" layoutY="387.0" text="El correo debe seguir una estructura similar a :&quot;example@gmail.com&quot;" visible="false" />
+      <Label fx:id="passwordLabel1" layoutX="47.0" layoutY="369.0" text="No puede contener espacios" visible="false" />
+      <Label layoutX="42.0" layoutY="412.0" prefHeight="18.0" prefWidth="569.0" text="O el usuario ya esta registrado, o los campos no cumplen con lo establecido" textFill="#d90808" visible="false" />
     </children>
 </AnchorPane>

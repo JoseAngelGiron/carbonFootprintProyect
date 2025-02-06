@@ -3,8 +3,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Text?>
 
-
-<AnchorPane prefHeight="577.0" prefWidth="754.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.github.JoseAngelGiron.view.MainPageController">
+<AnchorPane prefHeight="577.0" prefWidth="754.0" styleClass="reverse-background" stylesheets="@../../../../assets/styles.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.github.JoseAngelGiron.view.MainPageController">
    <children>
       <Text layoutX="163.0" layoutY="59.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Bienvenido a la APP" wrappingWidth="393.63006591796875" />
    </children>

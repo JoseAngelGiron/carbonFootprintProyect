@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import java.lang.String?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
@@ -7,22 +8,38 @@
 <?import javafx.scene.text.Text?>
 <?import javafx.scene.text.TextFlow?>
 
-<AnchorPane prefHeight="622.0" prefWidth="1498.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.github.JoseAngelGiron.view.YourHabitsController">
+<AnchorPane prefHeight="622.0" prefWidth="1498.0" styleClass="reverse-background" stylesheets="@../../../../assets/styles.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.github.JoseAngelGiron.view.YourHabitsController">
    <children>
-      <TableView fx:id="activityTable" layoutX="14.0" layoutY="19.0" prefHeight="586.0" prefWidth="686.0">
+      <TableView fx:id="activityTable" layoutX="14.0" layoutY="19.0" prefHeight="586.0" prefWidth="686.0" styleClass="habits-table" stylesheets="@../../../../assets/styles.css">
         <columns>
           <TableColumn fx:id="categoryColumn" prefWidth="106.39999103546143" text="Categoría" />
-          <TableColumn fx:id="habitColumn" prefWidth="176.8000030517578" text="Habito" />
-            <TableColumn fx:id="frequencyColumn" prefWidth="108.79998779296875" text="Frecuencia" />
+          <TableColumn fx:id="habitColumn" prefWidth="123.99996948242188" text="Habito" />
+            <TableColumn fx:id="frequencyColumn" prefWidth="162.40003967285156" text="Frecuencia" />
             <TableColumn fx:id="typeColumn" prefWidth="99.20001220703125" text="Tipo" />
             <TableColumn fx:id="lastTimeColumn" prefWidth="195.20001220703125" text="Ultima vez" />
         </columns>
       </TableView>
-      <TextFlow fx:id="textFlowRecommendations" layoutX="734.0" layoutY="145.0" prefHeight="436.0" prefWidth="679.0" />
-      <Button layoutX="734.0" layoutY="108.0" mnemonicParsing="false" onAction="#dailyRecomendation" text="Recomendación para el día" />
-      <Text layoutX="740.0" layoutY="44.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Para obtener una recomendación, basandonos en nuestros habitos de mayor frecuencia, solo tenemos que pulsar en los botones que tenemos abajo:" wrappingWidth="463.736572265625" />
-      <Button layoutX="912.0" layoutY="108.0" mnemonicParsing="false" onAction="#weekRecomendation" text="Recomendación para la semana" />
-      <Button layoutX="1114.0" layoutY="108.0" mnemonicParsing="false" onAction="#monthRecomendation" text="Recomendación para el mes" />
-      <Button layoutX="1293.0" layoutY="108.0" mnemonicParsing="false" onAction="#yearRecomendation" text="Recomendación para el año" />
+      <TextFlow fx:id="textFlowRecommendations" layoutX="744.0" layoutY="237.0" prefHeight="322.0" prefWidth="679.0" />
+      <Button layoutX="749.0" layoutY="108.0" mnemonicParsing="false" onAction="#dailyRecomendation" prefHeight="42.0" prefWidth="281.0" stylesheets="@../../../../assets/styles.css" text="Recomendación para el día">
+         <styleClass>
+            <String fx:value="recommendation-button" />
+            <String fx:value="daily-button" />
+         </styleClass></Button>
+      <Text layoutX="744.0" layoutY="52.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="custom-textarea" text="Para obtener una recomendación, basandonos en nuestros habitos de mayor frecuencia, solo tenemos que pulsar en los botones que tenemos abajo:" wrappingWidth="548.53662109375" />
+      <Button layoutX="749.0" layoutY="158.0" mnemonicParsing="false" onAction="#weekRecomendation" prefHeight="42.0" prefWidth="282.0" stylesheets="@../../../../assets/styles.css" text="Recomendación para la semana">
+         <styleClass>
+            <String fx:value="recommendation-button" />
+            <String fx:value="weekly-button" />
+         </styleClass></Button>
+      <Button layoutX="1095.0" layoutY="108.0" mnemonicParsing="false" onAction="#monthRecomendation" prefHeight="42.0" prefWidth="282.0" stylesheets="@../../../../assets/styles.css" text="Recomendación para el mes">
+         <styleClass>
+            <String fx:value="recommendation-button" />
+            <String fx:value="monthly-button" />
+         </styleClass></Button>
+      <Button layoutX="1095.0" layoutY="158.0" mnemonicParsing="false" onAction="#yearRecomendation" prefHeight="42.0" prefWidth="282.0" stylesheets="@../../../../assets/styles.css" text="Recomendación para el año">
+         <styleClass>
+            <String fx:value="recommendation-button" />
+            <String fx:value="yearly-button" />
+         </styleClass></Button>
    </children>
 </AnchorPane>

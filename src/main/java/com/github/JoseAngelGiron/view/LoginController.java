@@ -61,7 +61,7 @@ public class LoginController extends Controller implements Initializable {
             changeToMainWindow();
 
         }else{
-
+            //etiqueta
             System.out.println("No existe ningún usuario");
         }
 
@@ -75,7 +75,7 @@ public class LoginController extends Controller implements Initializable {
     private void changeToRegister() throws IOException {
         App.setRoot(Scenes.REGISTER.getURL());
 
-        App.scene.getWindow().setWidth(500);
+        App.scene.getWindow().setWidth(750);
         App.scene.getWindow().setHeight(580);
 
     }

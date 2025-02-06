@@ -8,14 +8,14 @@
 
 <AnchorPane prefHeight="655.0" prefWidth="1410.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.github.JoseAngelGiron.view.HomeController">
    <children>
-      <SplitPane dividerPositions="0.9569892473118279" orientation="VERTICAL" prefHeight="76.0" prefWidth="1561.0">
+      <SplitPane dividerPositions="0.9569892473118279" orientation="VERTICAL" prefHeight="76.0" prefWidth="1561.0" styleClass="background" stylesheets="@../../../../assets/styles.css">
         <items>
-          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="68.0" prefWidth="1550.0">
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="82.0" prefWidth="1562.0">
                <children>
-                  <AnchorPane layoutY="1.0" prefHeight="58.0" prefWidth="1560.0">
+                  <AnchorPane layoutX="-2.0" layoutY="1.0" prefHeight="76.0" prefWidth="1562.0" stylesheets="@../../../../assets/styles.css">
                      <children>
-                        <Button layoutX="1382.0" layoutY="17.0" mnemonicParsing="false" onAction="#changeProfile" prefHeight="26.0" prefWidth="154.0" text="Perfil" />
-                        <MenuButton layoutX="14.0" layoutY="16.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="154.0" text="Habitos">
+                        <Button layoutX="1384.0" layoutY="6.0" mnemonicParsing="false" onAction="#changeProfile" prefHeight="46.0" prefWidth="161.0" styleClass="profile-button" stylesheets="@../../../../assets/styles.css" text="Perfil" />
+                        <MenuButton layoutX="158.0" layoutY="8.0" mnemonicParsing="false" prefHeight="38.0" prefWidth="136.0" styleClass="habits-menu-button" stylesheets="@../../../../assets/styles.css" text="Habitos">
                           <items>
                             <MenuItem mnemonicParsing="false" onAction="#changeToRegisterHabit" text="Registrar un nuevo hábito" />
                               <MenuItem mnemonicParsing="false" onAction="#changeToUpdateHabit" text="Actualizar un hábito" />
@@ -23,7 +23,11 @@
                             <MenuItem mnemonicParsing="false" onAction="#changeToYourHabits" text="Tus habitos y recomendaciones" />
                           </items>
                         </MenuButton>
-                        <MenuButton layoutX="182.0" layoutY="17.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="204.0" text="Huellas">
+                        <Button layoutX="318.0" layoutY="6.0" mnemonicParsing="false" onAction="#changeToImpactFootprints" prefHeight="46.0" prefWidth="318.0" styleClass="impact-footprint-button" stylesheets="@../../../../assets/styles.css" text="Consultar el impacto de tus huellas" />
+                        <Button layoutX="988.0" layoutY="8.0" mnemonicParsing="false" onAction="#printYourReport" prefHeight="46.0" prefWidth="162.0" styleClass="generate-report-button" stylesheets="@../../../../assets/styles.css" text="Generar informe" />
+                        <Button layoutX="648.0" layoutY="8.0" mnemonicParsing="false" onAction="#changeToComparisonUsers" prefHeight="46.0" prefWidth="318.0" styleClass="compare-footprint-button" stylesheets="@../../../../assets/styles.css" text="¿Como es tu huella con la de resto?" />
+                        <Button layoutX="1191.0" layoutY="8.0" mnemonicParsing="false" onAction="#changeHome" prefHeight="46.0" prefWidth="172.0" styleClass="home-button" stylesheets="@../../../../assets/styles.css" text="Volver al home" />
+                        <MenuButton layoutX="12.0" layoutY="8.0" mnemonicParsing="false" prefHeight="38.0" prefWidth="136.0" styleClass="footprints-menu-button" stylesheets="@../../../../assets/styles.css" text="Huellas">
                           <items>
                             <MenuItem mnemonicParsing="false" onAction="#changeToRegisterPrint" text="Registrar una nueva huella" />
                               <MenuItem mnemonicParsing="false" onAction="#changeToUpdatePrints" text="Actualizar Huella" />
@@ -31,10 +35,6 @@
                             <MenuItem mnemonicParsing="false" onAction="#changeToYourPrints" text="Todas tus huellas y recomendaciones" />
                           </items>
                         </MenuButton>
-                        <Button layoutX="409.0" layoutY="16.0" mnemonicParsing="false" onAction="#changeToImpactFootprints" prefHeight="26.0" prefWidth="222.0" text="Consultar el impacto de tus huellas" />
-                        <Button layoutX="924.0" layoutY="17.0" mnemonicParsing="false" onAction="#printYourReport" prefHeight="26.0" prefWidth="197.0" text="Generar tu informe personalizado" />
-                        <Button layoutX="642.0" layoutY="16.0" mnemonicParsing="false" onAction="#changeToComparisonUsers" prefHeight="26.0" prefWidth="257.0" text="¿Como es tu huella con la de resto?" />
-                        <Button layoutX="1217.0" layoutY="17.0" mnemonicParsing="false" onAction="#changeHome" prefHeight="26.0" prefWidth="132.0" text="Volver al home" />
                      </children>
                   </AnchorPane>
                </children>

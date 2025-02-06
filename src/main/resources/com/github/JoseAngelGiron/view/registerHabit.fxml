@@ -8,13 +8,14 @@
 <?import javafx.scene.control.TableView?>
 <?import javafx.scene.control.TextArea?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Text?>
 
 <AnchorPane prefHeight="636.0" prefWidth="923.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.github.JoseAngelGiron.view.RegisterHabitController">
    <children>
-      <TableView fx:id="actividadTable" layoutX="18.0" layoutY="10.0" prefHeight="555.0" prefWidth="339.0">
+      <TableView fx:id="actividadTable" layoutX="18.0" layoutY="10.0" prefHeight="597.0" prefWidth="347.0">
         <columns>
           <TableColumn fx:id="activityCategoryColumn" prefWidth="120.80002212524414" text="Categoría" />
-          <TableColumn fx:id="activityNameColumn" prefWidth="220.79994201660156" text="Actividad" />
+          <TableColumn fx:id="activityNameColumn" prefWidth="224.8000061035156" text="Actividad" />
         </columns>
       </TableView>
       <TextArea fx:id="activityName" editable="false" layoutX="399.0" layoutY="52.0" prefHeight="42.0" prefWidth="399.0" />
@@ -25,12 +26,16 @@
       <TextArea fx:id="emisionFactor" editable="false" layoutX="399.0" layoutY="208.0" prefHeight="42.0" prefWidth="180.0" />
       <Label layoutX="607.0" layoutY="190.0" prefHeight="18.0" prefWidth="68.0" text="Unidad:" />
       <TextArea fx:id="unity" editable="false" layoutX="601.0" layoutY="208.0" prefHeight="42.0" prefWidth="198.0" />
-      <Label layoutX="406.0" layoutY="528.0" prefHeight="18.0" prefWidth="242.0" text="¿Desea registrar esta actividad?" />
-      <Button layoutX="404.0" layoutY="565.0" mnemonicParsing="false" onAction="#registerHabit" prefHeight="42.0" prefWidth="406.0" text="Registrar nueva actividad" />
+      <Label layoutX="399.0" layoutY="511.0" prefHeight="18.0" prefWidth="242.0" text="¿Desea registrar esta actividad?" />
+      <Button layoutX="399.0" layoutY="539.0" mnemonicParsing="false" onAction="#registerHabit" prefHeight="42.0" prefWidth="406.0" text="Registrar nuevo hábito" />
       <Label layoutX="399.0" layoutY="278.0" prefHeight="27.0" prefWidth="171.0" text="Seleccione:" />
-      <TextArea fx:id="frecuency" layoutX="399.0" layoutY="335.0" prefHeight="42.0" prefWidth="171.0" promptText="Ejemplo: 4.." />
+      <TextArea fx:id="frecuency" layoutX="399.0" layoutY="335.0" prefHeight="18.0" prefWidth="171.0" promptText="Ejemplo: 4.." />
       <Label layoutX="399.0" layoutY="116.0" prefHeight="18.0" prefWidth="114.0" text="Categoría:" />
-      <ComboBox fx:id="typeBox" layoutX="600.0" layoutY="335.0" prefHeight="42.0" prefWidth="198.0" promptText="Frecuencia" />
-      <DatePicker fx:id="datePicker" layoutX="399.0" layoutY="413.0" prefHeight="88.0" prefWidth="406.0" />
+      <ComboBox fx:id="typeBox" layoutX="601.0" layoutY="335.0" prefHeight="39.0" prefWidth="198.0" promptText="Frecuencia" />
+      <DatePicker fx:id="datePicker" layoutX="399.0" layoutY="438.0" prefHeight="27.0" prefWidth="406.0" />
+      <Label fx:id="errorFrecuencyLabel" layoutX="399.0" layoutY="387.0" prefHeight="18.0" prefWidth="406.0" text="El valor ingresado no es un número entero válido." textFill="#d90c0c" visible="false" />
+      <Text layoutX="399.0" layoutY="427.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Seleccione una fecha:" wrappingWidth="190.8558349609375" />
+      <Label fx:id="errorDateLabel" layoutX="399.0" layoutY="472.0" prefHeight="18.0" prefWidth="316.0" text="Seleccione una fecha anterior" visible="false" />
+      <Label fx:id="errorRegisteredLabel" layoutX="399.0" layoutY="591.0" prefHeight="18.0" prefWidth="406.0" text="No se pudo registrar el hábito" visible="false" />
    </children>
 </AnchorPane>

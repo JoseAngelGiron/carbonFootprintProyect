@@ -4,32 +4,26 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.Separator?>
 <?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
-<?import javafx.scene.layout.ColumnConstraints?>
-<?import javafx.scene.layout.GridPane?>
-<?import javafx.scene.layout.RowConstraints?>
 
-<AnchorPane minHeight="400.0" minWidth="399.0" prefHeight="455.0" prefWidth="502.0" styleClass="login-container" stylesheets="@../../../../assets/aplication.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.github.JoseAngelGiron.view.LoginController">
+<AnchorPane minHeight="400.0" minWidth="399.0" prefHeight="595.0" prefWidth="603.0" styleClass="background" stylesheets="@../../../../assets/styles.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.github.JoseAngelGiron.view.LoginController">
     <children>
-        <Separator layoutX="23.0" layoutY="314.0" prefHeight="10.0" prefWidth="520.0" AnchorPane.leftAnchor="23.0" AnchorPane.rightAnchor="74.59999999999991" AnchorPane.topAnchor="314.0" />
-        <GridPane prefHeight="15.0" prefWidth="520.0" AnchorPane.leftAnchor="49.0" AnchorPane.rightAnchor="49.0" AnchorPane.topAnchor="430.0">
-            <children>
-                <Label fx:id="loginError" prefHeight="18.0" prefWidth="454.0" text="No se ha encontrado el usuario especificado. ¿No tiene cuenta? ¡ Registrese !" textFill="#ef0c0c" visible="false" />
-            </children>
-         <columnConstraints>
-            <ColumnConstraints />
-         </columnConstraints>
-         <rowConstraints>
-            <RowConstraints />
-         </rowConstraints>
-        </GridPane>
-          <Label layoutX="71.0" layoutY="27.0" prefHeight="24.0" prefWidth="348.0" text="Inicia sesión con tu E-mail y contraseña" />
-          <TextField fx:id="emailText" layoutX="38.0" layoutY="112.0" prefHeight="31.0" prefWidth="335.0" text="JangelGiron@gmail.com" />
-          <Label layoutX="38.0" layoutY="88.0" prefHeight="24.0" prefWidth="54.0" text="E-mail:" />
-          <Label layoutX="38.0" layoutY="163.0" prefHeight="38.0" text="Contraseña: " />
-      <TextField fx:id="passwordText" layoutX="38.0" layoutY="202.0" prefHeight="24.0" prefWidth="335.0" text="Patata57" />
-          <Button fx:id="primaryButton" layoutX="74.0" layoutY="273.0" onAction="#LogUser" prefHeight="31.0" prefWidth="183.0" styleClass="button-login" text="Iniciar sesión" />
-          <Button alignment="TOP_CENTER" layoutX="206.0" layoutY="350.0" mnemonicParsing="false" onAction="#changeToRegister" prefHeight="26.0" prefWidth="242.0" styleClass="button-register" text="Crear una nueva cuenta" textAlignment="CENTER" />
-          <Label layoutX="30.0" layoutY="351.0" prefHeight="24.0" prefWidth="214.0" text="¿No tienes cuenta? ¡Registrate!" />
+        <Separator layoutX="32.0" layoutY="331.0" prefHeight="18.0" prefWidth="536.0" AnchorPane.leftAnchor="32.0" AnchorPane.rightAnchor="13.600000000000023" AnchorPane.topAnchor="331.0" />
+          <Label layoutX="47.0" layoutY="61.0" prefHeight="24.0" prefWidth="348.0" styleClass="SubTitle" stylesheets="@../../../../assets/styles.css" text="Inicia sesión con tu E-mail y contraseña" />
+          <TextField fx:id="emailText" layoutX="29.0" layoutY="124.0" prefHeight="31.0" prefWidth="234.0" styleClass="custom-textfield" stylesheets="@../../../../assets/styles.css" text="JangelGiron@gmail.com" />
+          <Label layoutX="31.0" layoutY="96.0" prefHeight="18.0" prefWidth="212.0" styleClass="indicativeTitle" stylesheets="@../../../../assets/styles.css" text="E-mail:" />
+          <Label layoutX="31.0" layoutY="165.0" prefHeight="38.0" styleClass="indicativeTitle" stylesheets="@../../../../assets/styles.css" text="Contraseña: " />
+      <TextField fx:id="passwordText" layoutX="29.0" layoutY="197.0" prefHeight="26.0" prefWidth="234.0" styleClass="custom-textfield" stylesheets="@../../../../assets/styles.css" text="Patata57" />
+          <Button fx:id="primaryButton" layoutX="32.0" layoutY="256.0" onAction="#LogUser" prefHeight="41.0" prefWidth="183.0" styleClass="login-button" stylesheets="@../../../../assets/styles.css" text="Iniciar sesión" />
+          <Button alignment="TOP_CENTER" layoutX="321.0" layoutY="356.0" mnemonicParsing="false" onAction="#changeToRegister" prefHeight="26.0" prefWidth="242.0" styleClass="create-account-button" stylesheets="@../../../../assets/styles.css" text="Crear una nueva cuenta" textAlignment="CENTER" />
+          <Label layoutX="54.0" layoutY="363.0" prefHeight="36.0" prefWidth="212.0" styleClass="indicativeTitle" stylesheets="@../../../../assets/styles.css" text="¿No tienes cuenta? ¡Registrate!" />
+      <ImageView fitHeight="225.0" fitWidth="255.0" layoutX="323.0" layoutY="91.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../../assets/footprint.png" />
+         </image>
+      </ImageView>
+      <Label layoutX="47.0" layoutY="14.0" prefHeight="18.0" prefWidth="226.0" styleClass="MainTitle" stylesheets="@../../../../assets/styles.css" text="Ecotrack" />
     </children>
 </AnchorPane>

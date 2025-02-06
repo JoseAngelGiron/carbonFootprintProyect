@@ -6,17 +6,17 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane prefHeight="459.0" prefWidth="624.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.github.JoseAngelGiron.view.ProfileController">
+<AnchorPane prefHeight="582.0" prefWidth="788.0" styleClass="reverse-background" stylesheets="@../../../../assets/styles.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.github.JoseAngelGiron.view.ProfileController">
    <children>
-      <TextField fx:id="usernameField" layoutX="50.0" layoutY="174.0" prefHeight="26.0" prefWidth="218.0" promptText="Inserte su nuevo nombre..." />
-      <TextField fx:id="emailField" layoutX="50.0" layoutY="266.0" prefHeight="26.0" prefWidth="218.0" promptText="Inserte su nuevo email...." />
-      <Text layoutX="50.0" layoutY="155.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Nombre:" wrappingWidth="76.64569091796875" />
-      <Text layoutX="50.0" layoutY="252.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Email:" wrappingWidth="76.64569091796875" />
-      <Text layoutX="324.0" layoutY="155.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Contraseña:" wrappingWidth="99.859375" />
-      <Button layoutX="63.0" layoutY="374.0" mnemonicParsing="false" onAction="#updateProfile" prefHeight="26.0" prefWidth="191.0" text="Actualizar" />
-      <Text layoutX="53.0" layoutY="76.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Estas son sus credenciales de acceso a la plataforma." wrappingWidth="321.336669921875" />
-      <Text layoutX="279.0" layoutY="384.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Si quiere cambiar sus datos, introduzca los datos, y pulse en actualizar" wrappingWidth="330.9366455078125" />
-      <Text layoutX="53.0" layoutY="42.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Perfil" wrappingWidth="120.3363037109375" />
-      <PasswordField fx:id="passwordField" layoutX="324.0" layoutY="173.0" prefHeight="26.0" prefWidth="218.0" promptText="Nueva contraseña..." />
+      <TextField fx:id="usernameField" layoutX="49.0" layoutY="199.0" prefHeight="26.0" prefWidth="218.0" promptText="Inserte su nuevo nombre..." styleClass="editable-textfield" />
+      <TextField fx:id="emailField" layoutX="49.0" layoutY="334.0" prefHeight="26.0" prefWidth="218.0" promptText="Inserte su nuevo email...." styleClass="editable-textfield" />
+      <Text layoutX="50.0" layoutY="178.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="custom-textarea" text="Nombre:" wrappingWidth="76.64569091796875" />
+      <Text layoutX="50.0" layoutY="313.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="custom-textarea" text="Email:" wrappingWidth="76.64569091796875" />
+      <Text layoutX="324.0" layoutY="178.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="custom-textarea" text="Contraseña:" wrappingWidth="99.859375" />
+      <Button layoutX="63.0" layoutY="425.0" mnemonicParsing="false" onAction="#updateProfile" prefHeight="26.0" prefWidth="191.0" styleClass="update-profile-button" stylesheets="@../../../../assets/styles.css" text="Actualizar" />
+      <Text layoutX="53.0" layoutY="71.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="custom-textarea" text="Estas son sus credenciales de acceso a la plataforma. " wrappingWidth="337.336669921875" />
+      <Text layoutX="55.0" layoutY="104.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="custom-textarea" text="Si quiere cambiar sus datos, introduzca los datos, y pulse en actualizar" wrappingWidth="398.9366455078125" />
+      <Text layoutX="53.0" layoutY="42.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="SubTitle" text="Perfil" wrappingWidth="120.3363037109375" />
+      <PasswordField fx:id="passwordField" layoutX="324.0" layoutY="199.0" prefHeight="26.0" prefWidth="218.0" promptText="Nueva contraseña..." styleClass="editable-textfield" stylesheets="@../../../../assets/styles.css" />
    </children>
 </AnchorPane>

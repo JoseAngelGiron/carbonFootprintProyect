@@ -7,34 +7,34 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane prefHeight="634.0" prefWidth="1170.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.github.JoseAngelGiron.view.DeletePrintController">
+<AnchorPane prefHeight="634.0" prefWidth="1245.0" styleClass="reverse-background" stylesheets="@../../../../assets/styles.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.github.JoseAngelGiron.view.DeletePrintController">
    <children>
-      <TableView fx:id="printTable" layoutX="25.0" layoutY="57.0" prefHeight="569.0" prefWidth="584.0">
+      <TableView fx:id="printTable" layoutX="7.0" layoutY="50.0" prefHeight="570.0" prefWidth="720.0" styleClass="habits-table" stylesheets="@../../../../assets/styles.css">
         <columns>
-          <TableColumn fx:id="numberColumn" prefWidth="72.79998779296875" text="Numero" />
-          <TableColumn fx:id="activityColumn" prefWidth="88.79998779296875" text="Actividad" />
-            <TableColumn fx:id="categoryColumn" prefWidth="88.00001525878906" text="Categoria" />
-            <TableColumn fx:id="emisionColumn" prefWidth="124.79998779296875" text="Factor de emisión" />
-            <TableColumn fx:id="unityColumn" prefWidth="95.199951171875" text="Unidad" />
-            <TableColumn fx:id="dateColumn" prefWidth="112.800048828125" text="Fecha" />
+          <TableColumn fx:id="numberColumn" prefWidth="87.99999618530273" text="Numero" />
+          <TableColumn fx:id="activityColumn" prefWidth="108.79998779296875" text="Actividad" />
+            <TableColumn fx:id="categoryColumn" prefWidth="95.20002746582031" text="Categoria" />
+            <TableColumn fx:id="emisionColumn" prefWidth="160.0" text="Factor de emisión" />
+            <TableColumn fx:id="unityColumn" prefWidth="103.20001220703125" text="Unidad" />
+            <TableColumn fx:id="dateColumn" prefWidth="130.4000244140625" text="Fecha" />
         </columns>
       </TableView>
-      <TextField fx:id="numberPrintField" editable="false" layoutX="679.0" layoutY="161.0" prefHeight="26.0" prefWidth="50.0" />
-      <Text layoutX="681.0" layoutY="97.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Huella seleccionada:" wrappingWidth="149.60000000000014" />
-      <Text layoutX="681.0" layoutY="143.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Número:" />
-      <Text layoutX="678.0" layoutY="227.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Actividad:" wrappingWidth="66.949951171875" />
-      <TextField fx:id="activityField" editable="false" layoutX="679.0" layoutY="241.0" prefHeight="26.0" prefWidth="123.0" />
-      <TextField fx:id="categoryField" editable="false" layoutX="917.0" layoutY="241.0" prefHeight="26.0" prefWidth="123.0" />
-      <Text layoutX="917.0" layoutY="219.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Categoría:" wrappingWidth="66.949951171875" />
-      <Text layoutX="679.0" layoutY="305.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Factor de emisión:" wrappingWidth="112.5499267578125" />
-      <TextField fx:id="emisionField" editable="false" layoutX="678.0" layoutY="325.0" prefHeight="26.0" prefWidth="103.0" />
-      <Text layoutX="912.0" layoutY="304.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Unidad:" wrappingWidth="112.5499267578125" />
-      <TextField fx:id="unityField" editable="false" layoutX="912.0" layoutY="325.0" prefHeight="26.0" prefWidth="103.0" />
-      <TextField fx:id="dateField" editable="false" layoutX="678.0" layoutY="410.0" prefHeight="26.0" prefWidth="103.0" />
-      <Text layoutX="679.0" layoutY="395.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Fecha:" wrappingWidth="112.5499267578125" />
-      <Button layoutX="674.0" layoutY="504.0" mnemonicParsing="false" onAction="#deletePrint" prefHeight="49.0" prefWidth="317.0" text="Borrar" />
-      <Text layoutX="674.0" layoutY="490.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Para borrar la huella seleccionada, pulse en borrar:" wrappingWidth="267.19997558593764" />
-      <Text layoutX="674.0" layoutY="26.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Borrar Huella" wrappingWidth="235.72216796875" />
+      <TextField fx:id="numberPrintField" editable="false" layoutX="805.0" layoutY="160.0" prefHeight="26.0" prefWidth="50.0" styleClass="non-editable-textfield" stylesheets="@../../../../assets/styles.css" />
+      <Text layoutX="788.0" layoutY="96.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="SubTitleAlt" text="Huella seleccionada:" wrappingWidth="247.9999633789064" />
+      <Text layoutX="790.0" layoutY="143.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="custom-textarea" text="Número:" />
+      <Text layoutX="797.0" layoutY="224.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="custom-textarea" text="Actividad:" wrappingWidth="66.949951171875" />
+      <TextField fx:id="activityField" editable="false" layoutX="802.0" layoutY="241.0" prefHeight="26.0" prefWidth="123.0" styleClass="non-editable-textfield" stylesheets="@../../../../assets/styles.css" />
+      <TextField fx:id="categoryField" editable="false" layoutX="1046.0" layoutY="241.0" prefHeight="26.0" prefWidth="123.0" styleClass="non-editable-textfield" stylesheets="@../../../../assets/styles.css" />
+      <Text layoutX="1046.0" layoutY="225.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="custom-textarea" text="Categoría:" wrappingWidth="66.949951171875" />
+      <Text layoutX="798.0" layoutY="309.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="custom-textarea" text="Factor de emisión:" wrappingWidth="130.949951171875" />
+      <TextField fx:id="emisionField" editable="false" layoutX="807.0" layoutY="325.0" prefHeight="26.0" prefWidth="103.0" styleClass="non-editable-textfield" stylesheets="@../../../../assets/styles.css" />
+      <Text layoutX="1056.0" layoutY="310.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="custom-textarea" text="Unidad:" wrappingWidth="112.5499267578125" />
+      <TextField fx:id="unityField" editable="false" layoutX="1056.0" layoutY="325.0" prefHeight="26.0" prefWidth="103.0" styleClass="non-editable-textfield" stylesheets="@../../../../assets/styles.css" />
+      <TextField fx:id="dateField" editable="false" layoutX="807.0" layoutY="412.0" prefHeight="26.0" prefWidth="103.0" styleClass="non-editable-textfield" stylesheets="@../../../../assets/styles.css" />
+      <Text layoutX="799.0" layoutY="401.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="custom-textarea" text="Fecha:" wrappingWidth="112.5499267578125" />
+      <Button layoutX="830.0" layoutY="546.0" mnemonicParsing="false" onAction="#deletePrint" prefHeight="49.0" prefWidth="317.0" styleClass="delete-button" stylesheets="@../../../../assets/styles.css" text="Borrar" />
+      <Text layoutX="808.0" layoutY="529.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="custom-textfield" text="Para borrar la huella seleccionada, pulse en borrar:" wrappingWidth="389.59987792968764" />
+      <Text layoutX="859.0" layoutY="47.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="delete-habit-title" text="Borrar Huella" wrappingWidth="235.72216796875" />
       <Text layoutX="25.0" layoutY="34.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Seleccione una huella:" wrappingWidth="235.72216796875" />
    </children>
 </AnchorPane>
