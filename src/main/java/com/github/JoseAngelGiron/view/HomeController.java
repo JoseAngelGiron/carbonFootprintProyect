@@ -1,6 +1,7 @@
 package com.github.JoseAngelGiron.view;
 
 
+import com.github.JoseAngelGiron.App;
 import com.github.JoseAngelGiron.model.UserSession;
 import com.github.JoseAngelGiron.model.entity.Huella;
 import com.github.JoseAngelGiron.model.entity.Usuario;
@@ -32,6 +33,9 @@ import static com.github.JoseAngelGiron.App.changeScene;
 
 
 public class HomeController extends Controller implements Initializable {
+
+    @FXML
+    private Pane window;
 
     @FXML
     private Pane mainPane;
@@ -120,6 +124,16 @@ public class HomeController extends Controller implements Initializable {
     @FXML
     public void changeToComparisonUsers() throws IOException {
         changeScene(Scenes.COMPARISONUSERS, mainPane,null);
+    }
+
+    @FXML
+    public void changeToLogin() throws IOException {
+        changeScene(Scenes.LOGIN, window,null);
+
+        App.scene.getWindow().setWidth(610);
+        App.scene.getWindow().setHeight(480);
+
+        App.scene.getWindow().centerOnScreen();
     }
 
     @FXML

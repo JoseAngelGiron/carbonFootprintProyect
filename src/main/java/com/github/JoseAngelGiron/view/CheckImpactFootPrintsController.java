@@ -9,6 +9,8 @@ import javafx.scene.control.DatePicker;
 
 import javafx.scene.control.TextArea;
 import java.time.format.DateTimeFormatter;
+
+import javafx.scene.control.TextField;
 import javafx.scene.paint.Color;
 
 import java.io.IOException;
@@ -22,7 +24,7 @@ public class CheckImpactFootPrintsController extends Controller implements Initi
     private DatePicker datePicker;
 
     @FXML
-    private TextArea textAreaImpact;
+    private TextField textAreaImpact;
 
     private Usuario currentUser;
     private HuellaServices printServices;

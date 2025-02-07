@@ -614,7 +614,7 @@
     -fx-background-color: transparent;  /* Fondo transparente */
     -fx-border-color: #B0B0B0;  /* Color suave para los bordes (gris claro) */
     -fx-border-width: 1px;  /* Borde delgado */
-    -fx-text-fill: #A9A9A9;  /* Texto en gris suave para indicar que no está activo */
+    -fx-text-fill: #000000; /* Texto en gris suave para indicar que no está activo */
     -fx-font-size: 14px;  /* Tamaño de fuente normal */
     -fx-font-family: 'Roboto', sans-serif;  /* Fuente coherente */
     -fx-padding: 8px;  /* Espaciado dentro del campo */
@@ -658,56 +658,69 @@
 }
 
 
+/* Estilo general de la tabla */
 .habits-table {
     -fx-background-color: rgba(255, 255, 255, 0.8); /* Fondo blanco semi-transparente */
+    -fx-alignment: CENTER;
     -fx-border-color: #FF9050;  /* Borde de la tabla en naranja suave */
-    -fx-border-width: 1px;  /* Grosor del borde */
+    -fx-border-width: 1px;
     -fx-background-radius: 15px; /* Bordes redondeados */
-    -fx-padding: 10px; /* Espaciado interno de la tabla */
-    -fx-effect: dropshadow(three-pass-box, rgba(0, 0, 0, 0.2), 5, 0, 2, 2); /* Sombra sutil */
+    -fx-padding: 10px;
+    -fx-effect: dropshadow(three-pass-box, rgba(0, 0, 0, 0.2), 5, 0, 2, 2);
 }
 
-/* Estilos para las filas de la tabla */
+/* Estilo para las filas de la tabla */
 .habits-table .table-row-cell {
-    -fx-background-color: transparent;  /* Sin fondo sólido para las filas */
-    -fx-text-fill: #333333; /* Texto oscuro para buen contraste */
-    -fx-font-size: 14px; /* Tamaño de la fuente */
-    -fx-padding: 5px 10px; /* Espaciado interno */
+    -fx-background-color: transparent; /* Mantiene el fondo de las filas sin color */
+    -fx-text-fill: #333333; /* Texto oscuro para asegurar visibilidad */
+    -fx-font-size: 12px;
+    -fx-padding: 1px 15px 1px 5px;
 }
 
-/* Estilo para las filas cuando están seleccionadas */
+/* Estilo para filas seleccionadas */
 .habits-table .table-row-cell:selected {
-    -fx-background-color: rgba(255, 144, 80, 0.2); /* Fondo suave y transparente cuando se selecciona */
-    -fx-text-fill: #2E8B57; /* Texto verde para las filas seleccionadas */
+    -fx-background-color: rgba(255, 144, 80, 0.2); /* Fondo suave */
+    -fx-text-fill: #2E8B57; /* Texto verde */
 }
 
-
+/* Estilo para las cabeceras */
 .habits-table .column-header {
-    -fx-background-color: #6AE368;  /* Fondo verde suave para las cabeceras */
-    -fx-text-fill: white;  /* Texto blanco en las cabeceras */
-    -fx-font-size: 16px; /* Tamaño de la fuente */
-    -fx-font-weight: bold;  /* Negrita para las cabeceras */
-    -fx-padding: 10px; /* Espaciado interno */
-    -fx-border-color: #4CAF50; /* Borde verde para las cabeceras */
-    -fx-border-width: 1px; /* Grosor del borde de las cabeceras */
+    -fx-background-color: #6AE368;
+    -fx-text-fill: white;
+    -fx-font-size: 16px;
+    -fx-font-weight: bold;
+    -fx-padding: 10px;
+    -fx-border-color: #4CAF50;
+    -fx-border-width: 1px;
 }
 
-
-.habits-table .column-header:selected {
-    -fx-background-color: #4CAF50; /* Verde fuerte cuando la columna está seleccionada */
+/* Evitar que el texto de las cabeceras desaparezca */
+.habits-table .column-header .label {
+    -fx-text-fill: white;
 }
 
-
+/* Estilo de las celdas de datos */
 .habits-table .table-cell {
-    -fx-background-color: transparent; /* Fondo transparente */
-    -fx-border-color: transparent; /* Sin borde */
-    -fx-padding: 5px 10px; /* Espaciado interno */
+    -fx-background-color: transparent; /* Se asegura de que no haya fondo blanco */
+    -fx-alignment: CENTER;
+    -fx-border-color: transparent;
+    -fx-padding: 1px 25px 1px 40px;
+    -fx-text-fill: #333333; /* Texto siempre oscuro */
 }
 
+/* Corrige cualquier posible sobreescritura del color del texto */
+.habits-table .table-cell:selected {
+    -fx-text-fill: #2E8B57;
+}
 
+/* Hover sobre filas */
 .habits-table .table-row-cell:hover {
-    -fx-background-color: rgba(255, 144, 80, 0.1); /* Fondo suave cuando se pasa el ratón */
+    -fx-background-color: rgba(255, 144, 80, 0.1);
 }
+
+
+
+
 
 
 
@@ -849,3 +862,28 @@
 }
 
 
+.logout-button {
+    -fx-background-color: linear-gradient(to bottom, #FF6B6B, #E63946); /* Rojo degradado */
+    -fx-text-fill: white; /* Texto en blanco */
+    -fx-font-size: 14px;
+    -fx-font-weight: bold;
+    -fx-padding: 10px 20px;
+    -fx-border-radius: 8px;
+    -fx-background-radius: 8px;
+    -fx-border-color: #B71C1C; /* Borde rojo oscuro */
+    -fx-border-width: 1px;
+    -fx-cursor: hand; /* Cambia el cursor al pasar */
+    -fx-effect: dropshadow(three-pass-box, rgba(0, 0, 0, 0.2), 5, 0, 2, 2);
+}
+
+/* Efecto cuando se pasa el mouse */
+.logout-button:hover {
+    -fx-background-color: linear-gradient(to bottom, #E63946, #B71C1C); /* Rojo más oscuro */
+    -fx-border-color: #FFCDD2;
+}
+
+/* Efecto cuando se presiona */
+.logout-button:pressed {
+    -fx-background-color: #B71C1C;
+    -fx-border-color: #FF6B6B;
+}

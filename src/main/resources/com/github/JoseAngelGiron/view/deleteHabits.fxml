@@ -7,30 +7,30 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane prefHeight="587.0" prefWidth="1056.0" styleClass="reverse-background" stylesheets="@../../../../assets/styles.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.github.JoseAngelGiron.view.DeleteHabitController">
+<AnchorPane prefHeight="714.0" prefWidth="1619.0" styleClass="reverse-background" stylesheets="@../../../../assets/styles.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.github.JoseAngelGiron.view.DeleteHabitController">
    <children>
-      <TableView fx:id="activityTable" layoutX="10.0" layoutY="8.0" prefHeight="542.0" prefWidth="580.0" styleClass="habits-table" stylesheets="@../../../../assets/styles.css">
+      <TableView fx:id="activityTable" layoutX="10.0" layoutY="8.0" prefHeight="610.0" prefWidth="941.0" styleClass="habits-table" stylesheets="@../../../../assets/styles.css">
          <columns>
-            <TableColumn fx:id="categoryColumn" prefWidth="102.39999103546143" text="Categoría" />
-            <TableColumn fx:id="habitColumn" prefWidth="109.5999755859375" text="Habito" />
-            <TableColumn fx:id="frequencyColumn" prefWidth="120.80003356933594" text="Frecuencia" />
-            <TableColumn fx:id="typeColumn" prefWidth="99.20001220703125" text="Tipo" />
-            <TableColumn fx:id="lastTimeColumn" prefWidth="136.0" text="Ultima vez" />
+            <TableColumn fx:id="categoryColumn" prefWidth="159.99999618530273" text="Categoría" />
+            <TableColumn fx:id="habitColumn" prefWidth="182.4000244140625" text="Habito" />
+            <TableColumn fx:id="frequencyColumn" prefWidth="154.39999389648438" text="Frecuencia" />
+            <TableColumn fx:id="typeColumn" prefWidth="168.79998779296875" text="Tipo" />
+            <TableColumn fx:id="lastTimeColumn" prefWidth="254.4000244140625" text="Ultima vez" />
          </columns>
       </TableView>
-      <Text layoutX="648.0" layoutY="42.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="delete-habit-title" text="Borrar Hábito" wrappingWidth="285.10198974609375" />
-      <Text layoutX="648.0" layoutY="95.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="SubTitleAlt" text="Datos del habito seleccionado:" wrappingWidth="376.536865234375" />
-      <TextField fx:id="categoryArea" editable="false" layoutX="627.0" layoutY="151.0" prefHeight="35.0" prefWidth="150.0" styleClass="non-editable-textfield" stylesheets="@../../../../assets/styles.css" />
-      <TextField fx:id="nameArea" editable="false" layoutX="822.0" layoutY="151.0" prefHeight="38.0" prefWidth="170.0" styleClass="non-editable-textfield" stylesheets="@../../../../assets/styles.css" />
-      <TextField fx:id="frequencyArea" editable="false" layoutX="627.0" layoutY="236.0" prefHeight="26.0" prefWidth="150.0" styleClass="non-editable-textfield" stylesheets="@../../../../assets/styles.css" />
-      <TextField fx:id="typeArea" editable="false" layoutX="822.0" layoutY="236.0" prefHeight="35.0" prefWidth="169.0" styleClass="non-editable-textfield" stylesheets="@../../../../assets/styles.css" />
-      <TextField fx:id="dateArea" editable="false" layoutX="627.0" layoutY="316.0" prefHeight="35.0" prefWidth="150.0" styleClass="non-editable-textfield" stylesheets="@../../../../assets/styles.css" />
-      <Button layoutX="648.0" layoutY="485.0" mnemonicParsing="false" onAction="#deleteHabit" prefHeight="41.0" prefWidth="330.0" styleClass="delete-button" stylesheets="@../../../../assets/styles.css" text="Borrar" />
-      <Text layoutX="641.0" layoutY="473.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="custom-textarea" text="¿Desea borrar el hábito seleccionado?" wrappingWidth="255.73681640625" />
-      <Text layoutX="627.0" layoutY="136.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="custom-textarea" text="Categoría" />
-      <Text layoutX="822.0" layoutY="137.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="custom-textarea" text="Actividad" />
-      <Text layoutX="632.0" layoutY="218.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="custom-textarea" text="Frecuencia" />
-      <Text layoutX="822.0" layoutY="218.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="custom-textarea" text="Tipo" />
-      <Text layoutX="623.0" layoutY="299.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="custom-textarea" text="Fecha de la ultima vez:" wrappingWidth="158.7020263671875" />
+      <Text layoutX="974.0" layoutY="42.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="delete-habit-title" text="Borrar Hábito" wrappingWidth="285.10198974609375" />
+      <Text layoutX="994.0" layoutY="84.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="SubTitleAlt" text="Datos del habito seleccionado:" wrappingWidth="376.536865234375" />
+      <TextField fx:id="categoryArea" editable="false" layoutX="1010.0" layoutY="150.0" prefHeight="35.0" prefWidth="150.0" styleClass="non-editable-textfield" stylesheets="@../../../../assets/styles.css" />
+      <TextField fx:id="nameArea" editable="false" layoutX="1274.0" layoutY="150.0" prefHeight="38.0" prefWidth="170.0" styleClass="non-editable-textfield" stylesheets="@../../../../assets/styles.css" />
+      <TextField fx:id="frequencyArea" editable="false" layoutX="1025.0" layoutY="242.0" prefHeight="26.0" prefWidth="150.0" styleClass="non-editable-textfield" stylesheets="@../../../../assets/styles.css" />
+      <TextField fx:id="typeArea" editable="false" layoutX="1283.0" layoutY="242.0" prefHeight="35.0" prefWidth="169.0" styleClass="non-editable-textfield" stylesheets="@../../../../assets/styles.css" />
+      <TextField fx:id="dateArea" editable="false" layoutX="1025.0" layoutY="320.0" prefHeight="35.0" prefWidth="150.0" styleClass="non-editable-textfield" stylesheets="@../../../../assets/styles.css" />
+      <Button layoutX="1055.0" layoutY="485.0" mnemonicParsing="false" onAction="#deleteHabit" prefHeight="41.0" prefWidth="330.0" styleClass="delete-button" stylesheets="@../../../../assets/styles.css" text="Borrar" />
+      <Text layoutX="1032.0" layoutY="467.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="custom-textarea" text="¿Desea borrar el hábito seleccionado?" wrappingWidth="255.73681640625" />
+      <Text layoutX="1014.0" layoutY="132.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="custom-textarea" text="Categoría" />
+      <Text layoutX="1272.0" layoutY="133.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="custom-textarea" text="Actividad" />
+      <Text layoutX="1011.0" layoutY="224.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="custom-textarea" text="Frecuencia" />
+      <Text layoutX="1274.0" layoutY="225.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="custom-textarea" text="Tipo" />
+      <Text layoutX="1006.0" layoutY="308.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="custom-textarea" text="Fecha de la ultima vez:" wrappingWidth="158.7020263671875" />
    </children>
 </AnchorPane>

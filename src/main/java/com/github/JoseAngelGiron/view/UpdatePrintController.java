@@ -48,9 +48,17 @@ public class UpdatePrintController extends Controller implements Initializable {
     @FXML
     private TextField emisionField;
     @FXML
+    private TextField valueField;
+    @FXML
     private TextField unityField;
     @FXML
     private DatePicker datePicker;
+
+    @FXML
+    private Label valueLabel;
+
+    @FXML
+    private Label dateLabel;
 
 
     private List<Huella> prints;
@@ -78,15 +86,25 @@ public class UpdatePrintController extends Controller implements Initializable {
     @FXML
     public void updatePrint(){
 
-        if(printSelected != null && !unityField.getText().isEmpty() && !(datePicker.getValue() != null) &&
+        if(printSelected != null && !valueField.getText().isEmpty() && !(datePicker.getValue() != null) &&
         datePicker.getValue().isBefore(LocalDate.now())) {
             printSelected.setFecha(datePicker.getValue());
 
-            //Poner control y mostrar etiquetas
-            printSelected.setValor(BigDecimal.valueOf(Long.parseLong(emisionField.getText())));
+            try{
+                printSelected.setValor(BigDecimal.valueOf(Long.parseLong(valueField.getText())));
+            }catch(NumberFormatException e){
+                valueField.setVisible(true);
+                return;
+            }
+
 
             HuellaServices huellaServices = new HuellaServices();
             huellaServices.update(printSelected);
+            valueField.setVisible(false);
+            dateLabel.setVisible(false);
+        }else {
+            valueField.setVisible(true);
+            dateLabel.setVisible(true);
         }
     }
 
@@ -150,6 +168,7 @@ public class UpdatePrintController extends Controller implements Initializable {
                     activityField.setText(printSelected.getIdActividad().getNombre());
                     categoryField.setText(printSelected.getIdActividad().getIdCategoria().getNombre());
                     emisionField.setText(printSelected.getIdActividad().getIdCategoria().getFactorEmision().toString());
+                    valueField.setText(printSelected.getValor().toString());
                     unityField.setText(printSelected.getUnidad());
 
                     datePicker.setValue(printSelected.getFecha());

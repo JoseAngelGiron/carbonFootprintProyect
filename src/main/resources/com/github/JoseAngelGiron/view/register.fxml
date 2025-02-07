@@ -19,10 +19,10 @@
       <TextField fx:id="emailField" layoutX="41.0" layoutY="213.0" prefHeight="26.0" prefWidth="429.0" styleClass="register-textfield" stylesheets="@../../../../assets/styles.css" />
             <Button layoutX="23.0" layoutY="465.0" mnemonicParsing="false" onAction="#registerUser" prefHeight="26.0" prefWidth="238.0" styleClass="register-button" stylesheets="@../../../../assets/aplication.css" text="REGISTRARSE" />
             <Button layoutX="450.0" layoutY="464.0" mnemonicParsing="false" onAction="#returnToLogin" prefHeight="50.0" prefWidth="178.0" styleClass="back-button" stylesheets="@../../../../assets/styles.css" text="VOLVER" />
-      <Label fx:id="nickLabel1" layoutX="47.0" layoutY="140.0" prefHeight="18.0" prefWidth="269.0" text="El nombre debe estar entre 4 y 12 caracteres" visible="false" />
-      <Label fx:id="emailLabel" layoutX="43.0" layoutY="250.0" text="La contraseña debe tener 8 caracteres, al menos 1 mayúscula " visible="false" />
-      <Label fx:id="passwordLabel2" layoutX="47.0" layoutY="387.0" text="El correo debe seguir una estructura similar a :&quot;example@gmail.com&quot;" visible="false" />
-      <Label fx:id="passwordLabel1" layoutX="47.0" layoutY="369.0" text="No puede contener espacios" visible="false" />
-      <Label layoutX="42.0" layoutY="412.0" prefHeight="18.0" prefWidth="569.0" text="O el usuario ya esta registrado, o los campos no cumplen con lo establecido" textFill="#d90808" visible="false" />
+      <Label fx:id="nickLabel1" layoutX="47.0" layoutY="153.0" prefHeight="18.0" prefWidth="269.0" text="El nombre debe estar entre 4 y 12 caracteres" visible="false" />
+      <Label fx:id="emailLabel" layoutX="47.0" layoutY="260.0" text="La contraseña debe tener 8 caracteres, al menos 1 mayúscula " visible="false" />
+      <Label fx:id="passwordLabel2" layoutX="47.0" layoutY="394.0" text="El correo debe seguir una estructura similar a :&quot;example@gmail.com&quot;" visible="false" />
+      <Label fx:id="passwordLabel1" layoutX="47.0" layoutY="374.0" text="No puede contener espacios" visible="false" />
+      <Label layoutX="46.0" layoutY="421.0" prefHeight="18.0" prefWidth="569.0" text="O el usuario ya esta registrado, o los campos no cumplen con lo establecido" textFill="#d90808" visible="false" />
     </children>
 </AnchorPane>

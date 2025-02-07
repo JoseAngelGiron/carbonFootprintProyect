@@ -5,6 +5,7 @@ import com.github.JoseAngelGiron.model.entity.Usuario;
 import com.github.JoseAngelGiron.model.services.UsuarioServices;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 
 import java.io.IOException;
@@ -23,7 +24,12 @@ public class ProfileController extends Controller implements Initializable {
     @FXML
     private TextField emailField;
 
+    @FXML
+    private Label warningLabel;
+
     private Usuario currentUser;
+
+
 
 
 
@@ -65,11 +71,13 @@ public class ProfileController extends Controller implements Initializable {
            currentUser.setContrasena(encryptPassword(password));
            usuarioServices.update(currentUser);
 
-           //Mostrar aviso de que fue actualizado correctamente
+           warningLabel.setVisible(true);
+           warningLabel.setText("Perfil actualizado correctamente");
 
        }else{
 
-           //Mostrar aviso
+           warningLabel.setVisible(true);
+           warningLabel.setText("Rellene los campos correctamente");
        }
 
 

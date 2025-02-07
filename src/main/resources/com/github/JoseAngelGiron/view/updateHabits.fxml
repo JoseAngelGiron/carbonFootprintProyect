@@ -8,30 +8,32 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane prefHeight="605.0" prefWidth="1153.0" styleClass="reverse-background" stylesheets="@../../../../assets/styles.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.github.JoseAngelGiron.view.UpdateHabitController">
+<AnchorPane prefHeight="698.0" prefWidth="1591.0" styleClass="reverse-background" stylesheets="@../../../../assets/styles.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.github.JoseAngelGiron.view.UpdateHabitController">
    <children>
-      <TableView fx:id="activityTable" layoutX="14.0" layoutY="22.0" prefHeight="562.0" prefWidth="595.0" styleClass="habits-table" stylesheets="@../../../../assets/styles.css">
+      <TableView fx:id="activityTable" layoutX="14.0" layoutY="56.0" prefHeight="595.0" prefWidth="895.0" styleClass="habits-table" stylesheets="@../../../../assets/styles.css">
          <columns>
-            <TableColumn fx:id="categoryColumn" prefWidth="102.39999103546143" text="Categoría" />
-            <TableColumn fx:id="habitColumn" prefWidth="92.0" text="Habito" />
-            <TableColumn fx:id="frequencyColumn" prefWidth="126.40003967285156" text="Frecuencia" />
-            <TableColumn fx:id="typeColumn" prefWidth="88.0" text="Tipo" />
-            <TableColumn fx:id="lastTimeColumn" prefWidth="162.39996337890625" text="Ultima vez" />
+            <TableColumn fx:id="categoryColumn" editable="false" prefWidth="151.20000839233398" text="Categoría" />
+            <TableColumn fx:id="habitColumn" editable="false" prefWidth="214.3999786376953" text="Habito" />
+            <TableColumn fx:id="frequencyColumn" editable="false" prefWidth="105.5999755859375" text="Frecuencia" />
+            <TableColumn fx:id="typeColumn" editable="false" prefWidth="157.60003662109375" text="Tipo" />
+            <TableColumn fx:id="lastTimeColumn" editable="false" prefWidth="243.20001220703125" text="Ultima vez" />
          </columns>
       </TableView>
-      <Text layoutX="641.0" layoutY="33.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="SubTitle" text="Actualizar un hábito" wrappingWidth="298.936767578125" />
-      <TextField fx:id="frequencyArea" layoutX="649.0" layoutY="346.0" styleClass="editable-textfield" stylesheets="@../../../../assets/styles.css" />
-      <TextField fx:id="nameArea" editable="false" layoutX="885.0" layoutY="132.0" prefHeight="26.0" prefWidth="150.0" styleClass="non-editable-textfield" stylesheets="@../../../../assets/styles.css" />
-      <TextField fx:id="categoryArea" layoutX="654.0" layoutY="132.0" styleClass="non-editable-textfield" stylesheets="@../../../../assets/styles.css" />
-      <TextField fx:id="typeArea" layoutX="649.0" layoutY="439.0" prefHeight="40.0" prefWidth="186.0" styleClass="editable-textfield" stylesheets="@../../../../assets/styles.css" />
-      <Text layoutX="649.0" layoutY="322.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Frecuencia:" wrappingWidth="79.461669921875" />
-      <Text layoutX="651.0" layoutY="414.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Tipo:" />
-      <Text layoutX="906.0" layoutY="414.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Ultima vez realizada:" />
-      <DatePicker fx:id="datePicker" layoutX="906.0" layoutY="434.0" prefHeight="26.0" prefWidth="208.0" />
-      <Text layoutX="637.0" layoutY="279.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="SubTitle" text="Datos del hábito para actualizar:" wrappingWidth="287.19997558593764" />
-      <Button layoutX="664.0" layoutY="527.0" mnemonicParsing="false" onAction="#updateHabit" prefHeight="26.0" prefWidth="401.0" styleClass="register-button" stylesheets="@../../../../assets/styles.css" text="Actualizar" />
-      <Text layoutX="649.0" layoutY="74.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="editable-textfield" text="Datos del hábito" wrappingWidth="141.0863037109375" />
-      <Text layoutX="654.0" layoutY="117.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Categoría:" wrappingWidth="86.35821533203125" />
-      <Text layoutX="881.0" layoutY="117.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Nombre:" wrappingWidth="86.35821533203114" />
+      <Text layoutX="981.0" layoutY="75.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="SubTitle" text="Actualizar un hábito" wrappingWidth="298.936767578125" />
+      <TextField fx:id="frequencyArea" layoutX="993.0" layoutY="384.0" styleClass="editable-textfield" stylesheets="@../../../../assets/styles.css" />
+      <TextField fx:id="nameArea" editable="false" layoutX="1302.0" layoutY="178.0" prefHeight="26.0" prefWidth="150.0" styleClass="non-editable-textfield" stylesheets="@../../../../assets/styles.css" />
+      <TextField fx:id="categoryArea" layoutX="987.0" layoutY="178.0" styleClass="non-editable-textfield" stylesheets="@../../../../assets/styles.css" />
+      <TextField fx:id="typeArea" layoutX="993.0" layoutY="491.0" prefHeight="40.0" prefWidth="186.0" styleClass="editable-textfield" stylesheets="@../../../../assets/styles.css" />
+      <Text layoutX="993.0" layoutY="367.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Frecuencia:" wrappingWidth="79.461669921875" />
+      <Text layoutX="993.0" layoutY="467.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Tipo:" />
+      <Text layoutX="1275.0" layoutY="467.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Ultima vez realizada:" />
+      <DatePicker fx:id="datePicker" layoutX="1273.0" layoutY="486.0" prefHeight="26.0" prefWidth="208.0" />
+      <Text layoutX="987.0" layoutY="336.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="SubTitle" text="Datos del hábito para actualizar:" wrappingWidth="287.19997558593764" />
+      <Button layoutX="1025.0" layoutY="608.0" mnemonicParsing="false" onAction="#updateHabit" prefHeight="26.0" prefWidth="401.0" styleClass="register-button" stylesheets="@../../../../assets/styles.css" text="Actualizar" />
+      <Text layoutX="976.0" layoutY="119.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="editable-textfield" text="Datos del hábito" wrappingWidth="141.0863037109375" />
+      <Text layoutX="976.0" layoutY="162.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Categoría:" wrappingWidth="86.35821533203125" />
+      <Text layoutX="1275.0" layoutY="162.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Nombre:" wrappingWidth="86.35821533203114" />
+      <Text layoutX="23.0" layoutY="38.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Seleccione los datos del hábito para actualizar:" wrappingWidth="344.7582550048828" />
+      <Text layoutX="1032.0" layoutY="588.0" strokeType="OUTSIDE" strokeWidth="0.0" text="¿Desea actualizar los datos seleccionados?:" />
    </children>
 </AnchorPane>

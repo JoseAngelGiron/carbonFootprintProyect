@@ -31,16 +31,16 @@ public class RegisterHabitController extends Controller implements Initializable
 
 
     @FXML
-    private TextArea activityName;
+    private TextField activityName;
     @FXML
-    private TextArea category;
+    private TextField category;
     @FXML
-    private TextArea emisionFactor;
+    private TextField emisionFactor;
     @FXML
-    private TextArea unity;
+    private TextField unity;
 
     @FXML
-    private TextArea frecuency;
+    private TextField frecuency;
 
     @FXML
     private ComboBox<String> typeBox;

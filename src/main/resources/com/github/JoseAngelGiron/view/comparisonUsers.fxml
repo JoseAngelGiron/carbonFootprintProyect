@@ -7,7 +7,7 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane prefHeight="609.0" prefWidth="826.0" styleClass="reverse-background" stylesheets="@../../../../assets/styles.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.github.JoseAngelGiron.view.ComparisonUsersController">
+<AnchorPane prefHeight="705.0" prefWidth="1543.0" styleClass="reverse-background" stylesheets="@../../../../assets/styles.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.github.JoseAngelGiron.view.ComparisonUsersController">
 
     <Label layoutX="190.0" layoutY="56.0" prefHeight="28.0" prefWidth="445.0" style="-fx-font-size: 22px; -fx-font-weight: bold;" styleClass="SubTitleAlt" stylesheets="@../../../../assets/styles.css" text="Comparación de Huella de Carbono" />
 
@@ -20,6 +20,6 @@
         </yAxis>
     </BarChart>
 
-    <Button fx:id="btnUpdate" layoutX="208.0" layoutY="424.0" onAction="#compareUserWithAverage" text="Actualizar Comparación" />
+    <Button fx:id="btnUpdate" layoutX="199.0" layoutY="435.0" onAction="#compareUserWithAverage" styleClass="register-button" stylesheets="@../../../../assets/styles.css" text="Calcular media" />
 
 </AnchorPane>

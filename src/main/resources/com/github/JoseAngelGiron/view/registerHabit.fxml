@@ -6,36 +6,36 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
-<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane prefHeight="636.0" prefWidth="923.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.github.JoseAngelGiron.view.RegisterHabitController">
+<AnchorPane prefHeight="701.0" prefWidth="1525.0" styleClass="reverse-background" stylesheets="@../../../../assets/styles.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.github.JoseAngelGiron.view.RegisterHabitController">
    <children>
-      <TableView fx:id="actividadTable" layoutX="18.0" layoutY="10.0" prefHeight="597.0" prefWidth="347.0">
+      <TableView fx:id="actividadTable" layoutX="14.0" layoutY="23.0" prefHeight="598.0" prefWidth="406.0" styleClass="habits-table" stylesheets="@../../../../assets/styles.css">
         <columns>
-          <TableColumn fx:id="activityCategoryColumn" prefWidth="120.80002212524414" text="Categoría" />
-          <TableColumn fx:id="activityNameColumn" prefWidth="224.8000061035156" text="Actividad" />
+          <TableColumn fx:id="activityCategoryColumn" prefWidth="167.20000839233398" text="Categoría" />
+          <TableColumn fx:id="activityNameColumn" prefWidth="220.00001525878906" text="Actividad" />
         </columns>
       </TableView>
-      <TextArea fx:id="activityName" editable="false" layoutX="399.0" layoutY="52.0" prefHeight="42.0" prefWidth="399.0" />
-      <Label layoutX="399.0" layoutY="26.0" prefHeight="18.0" prefWidth="171.0" text="Actividad seleccionada:" />
-      <Label layoutX="399.0" layoutY="316.0" prefHeight="18.0" prefWidth="114.0" text="Frecuencia:" />
-      <TextArea fx:id="category" editable="false" layoutX="399.0" layoutY="135.0" prefHeight="42.0" prefWidth="399.0" />
-      <Label layoutX="399.0" layoutY="190.0" prefHeight="18.0" prefWidth="114.0" text="Factor de emisión:" />
-      <TextArea fx:id="emisionFactor" editable="false" layoutX="399.0" layoutY="208.0" prefHeight="42.0" prefWidth="180.0" />
-      <Label layoutX="607.0" layoutY="190.0" prefHeight="18.0" prefWidth="68.0" text="Unidad:" />
-      <TextArea fx:id="unity" editable="false" layoutX="601.0" layoutY="208.0" prefHeight="42.0" prefWidth="198.0" />
-      <Label layoutX="399.0" layoutY="511.0" prefHeight="18.0" prefWidth="242.0" text="¿Desea registrar esta actividad?" />
-      <Button layoutX="399.0" layoutY="539.0" mnemonicParsing="false" onAction="#registerHabit" prefHeight="42.0" prefWidth="406.0" text="Registrar nuevo hábito" />
-      <Label layoutX="399.0" layoutY="278.0" prefHeight="27.0" prefWidth="171.0" text="Seleccione:" />
-      <TextArea fx:id="frecuency" layoutX="399.0" layoutY="335.0" prefHeight="18.0" prefWidth="171.0" promptText="Ejemplo: 4.." />
-      <Label layoutX="399.0" layoutY="116.0" prefHeight="18.0" prefWidth="114.0" text="Categoría:" />
-      <ComboBox fx:id="typeBox" layoutX="601.0" layoutY="335.0" prefHeight="39.0" prefWidth="198.0" promptText="Frecuencia" />
-      <DatePicker fx:id="datePicker" layoutX="399.0" layoutY="438.0" prefHeight="27.0" prefWidth="406.0" />
-      <Label fx:id="errorFrecuencyLabel" layoutX="399.0" layoutY="387.0" prefHeight="18.0" prefWidth="406.0" text="El valor ingresado no es un número entero válido." textFill="#d90c0c" visible="false" />
-      <Text layoutX="399.0" layoutY="427.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Seleccione una fecha:" wrappingWidth="190.8558349609375" />
-      <Label fx:id="errorDateLabel" layoutX="399.0" layoutY="472.0" prefHeight="18.0" prefWidth="316.0" text="Seleccione una fecha anterior" visible="false" />
-      <Label fx:id="errorRegisteredLabel" layoutX="399.0" layoutY="591.0" prefHeight="18.0" prefWidth="406.0" text="No se pudo registrar el hábito" visible="false" />
+      <Label layoutX="471.0" layoutY="23.0" prefHeight="18.0" prefWidth="171.0" text="Actividad seleccionada:" />
+      <Label layoutX="485.0" layoutY="322.0" prefHeight="18.0" prefWidth="114.0" styleClass="text-field" stylesheets="@../../../../assets/styles.css" text="Frecuencia:" />
+      <Label layoutX="470.0" layoutY="199.0" prefHeight="18.0" prefWidth="114.0" styleClass="text-field" stylesheets="@../../../../assets/styles.css" text="Factor de emisión:" />
+      <Label layoutX="771.0" layoutY="199.0" prefHeight="18.0" prefWidth="68.0" text="Unidad:" />
+      <Label layoutX="503.0" layoutY="552.0" prefHeight="18.0" prefWidth="242.0" text="¿Desea registrar este hábito?" />
+      <Button layoutX="511.0" layoutY="581.0" mnemonicParsing="false" onAction="#registerHabit" prefHeight="42.0" prefWidth="406.0" styleClass="register-button" text="Registrar nuevo hábito" />
+      <Label layoutX="471.0" layoutY="288.0" prefHeight="27.0" prefWidth="171.0" styleClass="text-field" stylesheets="@../../../../assets/styles.css" text="Seleccione:" />
+      <Label layoutX="469.0" layoutY="114.0" prefHeight="18.0" prefWidth="114.0" text="Categoría:" />
+      <ComboBox fx:id="typeBox" layoutX="783.0" layoutY="347.0" prefHeight="39.0" prefWidth="198.0" promptText="Frecuencia" styleClass="weekly-button" stylesheets="@../../../../assets/styles.css" />
+      <DatePicker fx:id="datePicker" layoutX="511.0" layoutY="456.0" prefHeight="27.0" prefWidth="406.0" />
+      <Label fx:id="errorFrecuencyLabel" layoutX="490.0" layoutY="401.0" prefHeight="18.0" prefWidth="406.0" text="El valor ingresado no es un número entero válido." textFill="#d90c0c" visible="false" />
+      <Text layoutX="503.0" layoutY="442.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Seleccione una fecha:" wrappingWidth="190.8558349609375" />
+      <Label fx:id="errorDateLabel" layoutX="511.0" layoutY="517.0" prefHeight="18.0" prefWidth="346.0" text="Seleccione una fecha anterior a la fecha actual para proceder" visible="false" />
+      <Label fx:id="errorRegisteredLabel" layoutX="520.0" layoutY="641.0" prefHeight="18.0" prefWidth="406.0" text="No se pudo registrar el hábito" visible="false" />
+      <TextField fx:id="activityName" layoutX="485.0" layoutY="59.0" prefHeight="38.0" prefWidth="334.0" styleClass="non-editable-textfield" stylesheets="@../../../../assets/styles.css" />
+      <TextField fx:id="category" layoutX="485.0" layoutY="142.0" prefHeight="38.0" prefWidth="334.0" styleClass="non-editable-textfield" stylesheets="@../../../../assets/styles.css" />
+      <TextField fx:id="emisionFactor" layoutX="481.0" layoutY="231.0" prefHeight="38.0" prefWidth="242.0" styleClass="non-editable-textfield" stylesheets="@../../../../assets/styles.css" />
+      <TextField fx:id="unity" layoutX="783.0" layoutY="231.0" prefHeight="38.0" prefWidth="231.0" styleClass="non-editable-textfield" stylesheets="@../../../../assets/styles.css" />
+      <TextField fx:id="frecuency" layoutX="502.0" layoutY="351.0" prefHeight="38.0" prefWidth="191.0" styleClass="editable-textfield" stylesheets="@../../../../assets/styles.css" />
    </children>
 </AnchorPane>
