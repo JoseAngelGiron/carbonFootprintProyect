@@ -6,6 +6,7 @@ import com.github.JoseAngelGiron.model.UserSession;
 import com.github.JoseAngelGiron.model.entity.Huella;
 import com.github.JoseAngelGiron.model.entity.Usuario;
 import com.github.JoseAngelGiron.model.services.HuellaServices;
+import com.github.JoseAngelGiron.model.services.UsuarioServices;
 import com.itextpdf.kernel.pdf.PdfDocument;
 import com.itextpdf.kernel.pdf.PdfWriter;
 import com.itextpdf.layout.Document;
@@ -14,6 +15,7 @@ import com.itextpdf.layout.element.Table;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.ChoiceDialog;
+
 import javafx.scene.layout.Pane;
 import javafx.stage.FileChooser;
 import javafx.stage.Stage;
@@ -34,6 +36,8 @@ import static com.github.JoseAngelGiron.App.changeScene;
 
 public class HomeController extends Controller implements Initializable {
 
+
+
     @FXML
     private Pane window;
 
@@ -42,6 +46,7 @@ public class HomeController extends Controller implements Initializable {
 
     private Usuario currentUser;
     private HuellaServices printService;
+    private UsuarioServices usuarioServices;
 
 
     @Override
@@ -135,6 +140,9 @@ public class HomeController extends Controller implements Initializable {
 
         App.scene.getWindow().centerOnScreen();
     }
+
+
+
 
     @FXML
     public void printYourReport() throws IOException {

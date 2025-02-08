@@ -3,6 +3,8 @@ package com.github.JoseAngelGiron.model.services;
 import com.github.JoseAngelGiron.model.dao.UsuarioDAO;
 import com.github.JoseAngelGiron.model.entity.Usuario;
 
+import java.util.List;
+
 
 public class UsuarioServices implements IServices<Usuario> {
 
@@ -46,6 +48,13 @@ public class UsuarioServices implements IServices<Usuario> {
         return user;
     }
 
+    public List<Usuario> findAll() {
+        return userDAO.findAll();
+    }
+
+    public List<Object[]> findUsersAndAVGImpact() {
+        return userDAO.findUsersWithHighestImpact();
+    }
 
     @Override
     public boolean update(Usuario user) {
@@ -60,12 +69,12 @@ public class UsuarioServices implements IServices<Usuario> {
     @Override
     public boolean delete(Integer id) {
         boolean deleted = false;
-        //Revisar si da problemas
+
         if (id != null) {
             Usuario user = userDAO.findById(id);
 
             if (user != null && user.getId() != null) {
-                System.out.println(user.getId());
+
                 userDAO.delete(user.getId());
                 deleted = true;
             }

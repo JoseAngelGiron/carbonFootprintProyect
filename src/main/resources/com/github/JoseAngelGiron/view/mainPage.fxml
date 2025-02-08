@@ -1,10 +1,42 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.chart.LineChart?>
+<?import javafx.scene.chart.NumberAxis?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Text?>
 
+<?import javafx.scene.chart.CategoryAxis?>
 <AnchorPane prefHeight="711.0" prefWidth="1544.0" styleClass="reverse-background" stylesheets="@../../../../assets/styles.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.github.JoseAngelGiron.view.MainPageController">
-   <children>
-      <Text layoutX="163.0" layoutY="59.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Bienvenido a la APP" wrappingWidth="393.63006591796875" />
-   </children>
+    <children>
+        <Text layoutX="71.0" layoutY="53.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="SubTitle" text="Bienvenido a la APP" wrappingWidth="393.63006591796875" />
+
+        <TableView fx:id="usuariosTableView" layoutX="48.0" layoutY="143.0" prefHeight="510.0" prefWidth="372.0" styleClass="habits-table" stylesheets="@../../../../assets/styles.css">
+            <columns>
+                <TableColumn fx:id="usuarioNameColumn" prefWidth="178.3999900817871" text="Usuario" />
+                <TableColumn fx:id="usersAVGColumn" prefWidth="171.9999542236328" text="Media" />
+            </columns>
+        </TableView>
+        <Text layoutX="55.0" layoutY="126.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="custom-textarea" text="Ranking de usuario y su media de impacto:" wrappingWidth="278.2744140625" />
+
+        <TableView fx:id="categoryTableView" layoutX="494.0" layoutY="149.0" prefHeight="504.0" prefWidth="477.0" styleClass="habits-table" stylesheets="@../../../../assets/styles.css">
+            <columns>
+                <TableColumn fx:id="categoryNameColumn" prefWidth="226.4000244140625" text="Categoría" />
+                <TableColumn fx:id="categoryImpactoColumn" prefWidth="231.99993896484375" text="Impacto total" />
+            </columns>
+        </TableView>
+        <Text layoutX="494.0" layoutY="106.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="custom-textarea" text="Categorías y su impacto en la huella de carbono según datos de los usuarios:" wrappingWidth="278.2744140625" />
+
+        <!-- Aquí agregamos el gráfico -->
+        <LineChart fx:id="huellaLineChart" layoutX="993.0" layoutY="149.0" prefHeight="510.0" prefWidth="500.0">
+            <xAxis>
+                <CategoryAxis fx:id="xAxis" label="Día del mes" />
+            </xAxis>
+            <yAxis>
+                <NumberAxis fx:id="yAxis" label="Impacto (valor)" />
+            </yAxis>
+        </LineChart>
+      <Text layoutX="1057.0" layoutY="116.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="custom-textarea" text="Huellas añadidas este mes a la aplicación:" />
+    </children>
 </AnchorPane>

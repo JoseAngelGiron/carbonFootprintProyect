@@ -5,13 +5,16 @@
 <?import javafx.scene.chart.NumberAxis?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Text?>
 
 <AnchorPane prefHeight="705.0" prefWidth="1543.0" styleClass="reverse-background" stylesheets="@../../../../assets/styles.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.github.JoseAngelGiron.view.ComparisonUsersController">
 
-    <Label layoutX="190.0" layoutY="56.0" prefHeight="28.0" prefWidth="445.0" style="-fx-font-size: 22px; -fx-font-weight: bold;" styleClass="SubTitleAlt" stylesheets="@../../../../assets/styles.css" text="Comparación de Huella de Carbono" />
+    <Label layoutX="88.0" layoutY="110.0" prefHeight="28.0" prefWidth="445.0" style="-fx-font-size: 22px; -fx-font-weight: bold;" styleClass="SubTitleAlt" stylesheets="@../../../../assets/styles.css" text="Comparación de Huella de Carbono" />
 
-    <BarChart fx:id="barChartComparison" layoutX="137.0" layoutY="110.0" prefHeight="300" prefWidth="500">
+    <BarChart fx:id="barChartComparison" layoutX="74.0" layoutY="176.0" prefHeight="300" prefWidth="500">
         <xAxis>
             <CategoryAxis label="Categoría" fx:id="xAxis" />
         </xAxis>
@@ -20,6 +23,12 @@
         </yAxis>
     </BarChart>
 
-    <Button fx:id="btnUpdate" layoutX="199.0" layoutY="435.0" onAction="#compareUserWithAverage" styleClass="register-button" stylesheets="@../../../../assets/styles.css" text="Calcular media" />
+    <Button fx:id="btnUpdate" layoutX="128.0" layoutY="510.0" onAction="#compareUserWithAverage" prefHeight="50.0" prefWidth="392.0" styleClass="register-button" stylesheets="@../../../../assets/styles.css" text="Calcular con la media del sistema" />
+   <TableView fx:id="usersTableView" layoutX="711.0" layoutY="176.0" prefHeight="377.0" prefWidth="244.0" styleClass="habits-table" stylesheets="@../../../../assets/styles.css">
+     <columns>
+       <TableColumn fx:id="usersNameColumn" editable="false" prefWidth="220.79998779296875" resizable="false" sortable="false" text="Usuarios" />
+     </columns>
+   </TableView>
+   <Text layoutX="698.0" layoutY="139.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="custom-textfield" text="Seleccione un usuario para comparar con sus medias por categoría con las suyas:" wrappingWidth="269.4027099609375" />
 
 </AnchorPane>

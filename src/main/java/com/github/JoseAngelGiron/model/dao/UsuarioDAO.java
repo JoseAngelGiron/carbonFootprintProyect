@@ -7,9 +7,20 @@ import org.hibernate.Session;
 import org.hibernate.Transaction;
 import org.hibernate.query.Query;
 
+import java.util.List;
+
 public class UsuarioDAO implements IDAO<Usuario> {
 
     private final static String FINDBYEMAIL = "FROM Usuario WHERE  email = :email";
+
+    String USERS_AND_AVG = "SELECT u.nombre, AVG(h.valor * c.factorEmision) as total_impacto " +
+            "FROM Huella h " +
+            "JOIN h.idUsuario u " +
+            "JOIN h.idActividad a " +
+            "JOIN a.idCategoria c " +
+            "GROUP BY u.nombre " +
+            "ORDER BY total_impacto DESC";
+
 
     private Session session;
 
@@ -68,6 +79,41 @@ public class UsuarioDAO implements IDAO<Usuario> {
 
         return user;
     }
+
+    public List<Usuario> findAll() {
+        session = Connection.getSessionFactory();
+
+        List<Usuario> results = null;
+        try{
+            results = session.createQuery("FROM Usuario", Usuario.class).list();
+
+        }catch (Exception e) {
+            e.printStackTrace();
+        }finally {
+            session.close();
+        }
+        return results;
+    }
+
+
+    public List<Object[]> findUsersWithHighestImpact() {
+        session = Connection.getSessionFactory();
+        List<Object[]> results = null;
+
+        try {
+            Query<Object[]> query = session.createQuery(USERS_AND_AVG);
+            results = query.getResultList();
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        } finally {
+            session.close();
+        }
+
+        return results;
+    }
+
+
 
     /**
      * Saves a new User to the database.
@@ -149,7 +195,5 @@ public class UsuarioDAO implements IDAO<Usuario> {
         }
         return updated;
     }
-
-
 
 }

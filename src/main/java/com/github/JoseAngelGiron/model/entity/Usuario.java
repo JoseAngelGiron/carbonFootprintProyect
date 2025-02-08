@@ -10,8 +10,6 @@ import java.util.Set;
 @Table(name = "usuario")
 public class Usuario {
 
-
-
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id_usuario", nullable = false)

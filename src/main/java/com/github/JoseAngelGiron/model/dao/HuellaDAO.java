@@ -10,10 +10,7 @@ import org.hibernate.query.Query;
 
 import java.math.BigDecimal;
 import java.time.LocalDate;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 
 public class HuellaDAO implements IDAO<Huella> {
@@ -45,6 +42,8 @@ public class HuellaDAO implements IDAO<Huella> {
     private final static String AVERAGE_FOOTPRINT_BY_CATEGORY = "SELECT h.idActividad.idCategoria.nombre, AVG(h.valor) " +
             "FROM Huella h " +
             "GROUP BY h.idActividad.idCategoria.nombre";
+
+    private String PRINTS_THIS_MONTH = "SELECT h FROM Huella h WHERE MONTH(h.fecha) = :currentMonth AND YEAR(h.fecha) = :currentYear";
 
     private Session session;
 
@@ -170,6 +169,31 @@ public class HuellaDAO implements IDAO<Huella> {
 
         return avgFootprint;
     }
+
+
+    public List<Huella> findPrintsThisMonth() {
+        session = Connection.getSessionFactory();
+        List<Huella> huellasDelMes = new ArrayList<>();
+
+        try {
+            Calendar calendar = Calendar.getInstance();
+            int currentMonth = calendar.get(Calendar.MONTH) + 1;
+            int currentYear = calendar.get(Calendar.YEAR);
+
+            huellasDelMes = session.createQuery(PRINTS_THIS_MONTH, Huella.class)
+                    .setParameter("currentMonth", currentMonth)
+                    .setParameter("currentYear", currentYear)
+                    .getResultList();
+
+        } catch (RuntimeException e) {
+            e.printStackTrace();
+        } finally {
+            session.close();
+        }
+
+        return huellasDelMes;
+    }
+
 
 
 

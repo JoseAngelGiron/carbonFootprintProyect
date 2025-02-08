@@ -73,6 +73,10 @@ public class HuellaServices implements IDAO<Huella> {
         return footprintsAndCategories;
     }
 
+    public List<Huella> findPrintsThisMonth() {
+        return huellaDAO.findPrintsThisMonth();
+    }
+
     @Override
     public boolean save(Huella entity) {
         boolean saved = false;
