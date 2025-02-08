@@ -7,11 +7,9 @@ import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.DatePicker;
 
-import javafx.scene.control.TextArea;
 import java.time.format.DateTimeFormatter;
 
 import javafx.scene.control.TextField;
-import javafx.scene.paint.Color;
 
 import java.io.IOException;
 import java.net.URL;

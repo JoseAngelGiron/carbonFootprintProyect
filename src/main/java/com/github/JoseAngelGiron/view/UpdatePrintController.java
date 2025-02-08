@@ -100,10 +100,10 @@ public class UpdatePrintController extends Controller implements Initializable {
 
             HuellaServices huellaServices = new HuellaServices();
             huellaServices.update(printSelected);
-            valueField.setVisible(false);
+            valueLabel.setVisible(false);
             dateLabel.setVisible(false);
         }else {
-            valueField.setVisible(true);
+            valueLabel.setVisible(true);
             dateLabel.setVisible(true);
         }
     }

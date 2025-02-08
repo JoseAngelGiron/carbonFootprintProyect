@@ -27,7 +27,7 @@ public class Categoria {
     private Set<Actividad> actividads = new LinkedHashSet<>();
 
     @OneToMany(mappedBy = "idCategoria")
-    private Set<com.github.JoseAngelGiron.model.entity.Recomendacion> recomendacions = new LinkedHashSet<>();
+    private Set<Recomendacion> recomendacions = new LinkedHashSet<>();
 
     public Integer getId() {
         return id;

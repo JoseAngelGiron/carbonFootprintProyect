@@ -142,7 +142,7 @@ public class HuellaDAO implements IDAO<Huella> {
 
         for (Object[] row : results) {
             String category = (String) row[0];
-            BigDecimal impact = (BigDecimal) row[1];  // Cambiado a BigDecimal
+            BigDecimal impact = (BigDecimal) row[1];
             userFootprint.put(category, impact);
         }
 
@@ -193,8 +193,6 @@ public class HuellaDAO implements IDAO<Huella> {
 
         return huellasDelMes;
     }
-
-
 
 
 

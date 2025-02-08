@@ -12,7 +12,7 @@ import java.util.Map;
 
 public class CategoriaDAO implements IDAO<Categoria> {
 
-    String CATEGORIES_WITH_HIGHEST_IMPACT = "SELECT c.nombre, SUM(h.valor * c.factorEmision) as total_impacto " +
+    private final static String CATEGORIES_WITH_HIGHEST_IMPACT = "SELECT c.nombre, SUM(h.valor * c.factorEmision) as total_impacto " +
             "FROM Huella h " +
             "JOIN h.idActividad a " +
             "JOIN a.idCategoria c " +

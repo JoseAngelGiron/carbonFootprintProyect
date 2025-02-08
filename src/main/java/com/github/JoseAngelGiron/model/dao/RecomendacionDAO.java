@@ -19,13 +19,12 @@ public class RecomendacionDAO implements IDAO<Recomendacion> {
             "WHERE h.id = :id ";
 
     private final static String FIND_RECOMMENDATIONS_BY_FREQUENCY = "SELECT r " +
-                    "FROM Recomendacion r " +
-                    "JOIN r.idCategoria c " +
-                    "JOIN Habito h ON h.idActividad.idCategoria = c " +
-                    "WHERE h.idUsuario.id = :userId " +
-                    "AND h.tipo = :tipo " +
-                    "ORDER BY h.frecuencia DESC";
-
+            "FROM Recomendacion r " +
+            "JOIN r.idCategoria c " +
+            "JOIN Habito h ON h.idActividad.idCategoria = c " +
+            "WHERE h.idUsuario.id = :userId " +
+            "AND h.tipo = :tipo " +
+            "ORDER BY h.frecuencia DESC";
 
 
     private Session session;
@@ -39,7 +38,7 @@ public class RecomendacionDAO implements IDAO<Recomendacion> {
         List<Recomendacion> recommendations = new ArrayList<>();
         session = Connection.getSessionFactory();
 
-        try{
+        try {
             Query<Recomendacion> query = session.createQuery(FIND_RECOMENDATION_BY_PRINT, Recomendacion.class);
             query.setParameter("id", id);
             recommendations = query.getResultList();
@@ -47,7 +46,7 @@ public class RecomendacionDAO implements IDAO<Recomendacion> {
 
         } catch (RuntimeException e) {
             e.printStackTrace();
-        }finally {
+        } finally {
             session.close();
         }
 
@@ -79,7 +78,6 @@ public class RecomendacionDAO implements IDAO<Recomendacion> {
     }
 
 
-
     @Override
     public boolean save(Recomendacion entity) {
         return false;
@@ -94,6 +92,7 @@ public class RecomendacionDAO implements IDAO<Recomendacion> {
     public boolean update(Recomendacion entity) {
         return false;
     }
-
-
 }
+
+
+

@@ -16,8 +16,7 @@
     <property name="format_sql">true</property>
     <property name="hibernate.hbm2ddl.auto">update</property>
 
-    <!-- DB schema will be updated if needed -->
-    <!-- <property name="hibernate.hbm2ddl.auto">update</property> -->
+
 
     <!-- entitys -->
     <mapping class="com.github.JoseAngelGiron.model.entity.Usuario"/>

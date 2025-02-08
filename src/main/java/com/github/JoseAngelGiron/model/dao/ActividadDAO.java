@@ -11,7 +11,9 @@ import java.util.List;
 
 public class ActividadDAO implements IDAO<Actividad> {
 
-    private final static String FINDALLACTIVITIESANDCATEGORIES = "SELECT a FROM Actividad a JOIN FETCH a.idCategoria";
+    private final static String FIND_ALL_ACTIVITIES_AND_CATEGORIES = "SELECT a FROM Actividad a " +
+            "JOIN FETCH a.idCategoria";
+
     private Session session;
 
 
@@ -25,7 +27,7 @@ public class ActividadDAO implements IDAO<Actividad> {
         List<Actividad> actividades = new ArrayList<>();
 
         try {
-            Query<Actividad> query = session.createQuery(FINDALLACTIVITIESANDCATEGORIES, Actividad.class);
+            Query<Actividad> query = session.createQuery(FIND_ALL_ACTIVITIES_AND_CATEGORIES, Actividad.class);
             actividades = query.list();
         } catch (Exception e) {
             e.printStackTrace();

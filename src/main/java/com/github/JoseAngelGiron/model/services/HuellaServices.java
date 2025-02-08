@@ -15,7 +15,7 @@ import java.util.Map;
 
 public class HuellaServices implements IDAO<Huella> {
 
-    HuellaDAO huellaDAO;
+    private HuellaDAO huellaDAO;
 
     public HuellaServices() {
         huellaDAO = new HuellaDAO();
@@ -111,6 +111,7 @@ public class HuellaServices implements IDAO<Huella> {
         }
         return updated;
     }
+
 
 
 }

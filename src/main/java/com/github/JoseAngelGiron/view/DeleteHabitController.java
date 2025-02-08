@@ -74,11 +74,7 @@ public class DeleteHabitController extends Controller implements Initializable {
 
         HabitoServices habitService = new HabitoServices();
 
-        boolean deleted = habitService.delete(selectedHabit);
-
-        if(deleted) {
-            //Manejar lógica, mostrar alguna etiqueta
-        }
+        habitService.delete(selectedHabit);
 
     }
 

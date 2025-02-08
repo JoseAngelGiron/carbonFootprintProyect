@@ -31,11 +31,4 @@ public class Connection {
         return sessionFactory.openSession();
     }
 
-    public void close() {
-
-        if (_instance != null && sessionFactory.isOpen()) {
-            sessionFactory.close();
-        }
-    }
-
 }

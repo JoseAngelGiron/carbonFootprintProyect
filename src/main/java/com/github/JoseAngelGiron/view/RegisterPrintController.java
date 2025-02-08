@@ -48,8 +48,6 @@ public class RegisterPrintController extends Controller implements Initializable
     @FXML
     private DatePicker datePicker;
 
-
-
     private List<Actividad> activities;
     private ObservableList<Actividad> observableActivities;
     private Actividad selectedActivity;
@@ -71,10 +69,8 @@ public class RegisterPrintController extends Controller implements Initializable
     }
 
     @FXML
-    private boolean registerNewPrint(){
+    private void registerNewPrint(){
         HuellaServices printService = new HuellaServices();
-
-
 
         if(datePicker.getValue() != null && valueField.getText() != null){
 
@@ -82,10 +78,11 @@ public class RegisterPrintController extends Controller implements Initializable
             BigDecimal value = null;
             try {
                 value = new BigDecimal(valueField.getText());
-                System.out.println("Valor convertido: " + value);
+
             } catch (NumberFormatException e) {
-                System.err.println("Error: Formato numérico inválido -> " + valueField.getText());
-            } //COMPROBAR ESTO Y MOVER LOS SOUT A ETIQUETAS
+
+                return;
+            }
             String unity = unityField.getText();
             LocalDate dateOfPrint = datePicker.getValue();
 
@@ -94,10 +91,6 @@ public class RegisterPrintController extends Controller implements Initializable
             printService.save(print);
 
         }
-
-
-
-        return true; //RETOCAR
     }
 
     private void showActivitiesAndCategories() throws IOException {

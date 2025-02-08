@@ -60,9 +60,6 @@ public class LoginController extends Controller implements Initializable {
             session.setUserIntoSession(userToLogin);
             changeToMainWindow();
 
-        }else{
-            //etiqueta
-            System.out.println("No existe ningún usuario");
         }
 
     }

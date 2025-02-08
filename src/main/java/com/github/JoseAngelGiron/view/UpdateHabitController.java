@@ -23,17 +23,17 @@ import java.util.ResourceBundle;
 public class UpdateHabitController extends Controller implements Initializable {
 
     @FXML
-    TableView<Habito> activityTable;
+    private TableView<Habito> activityTable;
     @FXML
-    TableColumn<Habito, String> categoryColumn;
+    private TableColumn<Habito, String> categoryColumn;
     @FXML
-    TableColumn<Habito, String> habitColumn;
+    private TableColumn<Habito, String> habitColumn;
     @FXML
-    TableColumn<Habito, Integer> frequencyColumn;
+    private TableColumn<Habito, Integer> frequencyColumn;
     @FXML
-    TableColumn<Habito, String> typeColumn;
+    private TableColumn<Habito, String> typeColumn;
     @FXML
-    TableColumn<Habito, String> lastTimeColumn;
+    private TableColumn<Habito, String> lastTimeColumn;
 
 
     @FXML
@@ -72,19 +72,15 @@ public class UpdateHabitController extends Controller implements Initializable {
     public boolean updateHabit() {
         boolean updated = false;
         HabitoServices habitServices = new HabitoServices();
-        //refactorizar esto a etiquetas por si falla algo, dar avisos individualizados
-
-
 
         if(!frequencyArea.getText().isEmpty() && !typeArea.getText().isEmpty() && datePicker.getValue() != null
-        && datePicker.getValue().isBefore(LocalDate.now())) { //ver que se permita el propio día en cuestión
-            //revisar el type
+        && datePicker.getValue().isBefore(LocalDate.now())) {
 
             selectedHabit.setFrecuencia(Integer.parseInt(frequencyArea.getText()));
             selectedHabit.setTipo(typeArea.getText());
 
             selectedHabit.setUltimaFecha(datePicker.getValue());
-            //Usar el boolean para mostrar aviso de etiqueta
+
             updated = habitServices.update(selectedHabit);
         }
 

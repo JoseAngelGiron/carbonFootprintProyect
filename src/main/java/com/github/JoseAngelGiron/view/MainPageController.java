@@ -71,7 +71,7 @@ public class MainPageController extends Controller implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-        // Inicialización de otros elementos si es necesario
+
     }
 
     private void showUsers() throws IOException {
@@ -111,14 +111,11 @@ public class MainPageController extends Controller implements Initializable {
     private void loadHuellasForCurrentMonth() {
         printServices = new HuellaServices();
 
-        // Obtener las huellas del mes actual
         List<Huella> huellasDelMes = printServices.findPrintsThisMonth();
 
-        // Crear la serie de datos para el gráfico
         XYChart.Series<String, Number> series = new XYChart.Series<>();
         series.setName("Huellas de este mes");
 
-        // Crear una lista de días para usar en el eje X
         List<String> daysOfMonth = new ArrayList<>();
 
         for (Huella huella : huellasDelMes) {
@@ -126,21 +123,21 @@ public class MainPageController extends Controller implements Initializable {
             BigDecimal valorHuella = huella.getValor();
             Double doubleValue = valorHuella.doubleValue();
 
-            // Asegúrate de que el día esté en la lista de días del mes
+
             if (!daysOfMonth.contains(String.valueOf(dayOfMonth))) {
-                daysOfMonth.add(String.valueOf(dayOfMonth)); // Agrega el día como una categoría
+                daysOfMonth.add(String.valueOf(dayOfMonth));
             }
 
-            // Añadir cada dato al gráfico
+
             series.getData().add(new XYChart.Data<>(String.valueOf(dayOfMonth), doubleValue));
         }
 
-        // Limpiar los datos anteriores y añadir la nueva serie
+
         huellaLineChart.getData().clear();
         huellaLineChart.getData().add(series);
 
-        // Establecer las categorías del eje X
-        xAxis.setCategories(FXCollections.observableArrayList(daysOfMonth));  // Usar CategoryAxis
+
+        xAxis.setCategories(FXCollections.observableArrayList(daysOfMonth));
     }
 }
 

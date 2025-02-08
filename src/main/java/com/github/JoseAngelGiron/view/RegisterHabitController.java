@@ -101,7 +101,7 @@ public class RegisterHabitController extends Controller implements Initializable
         }
 
         LocalDate dateSelected = datePicker.getValue();
-        if(dateSelected.isBefore(LocalDate.now())) {
+        if(dateSelected.isAfter(LocalDate.now())) {
             errorDateLabel.setText("La fecha no puede ser superior a la fecha actual");
             return;
         }
@@ -142,12 +142,12 @@ public class RegisterHabitController extends Controller implements Initializable
             if(registered) {
 
                 errorRegisteredLabel.setVisible(true);
-                errorRegisteredLabel.setText("Actividad registrada con éxito");
+                errorRegisteredLabel.setText("Habito registrado con éxito");
 
             }else{
 
                 errorRegisteredLabel.setVisible(true);
-                errorRegisteredLabel.setText("No se pudo registrar el actividad, ya esta registrada");
+                errorRegisteredLabel.setText("No se pudo registrar el hábito, ya esta registrado");
             }
 
         }else {

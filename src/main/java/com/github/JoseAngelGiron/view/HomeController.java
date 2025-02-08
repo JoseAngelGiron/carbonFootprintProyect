@@ -4,8 +4,10 @@ package com.github.JoseAngelGiron.view;
 import com.github.JoseAngelGiron.App;
 import com.github.JoseAngelGiron.model.UserSession;
 import com.github.JoseAngelGiron.model.entity.Huella;
+import com.github.JoseAngelGiron.model.entity.Recomendacion;
 import com.github.JoseAngelGiron.model.entity.Usuario;
 import com.github.JoseAngelGiron.model.services.HuellaServices;
+import com.github.JoseAngelGiron.model.services.RecomendacionServices;
 import com.github.JoseAngelGiron.model.services.UsuarioServices;
 import com.itextpdf.kernel.pdf.PdfDocument;
 import com.itextpdf.kernel.pdf.PdfWriter;
@@ -26,17 +28,12 @@ import java.io.FileNotFoundException;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.net.URL;
-import java.util.Arrays;
-import java.util.List;
-import java.util.Optional;
-import java.util.ResourceBundle;
+import java.util.*;
 
 import static com.github.JoseAngelGiron.App.changeScene;
 
 
 public class HomeController extends Controller implements Initializable {
-
-
 
     @FXML
     private Pane window;
@@ -46,7 +43,6 @@ public class HomeController extends Controller implements Initializable {
 
     private Usuario currentUser;
     private HuellaServices printService;
-    private UsuarioServices usuarioServices;
 
 
     @Override
@@ -180,6 +176,7 @@ public class HomeController extends Controller implements Initializable {
 
     private void generarPDF(String filePath) {
         printService = new HuellaServices();
+
         try {
 
             PdfWriter writer = new PdfWriter(filePath);
@@ -199,20 +196,34 @@ public class HomeController extends Controller implements Initializable {
 
             document.add(new Paragraph("\nDetalles de Huellas de Carbono:\n").setBold());
 
-            Table table = new Table(3); // 3 columnas
+            Table table = new Table(4); // 3 columnas
             table.addCell("Fecha");
             table.addCell("Categoría");
             table.addCell("Impacto (kg CO₂)");
+            table.addCell("Valor");
 
             List<Huella> huellas = printService.findAllprintsByUser(currentUser);
+
             for (Huella huella : huellas) {
                 table.addCell(huella.getFecha().toString());
                 table.addCell(huella.getIdActividad().getIdCategoria().getNombre());
-                table.addCell(String.valueOf(huella.getValor()));
+                table.addCell(String.valueOf(huella.getIdActividad().getIdCategoria().getFactorEmision()));
+                table.addCell(huella.getValor().toString());
             }
 
             document.add(table);
 
+            document.add(new Paragraph("\nRecomendaciones para el día a día:\n").setBold());
+            RecomendacionServices recomendacionServices = new RecomendacionServices();
+            List<Recomendacion> recomendaciones = recomendacionServices.findRecommendationsDailyByUser(currentUser, "diaria");
+
+            if (recomendaciones.isEmpty()) {
+                document.add(new Paragraph("No hay recomendaciones disponibles en este momento."));
+            } else {
+                for (Recomendacion recomendacion : recomendaciones) {
+                    document.add(new Paragraph("- " + recomendacion.getDescripcion()));
+                }
+            }
 
             document.close();
 

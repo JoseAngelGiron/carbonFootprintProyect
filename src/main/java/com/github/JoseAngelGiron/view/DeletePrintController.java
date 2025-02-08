@@ -1,12 +1,12 @@
 package com.github.JoseAngelGiron.view;
 
 import com.github.JoseAngelGiron.model.UserSession;
-import com.github.JoseAngelGiron.model.entity.Actividad;
+
 import com.github.JoseAngelGiron.model.entity.Huella;
 import com.github.JoseAngelGiron.model.entity.Usuario;
 import com.github.JoseAngelGiron.model.services.HuellaServices;
 import javafx.beans.property.ReadOnlyObjectWrapper;
-import javafx.beans.property.ReadOnlyStringWrapper;
+
 import javafx.beans.property.SimpleStringProperty;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;

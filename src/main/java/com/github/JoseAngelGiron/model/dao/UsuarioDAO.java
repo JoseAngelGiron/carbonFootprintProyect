@@ -13,7 +13,7 @@ public class UsuarioDAO implements IDAO<Usuario> {
 
     private final static String FINDBYEMAIL = "FROM Usuario WHERE  email = :email";
 
-    String USERS_AND_AVG = "SELECT u.nombre, AVG(h.valor * c.factorEmision) as total_impacto " +
+    private final static String USERS_AND_AVG = "SELECT u.nombre, AVG(h.valor * c.factorEmision) as total_impacto " +
             "FROM Huella h " +
             "JOIN h.idUsuario u " +
             "JOIN h.idActividad a " +
